@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ReportBuilderSL.Web.Services.LogoService" CodeBehind="LogoService.svc.cs" %>

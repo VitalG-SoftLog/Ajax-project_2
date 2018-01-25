@@ -1,0 +1,240 @@
+﻿<div templateId="RootTemplate" style="padding:16px 25px;">
+    <div>
+        <div class="title_group_report">DeliveryReports</div>
+        <div class="content_group_report">
+            <table>
+                <tr>
+                    <td class="top_left_dotted_container"></td>
+                    <td class="top_center_dotted_container" style="width: 900px;"></td>
+                    <td class="top_right_dotted_container"></td>
+                </tr>
+                <tr>
+                    <td class="center_left_dotted_container"></td>
+                    <td class="center_center_dotted_container">
+                        <table id="tableContainerDeliveryReport">
+                            <tr>
+                                <td class="custom_report_container" id="leftCustomReportContainerId" style="padding-right: 15px;">
+								   
+                                </td>
+                                <td class="separation_line">
+                                    <div></div>
+                                </td>
+                                <td class="custom_report_container"  id="rightCustomReportContainerId" style="padding-right: 5px;">
+								    
+                                </td>
+                            </tr>							
+                        </table>
+                    </td>
+                    <td class="center_right_dotted_container"></td>
+                </tr>
+                <tr>
+                    <td class="bottom_left_dotted_container"></td>
+                    <td class="bottom_center_dotted_container"></td>
+                    <td class="bottom_right_dotted_container"></td>
+                </tr>
+            </table>
+        </div>	
+    </div>
+    <div style="margin-top: 20px;">
+        <div class="title_group_report">Report Delivery History</div>
+        <div class="content_group_report">
+            <table>
+                <tr>
+                    <td class="top_left_dotted_container"></td>
+                    <td class="top_center_dotted_container"></td>
+                    <td class="top_right_dotted_container"></td>
+                </tr>
+                <tr>
+                    <td class="center_left_dotted_container"></td>
+                    <td class="center_center_dotted_container">
+                        <div class="header_delivery_history">
+                            <table>
+                                <tr>
+                                    <td style="width: 95px;">Delivery Date</td>
+                                    <td style="width: 328px;">Report Name</td>
+                                    <td style="width: 112px;">Delivery Method</td>
+                                    <td style="width: 235px;">Recipients</td>
+                                    <td style="width: 87px;">Report Link</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="container_delivery_history">
+                            <table cellpadding="0" cellspacing="0" id="reportDeliveryHistoryContainerId">
+                                
+                            </table>
+                        </div>
+                    </td>
+                    <td class="center_right_dotted_container"></td>
+                </tr>
+                <tr>
+                    <td class="bottom_left_dotted_container"></td>
+                    <td class="bottom_center_dotted_container"></td>
+                    <td class="bottom_right_dotted_container"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 930px;height: 50px; " id="reportDeliveryHistoryPagerId">
+            <table align="center">
+                <tr>
+                    <td>
+                        <div class="previous_page_delivered_history"></div>
+                    </td>
+                    <td  id="reportDeliveryHistoryNumberPagerId">
+                    </td>
+                    <td>
+                        <div class="next_page_delivered_history"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>	
+    </div>
+</div> 
+
+<div templateId="DeliveredHistoryPagerItemTemplate" style="float: left;">
+    <div class="{#classNumderHistoryPage}" id="{#numberHistoryPageId}">
+        <div class="left_numder_history_page"></div>
+        <div class="center_numder_history_page">{#numberHistoryPage}</div>
+        <div class="right_numder_history_page"></div>
+    </div>
+</div>
+
+
+<div templateId="DeliveredReportsFolderTemplate" class="{#class}" id="{#deliveredReportsFolderRootId}">
+    <table class="delivered_report_item" cellpadding="0" cellspacing="0" id="{#deliveredReportsFolderId}">
+        <tr>
+            <td class="top_left_hover_blue_report"></td>
+            <td class="top_hover_blue_report"></td>
+            <td class="top_right_hover_blue_report"></td>
+        </tr>
+        <tr>
+            <td class="center_center_hover_blue_report"></td>
+            <td class="center_center_hover_blue_report">
+                <div class="name_custom_report">
+                    <span class ="span_name_report">{#nameDescription}</span>
+                    <span class ="span_number_report" id="{#numberDeliveryFilesId}"></span>
+                </div>
+            </td>
+            <td class="center_center_hover_blue_report"></td>
+        </tr>
+        <tr>
+            <td class="bottom_left_hover_blue_report"></td>
+            <td class="bottom_hover_blue_report"></td>
+            <td class="bottom_right_hover_blue_report"></td>
+        </tr>
+    </table>
+    <div class="filling_custom_report" id="{#fillingCustomReportItemId}"></div>
+</div>
+
+<div templateId="DeliveredReportsItemTemplate" class="deliveredReportsItem">
+    <table cellpadding="0" cellspacing="0" class="{#numberFileClass}">
+        <tr>
+            <td class="directory_tree_last"></td>
+            <td class="place_for_icon">
+                <table cellpadding="0" cellspacing="0" class="">
+                    <tr>
+                        <td class="class_bg_icon" onclick="window.open('{#linkDeliveryReport}');">
+                            <div  class="{#typeReportFileClass}"></div>
+                        </td>
+                        <td class="date_report_file" onclick="window.open('{#linkDeliveryReport}');">
+                            <div style="overflow: hidden;width: 328px;height: 14px;">
+                                {#nameDeliveredReportFile}
+                            </div>
+                        </td>
+                        <td class="place_for_button_delete" id="{#deleteDeliveredReportButtonId}"></td>
+                    </tr>
+                </table>
+            </td>													
+        </tr>
+    </table>
+</div>
+
+ 
+ 
+
+<tr templateId="DeliveredReportsHistoryItemTemplate" class="history_report_row">
+    <td>
+        <table  cellpadding="0" cellspacing="0" class="{#classActiveHistoryRow}">
+            <tr class="{#numberHistoryClass}" >
+                <td  id="{#deliveredReportsHistoryId}" class="{#classActiveHistoryReportRow}" >
+                    <table cellpadding="0" cellspacing="0" class="table_history_class">
+                        <tr class="">
+                            <td  style="width: 95px;"><div>{#deliveryDate}</div></td>
+                            <td style="width: 328px;"><div>{#reportDeliveryName}</div></td>
+                            <td style="width: 112px;"><div>{#deliveryMethod}</div></td>
+                            <td style="width: 235px;"><div>{#recipientsDelivery}</div></td>
+                            <td style="width: 87px;border-right:0px;">
+                                <span onclick="window.open('{#linkDeliveryOpenReport}');" class="{#classDeliveryOpenReport}" id="{#deliveryOpenReportId}" >
+                                   Open Report
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="more_info_container" id="{#moreInfoContainerId}">
+                    <table cellpadding="0" cellspacing="0" id="{#moreInfoItemContainerId}">
+                        <tr class="header_delivery_history_active_item" >
+                            <td style="width: 323px;">Recipients</td>
+                            <td style="width: 190px;">Schedule Name</td>
+                            <td style="width: 115px;">Period</td>
+                            <td style="width: 110px;">Schedule Start</td>
+                            <td style="width: 108px;">Schedule Stop</td>
+                            <td style="width: 60px;border-right:0px;">Time</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+ 
+<tr templateId="DeliveredReportsHistoryMoreInfoItemTemplate" class="{#schedule_row}" id="{#scheduleHistoryRowId}">
+    <td>{#recipientsInfo}</td>
+    <td>{#scheduleNameInfo}</td>
+    <td>{#periodInfo}</td>
+    <td>{#scheduleStartInfo}</td>
+    <td>{#scheduleStopInfo}</td>
+    <td style="border-right: 0px;">{#timeInfo}</td>
+</tr>
+
+<div class="custom_report_item">
+	<table class="delivered_report_item" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="top_left_hover_blue_report"></td>
+			<td class="top_hover_blue_report"></td>
+			<td class="top_right_hover_blue_report"></td>
+		</tr>
+		<tr>
+			<td class="center_center_hover_blue_report"></td>
+			<td class="center_center_hover_blue_report">
+				<div class="name_custom_report">
+					<span class ="span_name_report">New Report</span>
+					<span class ="span_number_report"> (2) </span>
+				</div>
+			</td>
+			<td class="center_center_hover_blue_report"></td>
+		</tr>
+		<tr>
+			<td class="bottom_left_hover_blue_report"></td>
+			<td class="bottom_hover_blue_report"></td>
+			<td class="bottom_right_hover_blue_report"></td>
+		</tr>
+	</table>
+	<div class="filling_custom_report">
+		<table cellpadding="0" cellspacing="0" class="first_report">
+			<tr>
+				<td class="directory_tree"></td>
+				<td class="place_for_icon">
+					<table cellpadding="0" cellspacing="0" class="">
+						<tr>
+							<td class="type_report_file"></td>
+							<td class="date_report_file">cvvvvvvvvvvvv</td>
+							<td class="place_for_button_delete"></td>
+						</tr>
+					</table>
+				</td>													
+			</tr>
+		</table>
+	</div>									
+</div>

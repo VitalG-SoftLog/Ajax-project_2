@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MsiclaimModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MsiclaimModelStoreContainer">
+          <EntitySet Name="UserAssnView" EntityType="MsiclaimModel.Store.UserAssnView" store:Type="Views" store:Schema="dbo" store:Name="UserAssnView">
+            <DefiningQuery>SELECT 
+      [UserAssnView].[AssnNum] AS [AssnNum], 
+      [UserAssnView].[AssnName] AS [AssnName], 
+      [UserAssnView].[IsStandalone] AS [IsStandalone], 
+      [UserAssnView].[AssnLongName] AS [AssnLongName]
+      FROM [dbo].[UserAssnView] AS [UserAssnView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserLoginView" EntityType="MsiclaimModel.Store.UserLoginView" store:Type="Views" store:Schema="dbo" store:Name="UserLoginView">
+            <DefiningQuery>SELECT 
+      [UserLoginView].[ID] AS [ID], 
+      [UserLoginView].[UserID] AS [UserID], 
+      [UserLoginView].[Password] AS [Password], 
+      [UserLoginView].[DomainLogin] AS [DomainLogin], 
+      [UserLoginView].[LastName] AS [LastName], 
+      [UserLoginView].[FirstName] AS [FirstName], 
+      [UserLoginView].[IsAdministrator] AS [IsAdministrator], 
+      [UserLoginView].[EmailAddress] AS [EmailAddress], 
+      [UserLoginView].[PasswordChangedDate] AS [PasswordChangedDate], 
+      [UserLoginView].[FailedLoginAttempts] AS [FailedLoginAttempts], 
+      [UserLoginView].[IsActive] AS [IsActive], 
+      [UserLoginView].[DefaultAssn] AS [DefaultAssn], 
+      [UserLoginView].[DefaultCoverage] AS [DefaultCoverage], 
+      [UserLoginView].[DefaultAssnJoin] AS [DefaultAssnJoin], 
+      [UserLoginView].[DefaultCoverageJoin] AS [DefaultCoverageJoin], 
+      [UserLoginView].[AssnName] AS [AssnName]
+      FROM [dbo].[UserLoginView] AS [UserLoginView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Msiclaim.dbo.UserAssnView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserAssnView">
+          <Key>
+            <PropertyRef Name="AssnNum" />
+          </Key>
+          <Property Name="AssnNum" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="AssnName" Type="char" MaxLength="7" />
+          <Property Name="IsStandalone" Type="char" MaxLength="1" />
+          <Property Name="AssnLongName" Type="char" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Msiclaim.dbo.UserLoginView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserLoginView">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DomainLogin" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="EmailAddress" />
+            <PropertyRef Name="FailedLoginAttempts" />
+            <PropertyRef Name="IsActive" />
+          </Key>
+          <Property Name="ID" Type="int" />
+          <Property Name="UserID" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="Password" Type="char" MaxLength="10" />
+          <Property Name="DomainLogin" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="char" Nullable="false" MaxLength="18" />
+          <Property Name="FirstName" Type="char" Nullable="false" MaxLength="12" />
+          <Property Name="IsAdministrator" Type="char" MaxLength="1" />
+          <Property Name="EmailAddress" Type="varchar" Nullable="false" MaxLength="75" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="FailedLoginAttempts" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="DefaultAssn" Type="char" MaxLength="3" />
+          <Property Name="DefaultCoverage" Type="char" MaxLength="4" />
+          <Property Name="DefaultAssnJoin" Type="char" MaxLength="3" />
+          <Property Name="DefaultCoverageJoin" Type="char" MaxLength="4" />
+          <Property Name="AssnName" Type="char" MaxLength="50" />
+        </EntityType>
+        <Function Name="proc_ICE_UserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userid" Type="char" Mode="In" />
+          <Parameter Name="password" Type="char" Mode="In" />
+          <Parameter Name="assnNum" Type="char" Mode="In" />
+        </Function>
+        <Function Name="Reporting_GetAssnList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userid" Type="char" Mode="In" />
+        </Function>
+        <Function Name="Reporting_UserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="char" Mode="In" />
+        </Function>
+        <Function Name="Reporting_UserLogin2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="char" Mode="In" />
+          <Parameter Name="Passwd" Type="char" Mode="In" />
+          <Parameter Name="AssnNum" Type="char" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MsiclaimModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MsiclaimEntities">
+          <EntitySet Name="UserLoginSet" EntityType="MsiclaimModel.UserLogin" />
+          <FunctionImport Name="GetUser" EntitySet="UserLoginSet" ReturnType="Collection(MsiclaimModel.UserLogin)">
+          <Parameter Name="UserId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetUser2" EntitySet="UserLoginSet" ReturnType="Collection(MsiclaimModel.UserLogin)">
+            <Parameter Name="UserId" Mode="In" Type="String" />
+            <Parameter Name="Passwd" Mode="In" Type="String" />
+            <Parameter Name="AssnNum" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="UserAssnView" EntityType="MsiclaimModel.UserAssnView" />
+          <FunctionImport Name="GetUserAssn" EntitySet="UserAssnView" ReturnType="Collection(MsiclaimModel.UserAssnView)">
+            <Parameter Name="userid" Mode="In" Type="String" />
+          </FunctionImport></EntityContainer>
+        <EntityType Name="UserLogin">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="DomainLogin" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="EmailAddress" />
+            <PropertyRef Name="FailedLoginAttempts" />
+            <PropertyRef Name="IsActive" /></Key>
+          <Property Name="ID" Type="Int32" Nullable="true" />
+          <Property Name="UserID" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="true" />
+          <Property Name="DomainLogin" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="IsAdministrator" Type="String" Nullable="true" />
+          <Property Name="EmailAddress" Type="String" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Nullable="true" />
+          <Property Name="FailedLoginAttempts" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="String" Nullable="false" />
+          <Property Name="DefaultAssn" Type="String" Nullable="true" />
+          <Property Name="DefaultCoverage" Type="String" Nullable="true" />
+          <Property Name="DefaultAssnJoin" Type="String" Nullable="true" />
+          <Property Name="DefaultCoverageJoin" Type="String" Nullable="true" />
+          <Property Name="AssnName" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="UserAssnView">
+          <Key>
+            <PropertyRef Name="AssnNum" />
+          </Key>
+          <Property Type="String" Name="AssnNum" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AssnName" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="IsStandalone" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AssnLongName" MaxLength="50" FixedLength="true" Unicode="false" />
+        </EntityType></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MsiclaimModelStoreContainer" CdmEntityContainer="MsiclaimEntities">
+          <EntitySetMapping Name="UserLoginSet">
+            <EntityTypeMapping TypeName="IsTypeOf(MsiclaimModel.UserLogin)">
+              <MappingFragment StoreEntitySet="UserLoginView">
+                <ScalarProperty Name="AssnName" ColumnName="AssnName" />
+                <ScalarProperty Name="DefaultCoverageJoin" ColumnName="DefaultCoverageJoin" />
+                <ScalarProperty Name="DefaultAssnJoin" ColumnName="DefaultAssnJoin" />
+                <ScalarProperty Name="DefaultCoverage" ColumnName="DefaultCoverage" />
+                <ScalarProperty Name="DefaultAssn" ColumnName="DefaultAssn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FailedLoginAttempts" ColumnName="FailedLoginAttempts" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DomainLogin" ColumnName="DomainLogin" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetUser" FunctionName="MsiclaimModel.Store.Reporting_UserLogin" />
+          <FunctionImportMapping FunctionImportName="GetUser2" FunctionName="MsiclaimModel.Store.Reporting_UserLogin2" />
+          <EntitySetMapping Name="UserAssnView">
+            <EntityTypeMapping TypeName="MsiclaimModel.UserAssnView">
+              <MappingFragment StoreEntitySet="UserAssnView">
+                <ScalarProperty Name="AssnLongName" ColumnName="AssnLongName" />
+                <ScalarProperty Name="IsStandalone" ColumnName="IsStandalone" />
+                <ScalarProperty Name="AssnName" ColumnName="AssnName" />
+                <ScalarProperty Name="AssnNum" ColumnName="AssnNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetUserAssn" FunctionName="MsiclaimModel.Store.Reporting_GetAssnList" /></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="MSIClaimModel" DisplayType="true" ZoomLevel="96">
+        <edmx:EntityTypeShape EntityType="MsiclaimModel.UserLogin" Width="2.75" PointX="1" PointY="0.5" Height="3.9033007812499996" />
+        <edmx:EntityTypeShape EntityType="MsiclaimModel.UserAssnView" Width="2.5" PointX="4.375" PointY="0.75" Height="1.7879850260416674" /></edmx:Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

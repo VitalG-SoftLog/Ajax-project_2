@@ -1,0 +1,2546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ReportProjectDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ReportProjectDBModelStoreContainer">
+          <EntitySet Name="AdminUserName" EntityType="ReportProjectDBModel.Store.AdminUserName" store:Type="Tables" Schema="dbo" >
+            
+          </EntitySet>
+          <EntitySet Name="ApplicationLog" EntityType="ReportProjectDBModel.Store.ApplicationLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AssnSpecificFieldDefinition" EntityType="ReportProjectDBModel.Store.AssnSpecificFieldDefinition" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClientReportField" EntityType="ReportProjectDBModel.Store.ClientReportField" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DataType" EntityType="ReportProjectDBModel.Store.DataType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Filter" EntityType="ReportProjectDBModel.Store.Filter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FormatType" EntityType="ReportProjectDBModel.Store.FormatType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RdlComponent" EntityType="ReportProjectDBModel.Store.RdlComponent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RdlComponentType" EntityType="ReportProjectDBModel.Store.RdlComponentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReleaseNote" EntityType="ReportProjectDBModel.Store.ReleaseNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Report" EntityType="ReportProjectDBModel.Store.Report" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Report_ICESecurityCheckpoint" EntityType="ReportProjectDBModel.Store.Report_ICESecurityCheckpoint" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportDeliveryLog" EntityType="ReportProjectDBModel.Store.ReportDeliveryLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportField" EntityType="ReportProjectDBModel.Store.ReportField" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportFolder" EntityType="ReportProjectDBModel.Store.ReportFolder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportLayoutStyle" EntityType="ReportProjectDBModel.Store.ReportLayoutStyle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportLayoutStyleRdl" EntityType="ReportProjectDBModel.Store.ReportLayoutStyleRdl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportParameter" EntityType="ReportProjectDBModel.Store.ReportParameter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Schedule" EntityType="ReportProjectDBModel.Store.Schedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScheduleRecipient" EntityType="ReportProjectDBModel.Store.ScheduleRecipient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubReport" EntityType="ReportProjectDBModel.Store.SubReport" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubReportParameter" EntityType="ReportProjectDBModel.Store.SubReportParameter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReleaseNote" EntityType="ReportProjectDBModel.Store.UserReleaseNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReport" EntityType="ReportProjectDBModel.Store.UserReport" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReportField" EntityType="ReportProjectDBModel.Store.UserReportField" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReportOutput" EntityType="ReportProjectDBModel.Store.UserReportOutput" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReportParameter" EntityType="ReportProjectDBModel.Store.UserReportParameter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserReportSummarizeField" EntityType="ReportProjectDBModel.Store.UserReportSummarizeField" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ClientReportField__ReportField" Association="ReportProjectDBModel.Store.FK_ClientReportField__ReportField">
+            <End Role="ReportField" EntitySet="ReportField" />
+            <End Role="ClientReportField" EntitySet="ClientReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RdlComponent__RdlComponentType" Association="ReportProjectDBModel.Store.FK_RdlComponent__RdlComponentType">
+            <End Role="RdlComponentType" EntitySet="RdlComponentType" />
+            <End Role="RdlComponent" EntitySet="RdlComponent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report__Filter" Association="ReportProjectDBModel.Store.FK_Report__Filter">
+            <End Role="Filter" EntitySet="Filter" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report__ReportFolder" Association="ReportProjectDBModel.Store.FK_Report__ReportFolder">
+            <End Role="ReportFolder" EntitySet="ReportFolder" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_ICESecurityCheckpoint__Report" Association="ReportProjectDBModel.Store.FK_Report_ICESecurityCheckpoint__Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="Report_ICESecurityCheckpoint" EntitySet="Report_ICESecurityCheckpoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportDeliveryLog__Schedule" Association="ReportProjectDBModel.Store.FK_ReportDeliveryLog__Schedule">
+            <End Role="Schedule" EntitySet="Schedule" />
+            <End Role="ReportDeliveryLog" EntitySet="ReportDeliveryLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportDeliveryLog__ScheduleRecipient" Association="ReportProjectDBModel.Store.FK_ReportDeliveryLog__ScheduleRecipient">
+            <End Role="ScheduleRecipient" EntitySet="ScheduleRecipient" />
+            <End Role="ReportDeliveryLog" EntitySet="ReportDeliveryLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportDeliveryLog__UserReportOutput" Association="ReportProjectDBModel.Store.FK_ReportDeliveryLog__UserReportOutput">
+            <End Role="UserReportOutput" EntitySet="UserReportOutput" />
+            <End Role="ReportDeliveryLog" EntitySet="ReportDeliveryLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportField__DataType" Association="ReportProjectDBModel.Store.FK_ReportField__DataType">
+            <End Role="DataType" EntitySet="DataType" />
+            <End Role="ReportField" EntitySet="ReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportField__Report" Association="ReportProjectDBModel.Store.FK_ReportField__Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="ReportField" EntitySet="ReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyle__Report" Association="ReportProjectDBModel.Store.FK_ReportLayoutStyle__Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="ReportLayoutStyle" EntitySet="ReportLayoutStyle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyleRdl__FormatType" Association="ReportProjectDBModel.Store.FK_ReportLayoutStyleRdl__FormatType">
+            <End Role="FormatType" EntitySet="FormatType" />
+            <End Role="ReportLayoutStyleRdl" EntitySet="ReportLayoutStyleRdl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyleRdl__RdlComponent" Association="ReportProjectDBModel.Store.FK_ReportLayoutStyleRdl__RdlComponent">
+            <End Role="RdlComponent" EntitySet="RdlComponent" />
+            <End Role="ReportLayoutStyleRdl" EntitySet="ReportLayoutStyleRdl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyleRdl__ReportLayoutStyle" Association="ReportProjectDBModel.Store.FK_ReportLayoutStyleRdl__ReportLayoutStyle">
+            <End Role="ReportLayoutStyle" EntitySet="ReportLayoutStyle" />
+            <End Role="ReportLayoutStyleRdl" EntitySet="ReportLayoutStyleRdl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportParameter__DataType" Association="ReportProjectDBModel.Store.FK_ReportParameter__DataType">
+            <End Role="DataType" EntitySet="DataType" />
+            <End Role="ReportParameter" EntitySet="ReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportParameter__ReportParameter" Association="ReportProjectDBModel.Store.FK_ReportParameter__ReportParameter">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="ReportParameter" EntitySet="ReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule__UserReport" Association="ReportProjectDBModel.Store.FK_Schedule__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScheduleRecipient__Schedule" Association="ReportProjectDBModel.Store.FK_ScheduleRecipient__Schedule">
+            <End Role="Schedule" EntitySet="Schedule" />
+            <End Role="ScheduleRecipient" EntitySet="ScheduleRecipient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubReport__Report" Association="ReportProjectDBModel.Store.FK_SubReport__Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="SubReport" EntitySet="SubReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubReport_Report" Association="ReportProjectDBModel.Store.FK_SubReport_Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="SubReport" EntitySet="SubReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubReportParameter__SubReport" Association="ReportProjectDBModel.Store.FK_SubReportParameter__SubReport">
+            <End Role="SubReport" EntitySet="SubReport" />
+            <End Role="SubReportParameter" EntitySet="SubReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReleaseNote__ReleaseNote" Association="ReportProjectDBModel.Store.FK_UserReleaseNote__ReleaseNote">
+            <End Role="ReleaseNote" EntitySet="ReleaseNote" />
+            <End Role="UserReleaseNote" EntitySet="UserReleaseNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReport__FormatType" Association="ReportProjectDBModel.Store.FK_UserReport__FormatType">
+            <End Role="FormatType" EntitySet="FormatType" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReport__Report" Association="ReportProjectDBModel.Store.FK_UserReport__Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReport__ReportLayoutStyle" Association="ReportProjectDBModel.Store.FK_UserReport__ReportLayoutStyle">
+            <End Role="ReportLayoutStyle" EntitySet="ReportLayoutStyle" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportField__ReportField" Association="ReportProjectDBModel.Store.FK_UserReportField__ReportField">
+            <End Role="ReportField" EntitySet="ReportField" />
+            <End Role="UserReportField" EntitySet="UserReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportField__UserReport" Association="ReportProjectDBModel.Store.FK_UserReportField__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportField" EntitySet="UserReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportOutput__UserReport" Association="ReportProjectDBModel.Store.FK_UserReportOutput__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportOutput" EntitySet="UserReportOutput" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportParameter__ReportParameter" Association="ReportProjectDBModel.Store.FK_UserReportParameter__ReportParameter">
+            <End Role="ReportParameter" EntitySet="ReportParameter" />
+            <End Role="UserReportParameter" EntitySet="UserReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportParameter__UserReport" Association="ReportProjectDBModel.Store.FK_UserReportParameter__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportParameter" EntitySet="UserReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportSumField__UserReport" Association="ReportProjectDBModel.Store.FK_UserReportSumField__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportSummarizeField" EntitySet="UserReportSummarizeField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportSumField__UserReportField" Association="ReportProjectDBModel.Store.FK_UserReportSumField__UserReportField">
+            <End Role="UserReportField" EntitySet="UserReportField" />
+            <End Role="UserReportSummarizeField" EntitySet="UserReportSummarizeField" />
+          </AssociationSet>
+          <AssociationSet Name="ReportTypeCheckPointJoin_fk" Association="ReportProjectDBModel.Store.ReportTypeCheckPointJoin_fk">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="Report_ICESecurityCheckpoint" EntitySet="Report_ICESecurityCheckpoint" />
+          </AssociationSet>
+          <AssociationSet Name="UserReport_Report_fk" Association="ReportProjectDBModel.Store.UserReport_Report_fk">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'ReportProjectDB.dbo.AdminUserName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AdminUserName">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="userName" Type="char" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ApplicationLog">
+          <Key>
+            <PropertyRef Name="ApplicationLogID" />
+          </Key>
+          <Property Name="ApplicationLogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="MessageType" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Message" Type="text" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AssnSpecificFieldDefinition">
+          <Key>
+            <PropertyRef Name="AssnSpecificFieldDefinitionId" />
+          </Key>
+          <Property Name="AssnSpecificFieldDefinitionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FieldName" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="FieldDescription" Type="varchar" MaxLength="100" />
+          <Property Name="coverage_code" Type="varchar" MaxLength="4" />
+          <Property Name="AssociationNumber" Type="varchar" MaxLength="3" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientReportField">
+          <Key>
+            <PropertyRef Name="ClientReportFieldID" />
+          </Key>
+          <Property Name="ClientReportFieldID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportFieldID" Type="int" Nullable="false" />
+          <Property Name="ClientNumber" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DataType">
+          <Key>
+            <PropertyRef Name="DataTypeID" />
+          </Key>
+          <Property Name="DataTypeID" Type="int" Nullable="false" />
+          <Property Name="DataTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Filter">
+          <Key>
+            <PropertyRef Name="FilterID" />
+          </Key>
+          <Property Name="FilterID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SystemType" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FormatType">
+          <Key>
+            <PropertyRef Name="FormatTypeID" />
+          </Key>
+          <Property Name="FormatTypeID" Type="int" Nullable="false" />
+          <Property Name="FormatTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="200" />
+          <Property Name="Extension" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RdlComponent">
+          <Key>
+            <PropertyRef Name="RdlComponentID" />
+          </Key>
+          <Property Name="RdlComponentID" Type="int" Nullable="false" />
+          <Property Name="RdlComponentTypeID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="RdlData" Type="xml" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RdlComponentType">
+          <Key>
+            <PropertyRef Name="RdlComponentTypeID" />
+          </Key>
+          <Property Name="RdlComponentTypeID" Type="int" Nullable="false" />
+          <Property Name="RdlComponentTypeName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReleaseNote">
+          <Key>
+            <PropertyRef Name="ReleaseNoteID" />
+          </Key>
+          <Property Name="ReleaseNoteID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReleaseNumber" Type="varchar" MaxLength="30" />
+          <Property Name="ReleaseDate" Type="datetime" />
+          <Property Name="ReleaseTitle" Type="varchar" MaxLength="100" />
+          <Property Name="DOCUMENT" Type="varchar" MaxLength="200" />
+          <Property Name="CreatedUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUserId" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ReportID" />
+          </Key>
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="ReportName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="FilterID" Type="int" Nullable="false" />
+          <Property Name="VerifyRowCountSP" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ReportFolderID" Type="int" Nullable="false" />
+          <Property Name="VerifyRowCountBeforeExecuting" Type="bit" Nullable="false" />
+          <Property Name="RdlHeaderDate" Type="varchar(max)" />
+          <Property Name="RdlFooterMessage" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Report_ICESecurityCheckpoint">
+          <Key>
+            <PropertyRef Name="Report_ICESecurityCheckpointID" />
+          </Key>
+          <Property Name="CheckpointID" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="Report_ICESecurityCheckpointID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ReportDeliveryLog">
+          <Key>
+            <PropertyRef Name="ReportDeliveryLogID" />
+          </Key>
+          <Property Name="ReportDeliveryLogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ScheduleID" Type="int" Nullable="false" />
+          <Property Name="ScheduleRecipientID" Type="int" />
+          <Property Name="UserReportOutputID" Type="int" />
+          <Property Name="DeliveryDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportField">
+          <Key>
+            <PropertyRef Name="ReportFieldID" />
+          </Key>
+          <Property Name="ReportFieldID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="FieldName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SQLFieldName" Type="varchar" MaxLength="200" />
+          <Property Name="DataTypeID" Type="int" Nullable="false" />
+          <Property Name="ColumnOrder" Type="int" Nullable="false" />
+          <Property Name="ColumnWidthFactor" Type="float" Nullable="false" />
+          <Property Name="IsGroupable" Type="bit" Nullable="false" />
+          <Property Name="GroupSummaryExpression" Type="varchar" MaxLength="1024" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IncludePageBreak" Type="bit" Nullable="false" />
+          <Property Name="IsGroupByDefault" Type="bit" Nullable="false" />
+          <Property Name="IsDisplayInReport" Type="bit" Nullable="false" />
+          <Property Name="IsSummarizable" Type="bit" Nullable="false" />
+          <Property Name="IsClientSpecific" Type="bit" Nullable="false" />
+          <Property Name="Category" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FieldValueExpression" Type="varchar" MaxLength="500" />
+          <Property Name="IsCalculated" Type="bit" Nullable="false" />
+          <Property Name="CalculationDescription" Type="varchar" MaxLength="200" />
+          <Property Name="IsSensitive" Type="bit" Nullable="false" />
+          <Property Name="UseSummaryExpresionGroup" Type="bit" Nullable="false" />
+          <Property Name="isClientSpecificCode" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportFolder">
+          <Key>
+            <PropertyRef Name="ReportFolderID" />
+          </Key>
+          <Property Name="ReportFolderID" Type="int" Nullable="false" />
+          <Property Name="ReportFolderName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="OrderIndex" Type="int" />
+        </EntityType>
+        <EntityType Name="ReportLayoutStyle">
+          <Key>
+            <PropertyRef Name="ReportLayoutStyleID" />
+          </Key>
+          <Property Name="ReportLayoutStyleID" Type="int" Nullable="false" />
+          <Property Name="ReportLayoutStyleName" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="PreviewImagePath" Type="varchar" MaxLength="500" />
+          <Property Name="OrderIndex" Type="int" Nullable="false" />
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsCustom" Type="bit" Nullable="false" />
+          <Property Name="ReportLink" Type="varchar(max)" />
+          <Property Name="IsUsed" Type="bit" Nullable="false" />
+          <Property Name="IsSensitive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportLayoutStyleRdl">
+          <Key>
+            <PropertyRef Name="ReportLayoutStyleRdlID" />
+          </Key>
+          <Property Name="ReportLayoutStyleRdlID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportLayoutStyleID" Type="int" Nullable="false" />
+          <Property Name="RdlComponentID" Type="int" Nullable="false" />
+          <Property Name="FormatTypeID" Type="int" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportParameter">
+          <Key>
+            <PropertyRef Name="ReportParameterID" />
+          </Key>
+          <Property Name="ReportParameterID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="ReportParameterName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="DataTypeID" Type="int" Nullable="false" />
+          <Property Name="DefaultValue" Type="varchar" MaxLength="500" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsReportParameter" Type="bit" Nullable="false" />
+          <Property Name="IsQueryParameter" Type="bit" Nullable="false" />
+          <Property Name="OrderIndex" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Name="UserReportID" Type="int" Nullable="false" />
+          <Property Name="SubscriptionID" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="ScheduleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ScheduleStart" Type="datetime" Nullable="false" />
+          <Property Name="ScheduleStop" Type="datetime" />
+          <Property Name="RecurrenceTypeID" Type="int" Nullable="false" />
+          <Property Name="WeekOfMonthTypeID" Type="int" />
+          <Property Name="CalendarDays" Type="varchar" MaxLength="100" />
+          <Property Name="DaysOfWeekBitmask" Type="tinyint" />
+          <Property Name="MonthsOfYearBitmask" Type="smallint" />
+          <Property Name="RepeatAfterInterval" Type="int" />
+          <Property Name="Subject" Type="varchar" MaxLength="256" />
+          <Property Name="Comment" Type="varchar" MaxLength="5000" />
+          <Property Name="PriorityTypeID" Type="int" Nullable="false" />
+          <Property Name="AdditionalEmailAddresses" Type="varchar" MaxLength="512" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsNotSendWithNoData" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScheduleRecipient">
+          <Key>
+            <PropertyRef Name="ScheduleRecipientID" />
+          </Key>
+          <Property Name="ScheduleRecipientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ScheduleID" Type="int" Nullable="false" />
+          <Property Name="DeliveryMethodTypeID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="SubReport">
+          <Key>
+            <PropertyRef Name="SubReportID" />
+          </Key>
+          <Property Name="SubReportID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="SubReportName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="SPName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="OrderIndex" Type="int" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubReportParameter">
+          <Key>
+            <PropertyRef Name="SubReportParameterID" />
+          </Key>
+          <Property Name="SubReportParameterID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SubReportID" Type="int" Nullable="false" />
+          <Property Name="SubReportParameterName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="500" />
+          <Property Name="FieldValueExpression" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserReleaseNote">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ReleaseNoteID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ReleaseNoteID" Type="int" Nullable="false" />
+          <Property Name="IsReleaseNoteRead" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedUserId" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="IsReleaseNoteNotificationViewed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserReport">
+          <Key>
+            <PropertyRef Name="UserReportID" />
+          </Key>
+          <Property Name="UserReportID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserReportName" Type="varchar" MaxLength="500" />
+          <Property Name="IsCustom" Type="bit" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedByUserID" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ClientNumber" Type="varchar" MaxLength="3" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsSummaryOnly" Type="bit" Nullable="false" />
+          <Property Name="ReportID" Type="int" Nullable="false" />
+          <Property Name="ReportLayoutStyleID" Type="int" Nullable="false" />
+          <Property Name="FormatTypeID" Type="int" Nullable="false" />
+          <Property Name="IsTransient" Type="bit" Nullable="false" />
+          <Property Name="IsTurnOffPageBreak" Type="bit" Nullable="false" />
+          <Property Name="RowsCount" Type="int" Nullable="false" />
+          <Property Name="IncludeTitlePage" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserReportField">
+          <Key>
+            <PropertyRef Name="UserReportFieldID" />
+          </Key>
+          <Property Name="UserReportFieldID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserReportID" Type="int" Nullable="false" />
+          <Property Name="ReportFieldID" Type="int" Nullable="false" />
+          <Property Name="CustomName" Type="varchar" MaxLength="200" />
+          <Property Name="ColumnOrder" Type="int" Nullable="false" />
+          <Property Name="SortOrder" Type="int" Nullable="false" />
+          <Property Name="SortDirection" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="GroupOrder" Type="int" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="IncludePageBreak" Type="bit" Nullable="false" />
+          <Property Name="CoverageCode" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="UserReportOutput">
+          <Key>
+            <PropertyRef Name="UserReportOutputID" />
+          </Key>
+          <Property Name="UserReportOutputID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserReportID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ReportRunDate" Type="datetime" Nullable="false" />
+          <Property Name="ClientNumber" Type="char" Nullable="false" MaxLength="3" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserReportParameter">
+          <Key>
+            <PropertyRef Name="UserReportParameterID" />
+          </Key>
+          <Property Name="UserReportParameterID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserReportID" Type="int" Nullable="false" />
+          <Property Name="ReportParameterID" Type="int" Nullable="false" />
+          <Property Name="ParameterValue" Type="varchar(max)" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="FilterString" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="UserReportSummarizeField">
+          <Key>
+            <PropertyRef Name="UserReportSummarizeFieldID" />
+          </Key>
+          <Property Name="UserReportSummarizeFieldID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserReportID" Type="int" Nullable="false" />
+          <Property Name="UserReportFieldID" Type="int" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ClientReportField__ReportField">
+          <End Role="ReportField" Type="ReportProjectDBModel.Store.ReportField" Multiplicity="1" />
+          <End Role="ClientReportField" Type="ReportProjectDBModel.Store.ClientReportField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportField">
+              <PropertyRef Name="ReportFieldID" />
+            </Principal>
+            <Dependent Role="ClientReportField">
+              <PropertyRef Name="ReportFieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RdlComponent__RdlComponentType">
+          <End Role="RdlComponentType" Type="ReportProjectDBModel.Store.RdlComponentType" Multiplicity="1" />
+          <End Role="RdlComponent" Type="ReportProjectDBModel.Store.RdlComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RdlComponentType">
+              <PropertyRef Name="RdlComponentTypeID" />
+            </Principal>
+            <Dependent Role="RdlComponent">
+              <PropertyRef Name="RdlComponentTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report__Filter">
+          <End Role="Filter" Type="ReportProjectDBModel.Store.Filter" Multiplicity="1" />
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filter">
+              <PropertyRef Name="FilterID" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="FilterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report__ReportFolder">
+          <End Role="ReportFolder" Type="ReportProjectDBModel.Store.ReportFolder" Multiplicity="1" />
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportFolder">
+              <PropertyRef Name="ReportFolderID" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ReportFolderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_ICESecurityCheckpoint__Report">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="Report_ICESecurityCheckpoint" Type="ReportProjectDBModel.Store.Report_ICESecurityCheckpoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="Report_ICESecurityCheckpoint">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportDeliveryLog__Schedule">
+          <End Role="Schedule" Type="ReportProjectDBModel.Store.Schedule" Multiplicity="1" />
+          <End Role="ReportDeliveryLog" Type="ReportProjectDBModel.Store.ReportDeliveryLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="ReportDeliveryLog">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportDeliveryLog__ScheduleRecipient">
+          <End Role="ScheduleRecipient" Type="ReportProjectDBModel.Store.ScheduleRecipient" Multiplicity="0..1" />
+          <End Role="ReportDeliveryLog" Type="ReportProjectDBModel.Store.ReportDeliveryLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScheduleRecipient">
+              <PropertyRef Name="ScheduleRecipientID" />
+            </Principal>
+            <Dependent Role="ReportDeliveryLog">
+              <PropertyRef Name="ScheduleRecipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportDeliveryLog__UserReportOutput">
+          <End Role="UserReportOutput" Type="ReportProjectDBModel.Store.UserReportOutput" Multiplicity="0..1" />
+          <End Role="ReportDeliveryLog" Type="ReportProjectDBModel.Store.ReportDeliveryLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReportOutput">
+              <PropertyRef Name="UserReportOutputID" />
+            </Principal>
+            <Dependent Role="ReportDeliveryLog">
+              <PropertyRef Name="UserReportOutputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportField__DataType">
+          <End Role="DataType" Type="ReportProjectDBModel.Store.DataType" Multiplicity="1" />
+          <End Role="ReportField" Type="ReportProjectDBModel.Store.ReportField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DataType">
+              <PropertyRef Name="DataTypeID" />
+            </Principal>
+            <Dependent Role="ReportField">
+              <PropertyRef Name="DataTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportField__Report">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportField" Type="ReportProjectDBModel.Store.ReportField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="ReportField">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyle__Report">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="ReportLayoutStyle" Type="ReportProjectDBModel.Store.ReportLayoutStyle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyle">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyleRdl__FormatType">
+          <End Role="FormatType" Type="ReportProjectDBModel.Store.FormatType" Multiplicity="1" />
+          <End Role="ReportLayoutStyleRdl" Type="ReportProjectDBModel.Store.ReportLayoutStyleRdl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormatType">
+              <PropertyRef Name="FormatTypeID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyleRdl">
+              <PropertyRef Name="FormatTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyleRdl__RdlComponent">
+          <End Role="RdlComponent" Type="ReportProjectDBModel.Store.RdlComponent" Multiplicity="1" />
+          <End Role="ReportLayoutStyleRdl" Type="ReportProjectDBModel.Store.ReportLayoutStyleRdl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RdlComponent">
+              <PropertyRef Name="RdlComponentID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyleRdl">
+              <PropertyRef Name="RdlComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyleRdl__ReportLayoutStyle">
+          <End Role="ReportLayoutStyle" Type="ReportProjectDBModel.Store.ReportLayoutStyle" Multiplicity="1" />
+          <End Role="ReportLayoutStyleRdl" Type="ReportProjectDBModel.Store.ReportLayoutStyleRdl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportLayoutStyle">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyleRdl">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportParameter__DataType">
+          <End Role="DataType" Type="ReportProjectDBModel.Store.DataType" Multiplicity="1" />
+          <End Role="ReportParameter" Type="ReportProjectDBModel.Store.ReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DataType">
+              <PropertyRef Name="DataTypeID" />
+            </Principal>
+            <Dependent Role="ReportParameter">
+              <PropertyRef Name="DataTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportParameter__ReportParameter">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportParameter" Type="ReportProjectDBModel.Store.ReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="ReportParameter">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule__UserReport">
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Schedule" Type="ReportProjectDBModel.Store.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScheduleRecipient__Schedule">
+          <End Role="Schedule" Type="ReportProjectDBModel.Store.Schedule" Multiplicity="1" />
+          <End Role="ScheduleRecipient" Type="ReportProjectDBModel.Store.ScheduleRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="ScheduleRecipient">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubReport__Report">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="SubReport" Type="ReportProjectDBModel.Store.SubReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="SubReport">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubReport_Report">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="SubReport" Type="ReportProjectDBModel.Store.SubReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="SubReport">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubReportParameter__SubReport">
+          <End Role="SubReport" Type="ReportProjectDBModel.Store.SubReport" Multiplicity="1" />
+          <End Role="SubReportParameter" Type="ReportProjectDBModel.Store.SubReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubReport">
+              <PropertyRef Name="SubReportID" />
+            </Principal>
+            <Dependent Role="SubReportParameter">
+              <PropertyRef Name="SubReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReleaseNote__ReleaseNote">
+          <End Role="ReleaseNote" Type="ReportProjectDBModel.Store.ReleaseNote" Multiplicity="1" />
+          <End Role="UserReleaseNote" Type="ReportProjectDBModel.Store.UserReleaseNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReleaseNote">
+              <PropertyRef Name="ReleaseNoteID" />
+            </Principal>
+            <Dependent Role="UserReleaseNote">
+              <PropertyRef Name="ReleaseNoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReport__FormatType">
+          <End Role="FormatType" Type="ReportProjectDBModel.Store.FormatType" Multiplicity="1" />
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormatType">
+              <PropertyRef Name="FormatTypeID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="FormatTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReport__Report">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReport__ReportLayoutStyle">
+          <End Role="ReportLayoutStyle" Type="ReportProjectDBModel.Store.ReportLayoutStyle" Multiplicity="1" />
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportLayoutStyle">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportField__ReportField">
+          <End Role="ReportField" Type="ReportProjectDBModel.Store.ReportField" Multiplicity="1" />
+          <End Role="UserReportField" Type="ReportProjectDBModel.Store.UserReportField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportField">
+              <PropertyRef Name="ReportFieldID" />
+            </Principal>
+            <Dependent Role="UserReportField">
+              <PropertyRef Name="ReportFieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportField__UserReport">
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReportField" Type="ReportProjectDBModel.Store.UserReportField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportField">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportOutput__UserReport">
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReportOutput" Type="ReportProjectDBModel.Store.UserReportOutput" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportOutput">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportParameter__ReportParameter">
+          <End Role="ReportParameter" Type="ReportProjectDBModel.Store.ReportParameter" Multiplicity="1" />
+          <End Role="UserReportParameter" Type="ReportProjectDBModel.Store.UserReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportParameter">
+              <PropertyRef Name="ReportParameterID" />
+            </Principal>
+            <Dependent Role="UserReportParameter">
+              <PropertyRef Name="ReportParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportParameter__UserReport">
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="1" />
+          <End Role="UserReportParameter" Type="ReportProjectDBModel.Store.UserReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportParameter">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportSumField__UserReport">
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="1" />
+          <End Role="UserReportSummarizeField" Type="ReportProjectDBModel.Store.UserReportSummarizeField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportSummarizeField">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportSumField__UserReportField">
+          <End Role="UserReportField" Type="ReportProjectDBModel.Store.UserReportField" Multiplicity="1" />
+          <End Role="UserReportSummarizeField" Type="ReportProjectDBModel.Store.UserReportSummarizeField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReportField">
+              <PropertyRef Name="UserReportFieldID" />
+            </Principal>
+            <Dependent Role="UserReportSummarizeField">
+              <PropertyRef Name="UserReportFieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ReportTypeCheckPointJoin_fk">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="Report_ICESecurityCheckpoint" Type="ReportProjectDBModel.Store.Report_ICESecurityCheckpoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="Report_ICESecurityCheckpoint">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserReport_Report_fk">
+          <End Role="Report" Type="ReportProjectDBModel.Store.Report" Multiplicity="1" />
+          <End Role="UserReport" Type="ReportProjectDBModel.Store.UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReportProjectDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ReportProjectDBEntities" a:LazyLoadingEnabled="false" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="DataType" EntityType="ReportProjectDBModel.DataType" />
+          <EntitySet Name="FormatType" EntityType="ReportProjectDBModel.FormatType" />
+          <EntitySet Name="Report" EntityType="ReportProjectDBModel.Report" />
+          <EntitySet Name="ReportField" EntityType="ReportProjectDBModel.ReportField" />
+          <EntitySet Name="ReportParameter" EntityType="ReportProjectDBModel.ReportParameter" />
+          <EntitySet Name="UserReport" EntityType="ReportProjectDBModel.UserReport" />
+          <EntitySet Name="UserReportField" EntityType="ReportProjectDBModel.UserReportField" />
+          <AssociationSet Name="FK_ReportField_DataType" Association="ReportProjectDBModel.FK_ReportField_DataType">
+            <End Role="DataType" EntitySet="DataType" />
+            <End Role="ReportField" EntitySet="ReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportParameter_DataType" Association="ReportProjectDBModel.FK_ReportParameter_DataType">
+            <End Role="DataType" EntitySet="DataType" />
+            <End Role="ReportParameter" EntitySet="ReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportField_Report" Association="ReportProjectDBModel.FK_ReportField_Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="ReportField" EntitySet="ReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportParameter_ReportParameter" Association="ReportProjectDBModel.FK_ReportParameter_ReportParameter">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="ReportParameter" EntitySet="ReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportField_ReportField" Association="ReportProjectDBModel.FK_UserReportField_ReportField">
+            <End Role="ReportField" EntitySet="ReportField" />
+            <End Role="UserReportField" EntitySet="UserReportField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportField_UserReport" Association="ReportProjectDBModel.FK_UserReportField_UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportField" EntitySet="UserReportField" />
+          </AssociationSet>
+          <EntitySet Name="Filter" EntityType="ReportProjectDBModel.Filter" />
+          <AssociationSet Name="FilterReport" Association="ReportProjectDBModel.FilterReport">
+            <End Role="Filter" EntitySet="Filter" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <EntitySet Name="UserReportOutput" EntityType="ReportProjectDBModel.UserReportOutput" />
+          <AssociationSet Name="FK_UserReportOutput_UserReport" Association="ReportProjectDBModel.FK_UserReportOutput_UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportOutput" EntitySet="UserReportOutput" />
+          </AssociationSet>
+          <EntitySet Name="SubReport" EntityType="ReportProjectDBModel.SubReport" />
+          <EntitySet Name="SubReportParameter" EntityType="ReportProjectDBModel.SubReportParameter" />
+          <AssociationSet Name="FK_SubReport_Report" Association="ReportProjectDBModel.FK_SubReport_Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="SubReport" EntitySet="SubReport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubReportParameter_SubReport" Association="ReportProjectDBModel.FK_SubReportParameter_SubReport">
+            <End Role="SubReport" EntitySet="SubReport" />
+            <End Role="SubReportParameter" EntitySet="SubReportParameter" />
+          </AssociationSet>
+          <EntitySet Name="ReportFolder" EntityType="ReportProjectDBModel.ReportFolder" />
+          <AssociationSet Name="Report_fk" Association="ReportProjectDBModel.Report_fk">
+            <End Role="ReportFolder" EntitySet="ReportFolder" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <EntitySet Name="AdminUserName" EntityType="ReportProjectDBModel.AdminUserName" />
+          <EntitySet Name="UserReportParameter" EntityType="ReportProjectDBModel.UserReportParameter" />
+          <AssociationSet Name="FK_UserReportParameter_ReportParameter" Association="ReportProjectDBModel.FK_UserReportParameter_ReportParameter">
+            <End Role="ReportParameter" EntitySet="ReportParameter" />
+            <End Role="UserReportParameter" EntitySet="UserReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportParameter_UserReport" Association="ReportProjectDBModel.FK_UserReportParameter_UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportParameter" EntitySet="UserReportParameter" />
+          </AssociationSet>
+          <AssociationSet Name="UserReport_Report_fk" Association="ReportProjectDBModel.UserReport_Report_fk">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+          <EntitySet Name="Report_ICESecurityCheckpoint" EntityType="ReportProjectDBModel.Report_ICESecurityCheckpoint" />
+          <AssociationSet Name="ReportTypeCheckPointJoin_fk" Association="ReportProjectDBModel.ReportTypeCheckPointJoin_fk">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="Report_ICESecurityCheckpoint" EntitySet="Report_ICESecurityCheckpoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReport__FormatType" Association="ReportProjectDBModel.FK_UserReport__FormatType">
+            <End Role="FormatType" EntitySet="FormatType" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+          <EntitySet Name="RdlComponent" EntityType="ReportProjectDBModel.RdlComponent" />
+          <EntitySet Name="RdlComponentType" EntityType="ReportProjectDBModel.RdlComponentType" />
+          <EntitySet Name="ReportLayoutStyle" EntityType="ReportProjectDBModel.ReportLayoutStyle" />
+          <EntitySet Name="ReportLayoutStyleRdl" EntityType="ReportProjectDBModel.ReportLayoutStyleRdl" />
+          <AssociationSet Name="FK_ReportLayoutStyleRdl__FormatType" Association="ReportProjectDBModel.FK_ReportLayoutStyleRdl__FormatType">
+            <End Role="FormatType" EntitySet="FormatType" />
+            <End Role="ReportLayoutStyleRdl" EntitySet="ReportLayoutStyleRdl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RdlComponent__RdlComponentType" Association="ReportProjectDBModel.FK_RdlComponent__RdlComponentType">
+            <End Role="RdlComponentType" EntitySet="RdlComponentType" />
+            <End Role="RdlComponent" EntitySet="RdlComponent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyleRdl__RdlComponent" Association="ReportProjectDBModel.FK_ReportLayoutStyleRdl__RdlComponent">
+            <End Role="RdlComponent" EntitySet="RdlComponent" />
+            <End Role="ReportLayoutStyleRdl" EntitySet="ReportLayoutStyleRdl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyle__Report" Association="ReportProjectDBModel.FK_ReportLayoutStyle__Report">
+            <End Role="Report" EntitySet="Report" />
+            <End Role="ReportLayoutStyle" EntitySet="ReportLayoutStyle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportLayoutStyleRdl__ReportLayoutStyle" Association="ReportProjectDBModel.FK_ReportLayoutStyleRdl__ReportLayoutStyle">
+            <End Role="ReportLayoutStyle" EntitySet="ReportLayoutStyle" />
+            <End Role="ReportLayoutStyleRdl" EntitySet="ReportLayoutStyleRdl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReport__ReportLayoutStyle" Association="ReportProjectDBModel.FK_UserReport__ReportLayoutStyle">
+            <End Role="ReportLayoutStyle" EntitySet="ReportLayoutStyle" />
+            <End Role="UserReport" EntitySet="UserReport" />
+          </AssociationSet>
+          <EntitySet Name="Schedule" EntityType="ReportProjectDBModel.Schedule" />
+          <AssociationSet Name="FK_Schedule__UserReport" Association="ReportProjectDBModel.FK_Schedule__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <EntitySet Name="UserReportSummarizeField" EntityType="ReportProjectDBModel.UserReportSummarizeField" />
+          <AssociationSet Name="FK_UserReportSumField__UserReport" Association="ReportProjectDBModel.FK_UserReportSumField__UserReport">
+            <End Role="UserReport" EntitySet="UserReport" />
+            <End Role="UserReportSummarizeField" EntitySet="UserReportSummarizeField" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserReportSumField__UserReportField" Association="ReportProjectDBModel.FK_UserReportSumField__UserReportField">
+            <End Role="UserReportField" EntitySet="UserReportField" />
+            <End Role="UserReportSummarizeField" EntitySet="UserReportSummarizeField" />
+          </AssociationSet>
+          <EntitySet Name="ClientReportField" EntityType="ReportProjectDBModel.ClientReportField" />
+          <AssociationSet Name="FK_ClientReportField__ReportField" Association="ReportProjectDBModel.FK_ClientReportField__ReportField">
+            <End Role="ReportField" EntitySet="ReportField" />
+            <End Role="ClientReportField" EntitySet="ClientReportField" />
+          </AssociationSet>
+          <EntitySet Name="ScheduleRecipient" EntityType="ReportProjectDBModel.ScheduleRecipient" />
+          <AssociationSet Name="FK_ScheduleRecipient__Schedule" Association="ReportProjectDBModel.FK_ScheduleRecipient__Schedule">
+            <End Role="Schedule" EntitySet="Schedule" />
+            <End Role="ScheduleRecipient" EntitySet="ScheduleRecipient" />
+          </AssociationSet>
+          <EntitySet Name="ReportDeliveryLog" EntityType="ReportProjectDBModel.ReportDeliveryLog" />
+          <AssociationSet Name="FK_ReportDeliveryLog__Schedule" Association="ReportProjectDBModel.FK_ReportDeliveryLog__Schedule">
+            <End Role="Schedule" EntitySet="Schedule" />
+            <End Role="ReportDeliveryLog" EntitySet="ReportDeliveryLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportDeliveryLog__ScheduleRecipient" Association="ReportProjectDBModel.FK_ReportDeliveryLog__ScheduleRecipient">
+            <End Role="ScheduleRecipient" EntitySet="ScheduleRecipient" />
+            <End Role="ReportDeliveryLog" EntitySet="ReportDeliveryLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportDeliveryLog__UserReportOutput" Association="ReportProjectDBModel.FK_ReportDeliveryLog__UserReportOutput">
+            <End Role="UserReportOutput" EntitySet="UserReportOutput" />
+            <End Role="ReportDeliveryLog" EntitySet="ReportDeliveryLog" />
+          </AssociationSet>
+          <EntitySet Name="ReleaseNote" EntityType="ReportProjectDBModel.ReleaseNote" />
+          <EntitySet Name="UserReleaseNote" EntityType="ReportProjectDBModel.UserReleaseNote" />
+          <AssociationSet Name="FK_UserReleaseNote__ReleaseNote" Association="ReportProjectDBModel.FK_UserReleaseNote__ReleaseNote">
+            <End Role="ReleaseNote" EntitySet="ReleaseNote" />
+            <End Role="UserReleaseNote" EntitySet="UserReleaseNote" />
+          </AssociationSet>
+          <EntitySet Name="AssnSpecificFieldDefinition" EntityType="ReportProjectDBModel.AssnSpecificFieldDefinition" />
+          <EntitySet Name="ApplicationLog" EntityType="ReportProjectDBModel.ApplicationLog" />
+          </EntityContainer>
+        <EntityType Name="DataType">
+          <Key>
+            <PropertyRef Name="DataTypeID" />
+          </Key>
+          <Property Name="DataTypeID" Type="Int32" Nullable="false" />
+          <Property Name="DataTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ReportField" Relationship="ReportProjectDBModel.FK_ReportField_DataType" FromRole="DataType" ToRole="ReportField" />
+          <NavigationProperty Name="ReportParameter" Relationship="ReportProjectDBModel.FK_ReportParameter_DataType" FromRole="DataType" ToRole="ReportParameter" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FormatType">
+          <Key>
+            <PropertyRef Name="FormatTypeID" />
+          </Key>
+          <Property Name="FormatTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FormatTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Extension" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_UserReport__FormatType" FromRole="FormatType" ToRole="UserReport" />
+          <NavigationProperty Name="ReportLayoutStyleRdl" Relationship="ReportProjectDBModel.FK_ReportLayoutStyleRdl__FormatType" FromRole="FormatType" ToRole="ReportLayoutStyleRdl" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ReportID" />
+          </Key>
+          <Property Name="ReportID" Type="Int32" Nullable="false" />
+          <Property Name="ReportName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ReportField" Relationship="ReportProjectDBModel.FK_ReportField_Report" FromRole="Report" ToRole="ReportField" />
+          <NavigationProperty Name="ReportParameter" Relationship="ReportProjectDBModel.FK_ReportParameter_ReportParameter" FromRole="Report" ToRole="ReportParameter" />
+          <NavigationProperty Name="Filters" Relationship="ReportProjectDBModel.FilterReport" FromRole="Report" ToRole="Filter" />
+          <NavigationProperty Name="SubReport" Relationship="ReportProjectDBModel.FK_SubReport_Report" FromRole="Report" ToRole="SubReport" />
+          <Property Type="Int32" Name="ReportFolderID" Nullable="false" />
+          <NavigationProperty Name="ReportFolder" Relationship="ReportProjectDBModel.Report_fk" FromRole="Report" ToRole="ReportFolder" />
+          <Property Type="String" Name="VerifyRowCountSP" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="VerifyRowCountBeforeExecuting" Nullable="false" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.UserReport_Report_fk" FromRole="Report" ToRole="UserReport" />
+          <NavigationProperty Name="Report_ICESecurityCheckpoint" Relationship="ReportProjectDBModel.ReportTypeCheckPointJoin_fk" FromRole="Report" ToRole="Report_ICESecurityCheckpoint" />
+          <NavigationProperty Name="ReportLayoutStyle" Relationship="ReportProjectDBModel.FK_ReportLayoutStyle__Report" FromRole="Report" ToRole="ReportLayoutStyle" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="RdlHeaderDate" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RdlFooterMessage" MaxLength="Max" FixedLength="false" Unicode="false" />
+          </EntityType>
+        <EntityType Name="ReportField">
+          <Key>
+            <PropertyRef Name="ReportFieldID" />
+          </Key>
+          <Property Name="ReportFieldID" Type="Int32" Nullable="false" />
+          <Property Name="FieldName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SQLFieldName" Type="String" Nullable="true" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ColumnOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DataType" Relationship="ReportProjectDBModel.FK_ReportField_DataType" FromRole="ReportField" ToRole="DataType" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.FK_ReportField_Report" FromRole="ReportField" ToRole="Report" />
+          <NavigationProperty Name="UserReportField" Relationship="ReportProjectDBModel.FK_UserReportField_ReportField" FromRole="ReportField" ToRole="UserReportField" />
+          <Property Type="Boolean" Name="IsGroupByDefault" Nullable="false" />
+          <Property Type="Boolean" Name="IsDisplayInReport" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Boolean" Name="IsGroupable" Nullable="false" />
+          <Property Type="Boolean" Name="IsSummarizable" Nullable="false" />
+          <Property Type="Boolean" Name="IsClientSpecific" Nullable="false" />
+          <NavigationProperty Name="ClientReportField" Relationship="ReportProjectDBModel.FK_ClientReportField__ReportField" FromRole="ReportField" ToRole="ClientReportField" />
+          <Property Type="Double" Name="ColumnWidthFactor" Nullable="false" />
+          <Property Type="String" Name="GroupSummaryExpression" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IncludePageBreak" Nullable="false" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FieldValueExpression" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsCalculated" Nullable="false" />
+          <Property Type="String" Name="CalculationDescription" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsSensitive" Nullable="false" />
+          <Property Type="Boolean" Name="UseSummaryExpresionGroup" Nullable="false" />
+          <Property Type="Boolean" Name="isClientSpecificCode" Nullable="false" />
+          </EntityType>
+        <EntityType Name="ReportParameter">
+          <Key>
+            <PropertyRef Name="ReportParameterID" />
+          </Key>
+          <Property Name="ReportParameterID" Type="Int32" Nullable="false" />
+          <Property Name="ReportParameterName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="DefaultValue" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DataType" Relationship="ReportProjectDBModel.FK_ReportParameter_DataType" FromRole="ReportParameter" ToRole="DataType" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.FK_ReportParameter_ReportParameter" FromRole="ReportParameter" ToRole="Report" />
+          <Property Type="Boolean" Name="IsReportParameter" Nullable="false" />
+          <Property Type="Boolean" Name="IsQueryParameter" Nullable="false" />
+          <NavigationProperty Name="UserReportParameter" Relationship="ReportProjectDBModel.FK_UserReportParameter_ReportParameter" FromRole="ReportParameter" ToRole="UserReportParameter" />
+          <Property Type="Int32" Name="OrderIndex" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          </EntityType>
+        <EntityType Name="UserReport">
+          <Key>
+            <PropertyRef Name="UserReportID" />
+          </Key>
+          <Property Name="UserReportID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserReportField" Relationship="ReportProjectDBModel.FK_UserReportField_UserReport" FromRole="UserReport" ToRole="UserReportField" />
+          <Property Name="IsCustom" Type="Boolean" Nullable="false" />
+          <Property Name="ModifiedByUserID" Type="Int32" Nullable="false" />
+          <Property Type="String" Name="ClientNumber" MaxLength="3" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserReportOutput" Relationship="ReportProjectDBModel.FK_UserReportOutput_UserReport" FromRole="UserReport" ToRole="UserReportOutput" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <NavigationProperty Name="UserReportParameter" Relationship="ReportProjectDBModel.FK_UserReportParameter_UserReport" FromRole="UserReport" ToRole="UserReportParameter" />
+          <Property Type="Int32" Name="ReportID" Nullable="false" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.UserReport_Report_fk" FromRole="UserReport" ToRole="Report" />
+          <Property Type="Int32" Name="ReportLayoutStyleID" Nullable="false" />
+          <Property Type="Int32" Name="FormatTypeID" Nullable="false" />
+          <NavigationProperty Name="FormatType" Relationship="ReportProjectDBModel.FK_UserReport__FormatType" FromRole="UserReport" ToRole="FormatType" />
+          <NavigationProperty Name="ReportLayoutStyle" Relationship="ReportProjectDBModel.FK_UserReport__ReportLayoutStyle" FromRole="UserReport" ToRole="ReportLayoutStyle" />
+          <Property Type="String" Name="UserReportName" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="Schedule" Relationship="ReportProjectDBModel.FK_Schedule__UserReport" FromRole="UserReport" ToRole="Schedule" />
+          <Property Type="Boolean" Name="IsSummaryOnly" Nullable="false" />
+          <NavigationProperty Name="UserReportSummarizeField" Relationship="ReportProjectDBModel.FK_UserReportSumField__UserReport" FromRole="UserReport" ToRole="UserReportSummarizeField" />
+          <Property Type="Boolean" Name="IsTransient" Nullable="false" />
+          <Property Type="Boolean" Name="IsTurnOffPageBreak" Nullable="false" />
+          <Property Type="Int32" Name="RowsCount" Nullable="false" />
+          <Property Type="Boolean" Name="IncludeTitlePage" Nullable="false" />
+          </EntityType>
+        <EntityType Name="UserReportField">
+          <Key>
+            <PropertyRef Name="UserReportFieldID" />
+          </Key>
+          <Property Name="UserReportFieldID" Type="Int32" Nullable="false" />
+          <Property Name="CustomName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="ColumnOrder" Type="Int32" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="SortDirection" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="GroupOrder" Type="Int32" Nullable="false" />
+          <Property Name="CreatedByUserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ReportField" Relationship="ReportProjectDBModel.FK_UserReportField_ReportField" FromRole="UserReportField" ToRole="ReportField" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_UserReportField_UserReport" FromRole="UserReportField" ToRole="UserReport" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <NavigationProperty Name="UserReportSummarizeField" Relationship="ReportProjectDBModel.FK_UserReportSumField__UserReportField" FromRole="UserReportField" ToRole="UserReportSummarizeField" />
+          <Property Type="Boolean" Name="IncludePageBreak" Nullable="false" />
+          <Property Type="String" Name="CoverageCode" MaxLength="5" FixedLength="false" Unicode="false" />
+          </EntityType>
+        <Association Name="FK_ReportField_DataType">
+          <End Role="DataType" Type="ReportProjectDBModel.DataType" Multiplicity="1" />
+          <End Role="ReportField" Type="ReportProjectDBModel.ReportField" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ReportParameter_DataType">
+          <End Role="DataType" Type="ReportProjectDBModel.DataType" Multiplicity="1" />
+          <End Role="ReportParameter" Type="ReportProjectDBModel.ReportParameter" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ReportField_Report">
+          <End Role="Report" Type="ReportProjectDBModel.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportField" Type="ReportProjectDBModel.ReportField" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ReportParameter_ReportParameter">
+          <End Role="Report" Type="ReportProjectDBModel.Report" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ReportParameter" Type="ReportProjectDBModel.ReportParameter" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UserReportField_ReportField">
+          <End Role="ReportField" Type="ReportProjectDBModel.ReportField" Multiplicity="1" />
+          <End Role="UserReportField" Type="ReportProjectDBModel.UserReportField" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_UserReportField_UserReport">
+          <End Role="UserReport" Type="ReportProjectDBModel.UserReport" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserReportField" Type="ReportProjectDBModel.UserReportField" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Filter">
+          <Key>
+            <PropertyRef Name="FilterID" />
+          </Key>
+          <Property Type="String" Name="SystemType" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FilterID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.FilterReport" FromRole="Filter" ToRole="Report" />
+        </EntityType>
+        <Association Name="FilterReport">
+          <End Type="ReportProjectDBModel.Filter" Role="Filter" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.Report" Role="Report" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UserReportOutput">
+          <Key>
+            <PropertyRef Name="UserReportOutputID" />
+          </Key>
+          <Property Type="Int32" Name="UserReportOutputID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="UserReportID" Nullable="false" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="FileName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ReportRunDate" Nullable="false" />
+          <Property Type="String" Name="ClientNumber" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_UserReportOutput_UserReport" FromRole="UserReportOutput" ToRole="UserReport" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <NavigationProperty Name="ReportDeliveryLog" Relationship="ReportProjectDBModel.FK_ReportDeliveryLog__UserReportOutput" FromRole="UserReportOutput" ToRole="ReportDeliveryLog" />
+        </EntityType>
+        <Association Name="FK_UserReportOutput_UserReport">
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReportOutput" Role="UserReportOutput" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportOutput">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SubReport">
+          <Key>
+            <PropertyRef Name="SubReportID" />
+          </Key>
+          <Property Type="Int32" Name="SubReportID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ReportID" Nullable="false" />
+          <Property Type="String" Name="SubReportName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SPName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OrderIndex" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.FK_SubReport_Report" FromRole="SubReport" ToRole="Report" />
+          <NavigationProperty Name="SubReportParameter" Relationship="ReportProjectDBModel.FK_SubReportParameter_SubReport" FromRole="SubReport" ToRole="SubReportParameter" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubReportParameter">
+          <Key>
+            <PropertyRef Name="SubReportParameterID" />
+          </Key>
+          <Property Type="Int32" Name="SubReportParameterID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="SubReportID" Nullable="false" />
+          <Property Type="String" Name="SubReportParameterName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FieldValueExpression" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="SubReport" Relationship="ReportProjectDBModel.FK_SubReportParameter_SubReport" FromRole="SubReportParameter" ToRole="SubReport" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_SubReport_Report">
+          <End Type="ReportProjectDBModel.Report" Role="Report" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.SubReport" Role="SubReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="SubReport">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubReportParameter_SubReport">
+          <End Type="ReportProjectDBModel.SubReport" Role="SubReport" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.SubReportParameter" Role="SubReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubReport">
+              <PropertyRef Name="SubReportID" />
+            </Principal>
+            <Dependent Role="SubReportParameter">
+              <PropertyRef Name="SubReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReportFolder">
+          <Key>
+            <PropertyRef Name="ReportFolderID" />
+          </Key>
+          <Property Type="Int32" Name="ReportFolderID" Nullable="false" />
+          <Property Type="String" Name="ReportFolderName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.Report_fk" FromRole="ReportFolder" ToRole="Report" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="OrderIndex" />
+        </EntityType>
+        <Association Name="Report_fk">
+          <End Type="ReportProjectDBModel.ReportFolder" Role="ReportFolder" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportFolder">
+              <PropertyRef Name="ReportFolderID" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ReportFolderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AdminUserName">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserReportParameter">
+          <Key>
+            <PropertyRef Name="UserReportParameterID" />
+          </Key>
+          <Property Type="Int32" Name="UserReportParameterID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="UserReportID" Nullable="false" />
+          <Property Type="Int32" Name="ReportParameterID" Nullable="false" />
+          <Property Type="String" Name="ParameterValue" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="String" Name="FilterString" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ReportParameter" Relationship="ReportProjectDBModel.FK_UserReportParameter_ReportParameter" FromRole="UserReportParameter" ToRole="ReportParameter" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_UserReportParameter_UserReport" FromRole="UserReportParameter" ToRole="UserReport" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_UserReportParameter_ReportParameter">
+          <End Type="ReportProjectDBModel.ReportParameter" Role="ReportParameter" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReportParameter" Role="UserReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportParameter">
+              <PropertyRef Name="ReportParameterID" />
+            </Principal>
+            <Dependent Role="UserReportParameter">
+              <PropertyRef Name="ReportParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportParameter_UserReport">
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReportParameter" Role="UserReportParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportParameter">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserReport_Report_fk">
+          <End Type="ReportProjectDBModel.Report" Role="Report" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Report_ICESecurityCheckpoint">
+          <Key>
+            <PropertyRef Name="Report_ICESecurityCheckpointID" />
+          </Key>
+          <Property Type="String" Name="CheckpointID" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="ReportID" Nullable="false" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.ReportTypeCheckPointJoin_fk" FromRole="Report_ICESecurityCheckpoint" ToRole="Report" />
+          <Property Type="Int32" Name="Report_ICESecurityCheckpointID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+        <Association Name="ReportTypeCheckPointJoin_fk">
+          <End Type="ReportProjectDBModel.Report" Role="Report" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.Report_ICESecurityCheckpoint" Role="Report_ICESecurityCheckpoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="Report_ICESecurityCheckpoint">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReport__FormatType">
+          <End Type="ReportProjectDBModel.FormatType" Role="FormatType" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormatType">
+              <PropertyRef Name="FormatTypeID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="FormatTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RdlComponent">
+          <Key>
+            <PropertyRef Name="RdlComponentID" />
+          </Key>
+          <Property Type="Int32" Name="RdlComponentID" Nullable="false" />
+          <Property Type="Int32" Name="RdlComponentTypeID" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RdlData" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="RdlComponentType" Relationship="ReportProjectDBModel.FK_RdlComponent__RdlComponentType" FromRole="RdlComponent" ToRole="RdlComponentType" />
+          <NavigationProperty Name="ReportLayoutStyleRdl" Relationship="ReportProjectDBModel.FK_ReportLayoutStyleRdl__RdlComponent" FromRole="RdlComponent" ToRole="ReportLayoutStyleRdl" />
+          <Property Type="DateTime" Name="CreatedDate" />
+        </EntityType>
+        <EntityType Name="RdlComponentType">
+          <Key>
+            <PropertyRef Name="RdlComponentTypeID" />
+          </Key>
+          <Property Type="Int32" Name="RdlComponentTypeID" Nullable="false" />
+          <Property Type="String" Name="RdlComponentTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="RdlComponent" Relationship="ReportProjectDBModel.FK_RdlComponent__RdlComponentType" FromRole="RdlComponentType" ToRole="RdlComponent" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportLayoutStyle">
+          <Key>
+            <PropertyRef Name="ReportLayoutStyleID" />
+          </Key>
+          <Property Type="Int32" Name="ReportLayoutStyleID" Nullable="false" />
+          <Property Type="String" Name="ReportLayoutStyleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PreviewImagePath" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ReportID" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="Report" Relationship="ReportProjectDBModel.FK_ReportLayoutStyle__Report" FromRole="ReportLayoutStyle" ToRole="Report" />
+          <NavigationProperty Name="ReportLayoutStyleRdl" Relationship="ReportProjectDBModel.FK_ReportLayoutStyleRdl__ReportLayoutStyle" FromRole="ReportLayoutStyle" ToRole="ReportLayoutStyleRdl" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_UserReport__ReportLayoutStyle" FromRole="ReportLayoutStyle" ToRole="UserReport" />
+          <Property Type="Int32" Name="OrderIndex" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Boolean" Name="IsCustom" Nullable="false" />
+          <Property Type="String" Name="ReportLink" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsUsed" Nullable="false" />
+          <Property Type="Boolean" Name="IsSensitive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportLayoutStyleRdl">
+          <Key>
+            <PropertyRef Name="ReportLayoutStyleRdlID" />
+          </Key>
+          <Property Type="Int32" Name="ReportLayoutStyleRdlID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ReportLayoutStyleID" Nullable="false" />
+          <Property Type="Int32" Name="RdlComponentID" Nullable="false" />
+          <Property Type="Int32" Name="FormatTypeID" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <NavigationProperty Name="FormatType" Relationship="ReportProjectDBModel.FK_ReportLayoutStyleRdl__FormatType" FromRole="ReportLayoutStyleRdl" ToRole="FormatType" />
+          <NavigationProperty Name="RdlComponent" Relationship="ReportProjectDBModel.FK_ReportLayoutStyleRdl__RdlComponent" FromRole="ReportLayoutStyleRdl" ToRole="RdlComponent" />
+          <NavigationProperty Name="ReportLayoutStyle" Relationship="ReportProjectDBModel.FK_ReportLayoutStyleRdl__ReportLayoutStyle" FromRole="ReportLayoutStyleRdl" ToRole="ReportLayoutStyle" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ReportLayoutStyleRdl__FormatType">
+          <End Type="ReportProjectDBModel.FormatType" Role="FormatType" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ReportLayoutStyleRdl" Role="ReportLayoutStyleRdl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FormatType">
+              <PropertyRef Name="FormatTypeID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyleRdl">
+              <PropertyRef Name="FormatTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RdlComponent__RdlComponentType">
+          <End Type="ReportProjectDBModel.RdlComponentType" Role="RdlComponentType" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.RdlComponent" Role="RdlComponent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RdlComponentType">
+              <PropertyRef Name="RdlComponentTypeID" />
+            </Principal>
+            <Dependent Role="RdlComponent">
+              <PropertyRef Name="RdlComponentTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyleRdl__RdlComponent">
+          <End Type="ReportProjectDBModel.RdlComponent" Role="RdlComponent" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ReportLayoutStyleRdl" Role="ReportLayoutStyleRdl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RdlComponent">
+              <PropertyRef Name="RdlComponentID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyleRdl">
+              <PropertyRef Name="RdlComponentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyle__Report">
+          <End Type="ReportProjectDBModel.Report" Role="Report" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ReportLayoutStyle" Role="ReportLayoutStyle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyle">
+              <PropertyRef Name="ReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportLayoutStyleRdl__ReportLayoutStyle">
+          <End Type="ReportProjectDBModel.ReportLayoutStyle" Role="ReportLayoutStyle" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ReportLayoutStyleRdl" Role="ReportLayoutStyleRdl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportLayoutStyle">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Principal>
+            <Dependent Role="ReportLayoutStyleRdl">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReport__ReportLayoutStyle">
+          <End Type="ReportProjectDBModel.ReportLayoutStyle" Role="ReportLayoutStyle" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportLayoutStyle">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Principal>
+            <Dependent Role="UserReport">
+              <PropertyRef Name="ReportLayoutStyleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="ScheduleID" />
+          </Key>
+          <Property Type="Int32" Name="UserReportID" Nullable="false" />
+          <Property Type="String" Name="SubscriptionID" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="Int32" Name="ScheduleID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="ScheduleStart" Nullable="false" />
+          <Property Type="DateTime" Name="ScheduleStop" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_Schedule__UserReport" FromRole="Schedule" ToRole="UserReport" />
+          <Property Type="Int32" Name="RecurrenceTypeID" Nullable="false" />
+          <Property Type="Int32" Name="WeekOfMonthTypeID" />
+          <Property Type="String" Name="CalendarDays" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Byte" Name="DaysOfWeekBitmask" />
+          <Property Type="Int16" Name="MonthsOfYearBitmask" />
+          <Property Type="Int32" Name="RepeatAfterInterval" />
+          <Property Type="String" Name="Subject" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PriorityTypeID" Nullable="false" />
+          <Property Type="String" Name="AdditionalEmailAddresses" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="ScheduleRecipient" Relationship="ReportProjectDBModel.FK_ScheduleRecipient__Schedule" FromRole="Schedule" ToRole="ScheduleRecipient" />
+          <Property Type="String" Name="Comment" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ReportDeliveryLog" Relationship="ReportProjectDBModel.FK_ReportDeliveryLog__Schedule" FromRole="Schedule" ToRole="ReportDeliveryLog" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsNotSendWithNoData" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Schedule__UserReport">
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserReportSummarizeField">
+          <Key>
+            <PropertyRef Name="UserReportSummarizeFieldID" />
+          </Key>
+          <Property Type="Int32" Name="UserReportID" Nullable="false" />
+          <Property Type="Int32" Name="UserReportFieldID" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <NavigationProperty Name="UserReport" Relationship="ReportProjectDBModel.FK_UserReportSumField__UserReport" FromRole="UserReportSummarizeField" ToRole="UserReport" />
+          <NavigationProperty Name="UserReportField" Relationship="ReportProjectDBModel.FK_UserReportSumField__UserReportField" FromRole="UserReportSummarizeField" ToRole="UserReportField" />
+          <Property Type="Int32" Name="UserReportSummarizeFieldID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+        <Association Name="FK_UserReportSumField__UserReport">
+          <End Type="ReportProjectDBModel.UserReport" Role="UserReport" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReportSummarizeField" Role="UserReportSummarizeField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReport">
+              <PropertyRef Name="UserReportID" />
+            </Principal>
+            <Dependent Role="UserReportSummarizeField">
+              <PropertyRef Name="UserReportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserReportSumField__UserReportField">
+          <End Type="ReportProjectDBModel.UserReportField" Role="UserReportField" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReportSummarizeField" Role="UserReportSummarizeField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReportField">
+              <PropertyRef Name="UserReportFieldID" />
+            </Principal>
+            <Dependent Role="UserReportSummarizeField">
+              <PropertyRef Name="UserReportFieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ClientReportField">
+          <Key>
+            <PropertyRef Name="ClientReportFieldID" />
+          </Key>
+          <Property Type="Int32" Name="ClientReportFieldID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ReportFieldID" Nullable="false" />
+          <Property Type="String" Name="ClientNumber" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <NavigationProperty Name="ReportField" Relationship="ReportProjectDBModel.FK_ClientReportField__ReportField" FromRole="ClientReportField" ToRole="ReportField" />
+        </EntityType>
+        <Association Name="FK_ClientReportField__ReportField">
+          <End Type="ReportProjectDBModel.ReportField" Role="ReportField" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ClientReportField" Role="ClientReportField" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportField">
+              <PropertyRef Name="ReportFieldID" />
+            </Principal>
+            <Dependent Role="ClientReportField">
+              <PropertyRef Name="ReportFieldID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScheduleRecipient">
+          <Key>
+            <PropertyRef Name="ScheduleRecipientID" />
+          </Key>
+          <Property Type="Int32" Name="ScheduleRecipientID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ScheduleID" Nullable="false" />
+          <Property Type="Int32" Name="DeliveryMethodTypeID" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" a:StoreGeneratedPattern="Computed" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Schedule" Relationship="ReportProjectDBModel.FK_ScheduleRecipient__Schedule" FromRole="ScheduleRecipient" ToRole="Schedule" />
+          <NavigationProperty Name="ReportDeliveryLog" Relationship="ReportProjectDBModel.FK_ReportDeliveryLog__ScheduleRecipient" FromRole="ScheduleRecipient" ToRole="ReportDeliveryLog" />
+        </EntityType>
+        <Association Name="FK_ScheduleRecipient__Schedule">
+          <End Type="ReportProjectDBModel.Schedule" Role="Schedule" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ScheduleRecipient" Role="ScheduleRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="ScheduleRecipient">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReportDeliveryLog">
+          <Key>
+            <PropertyRef Name="ReportDeliveryLogID" />
+          </Key>
+          <Property Type="Int32" Name="ReportDeliveryLogID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ScheduleID" Nullable="false" />
+          <Property Type="Int32" Name="ScheduleRecipientID" />
+          <Property Type="Int32" Name="UserReportOutputID" />
+          <Property Type="DateTime" Name="DeliveryDate" Nullable="false" />
+          <NavigationProperty Name="Schedule" Relationship="ReportProjectDBModel.FK_ReportDeliveryLog__Schedule" FromRole="ReportDeliveryLog" ToRole="Schedule" />
+          <NavigationProperty Name="ScheduleRecipient" Relationship="ReportProjectDBModel.FK_ReportDeliveryLog__ScheduleRecipient" FromRole="ReportDeliveryLog" ToRole="ScheduleRecipient" />
+          <NavigationProperty Name="UserReportOutput" Relationship="ReportProjectDBModel.FK_ReportDeliveryLog__UserReportOutput" FromRole="ReportDeliveryLog" ToRole="UserReportOutput" />
+        </EntityType>
+        <Association Name="FK_ReportDeliveryLog__Schedule">
+          <End Type="ReportProjectDBModel.Schedule" Role="Schedule" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.ReportDeliveryLog" Role="ReportDeliveryLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schedule">
+              <PropertyRef Name="ScheduleID" />
+            </Principal>
+            <Dependent Role="ReportDeliveryLog">
+              <PropertyRef Name="ScheduleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportDeliveryLog__ScheduleRecipient">
+          <End Type="ReportProjectDBModel.ScheduleRecipient" Role="ScheduleRecipient" Multiplicity="0..1" />
+          <End Type="ReportProjectDBModel.ReportDeliveryLog" Role="ReportDeliveryLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScheduleRecipient">
+              <PropertyRef Name="ScheduleRecipientID" />
+            </Principal>
+            <Dependent Role="ReportDeliveryLog">
+              <PropertyRef Name="ScheduleRecipientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportDeliveryLog__UserReportOutput">
+          <End Type="ReportProjectDBModel.UserReportOutput" Role="UserReportOutput" Multiplicity="0..1" />
+          <End Type="ReportProjectDBModel.ReportDeliveryLog" Role="ReportDeliveryLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserReportOutput">
+              <PropertyRef Name="UserReportOutputID" />
+            </Principal>
+            <Dependent Role="ReportDeliveryLog">
+              <PropertyRef Name="UserReportOutputID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReleaseNote">
+          <Key>
+            <PropertyRef Name="ReleaseNoteID" />
+          </Key>
+          <Property Type="Int32" Name="ReleaseNoteID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="ReleaseNumber" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ReleaseDate" />
+          <Property Type="String" Name="ReleaseTitle" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DOCUMENT" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedUserId" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="UserReleaseNote" Relationship="ReportProjectDBModel.FK_UserReleaseNote__ReleaseNote" FromRole="ReleaseNote" ToRole="UserReleaseNote" />
+        </EntityType>
+        <EntityType Name="UserReleaseNote">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ReleaseNoteID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ReleaseNoteID" Nullable="false" />
+          <Property Type="Boolean" Name="IsReleaseNoteRead" Nullable="false" />
+          <Property Type="Int32" Name="CreatedUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="Int32" Name="ModifiedUserId" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="false" />
+          <NavigationProperty Name="ReleaseNote" Relationship="ReportProjectDBModel.FK_UserReleaseNote__ReleaseNote" FromRole="UserReleaseNote" ToRole="ReleaseNote" />
+          <Property Type="Boolean" Name="IsReleaseNoteNotificationViewed" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_UserReleaseNote__ReleaseNote">
+          <End Type="ReportProjectDBModel.ReleaseNote" Role="ReleaseNote" Multiplicity="1" />
+          <End Type="ReportProjectDBModel.UserReleaseNote" Role="UserReleaseNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReleaseNote">
+              <PropertyRef Name="ReleaseNoteID" />
+            </Principal>
+            <Dependent Role="UserReleaseNote">
+              <PropertyRef Name="ReleaseNoteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AssnSpecificFieldDefinition">
+          <Key>
+            <PropertyRef Name="AssnSpecificFieldDefinitionId" />
+          </Key>
+          <Property Type="Int32" Name="AssnSpecificFieldDefinitionId" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="FieldName" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FieldDescription" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="coverage_code" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AssociationNumber" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CreatedByUserID" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ApplicationLog">
+          <Key>
+            <PropertyRef Name="ApplicationLogID" />
+          </Key>
+          <Property Type="Int32" Name="ApplicationLogID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Source" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MessageType" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReportProjectDBModelStoreContainer" CdmEntityContainer="ReportProjectDBEntities">
+          <EntitySetMapping Name="DataType">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.DataType)">
+              <MappingFragment StoreEntitySet="DataType">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DataTypeID" ColumnName="DataTypeID" />
+                <ScalarProperty Name="DataTypeName" ColumnName="DataTypeName" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormatType">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.FormatType)">
+              <MappingFragment StoreEntitySet="FormatType">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FormatTypeID" ColumnName="FormatTypeID" />
+                <ScalarProperty Name="FormatTypeName" ColumnName="FormatTypeName" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Report">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.Report)">
+              <MappingFragment StoreEntitySet="Report">
+                <ScalarProperty Name="RdlHeaderDate" ColumnName="RdlHeaderDate" />
+                <ScalarProperty Name="RdlFooterMessage" ColumnName="RdlFooterMessage" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="VerifyRowCountBeforeExecuting" ColumnName="VerifyRowCountBeforeExecuting" />
+                <ScalarProperty Name="VerifyRowCountSP" ColumnName="VerifyRowCountSP" />
+                <ScalarProperty Name="ReportFolderID" ColumnName="ReportFolderID" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportField">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.ReportField)">
+              <MappingFragment StoreEntitySet="ReportField">
+                <ScalarProperty Name="isClientSpecificCode" ColumnName="isClientSpecificCode" />
+                <ScalarProperty Name="UseSummaryExpresionGroup" ColumnName="UseSummaryExpresionGroup" />
+                <ScalarProperty Name="IsSensitive" ColumnName="IsSensitive" />
+                <ScalarProperty Name="CalculationDescription" ColumnName="CalculationDescription" />
+                <ScalarProperty Name="IsCalculated" ColumnName="IsCalculated" />
+                <ScalarProperty Name="FieldValueExpression" ColumnName="FieldValueExpression" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="IncludePageBreak" ColumnName="IncludePageBreak" />
+                <ScalarProperty Name="GroupSummaryExpression" ColumnName="GroupSummaryExpression" />
+                <ScalarProperty Name="ColumnWidthFactor" ColumnName="ColumnWidthFactor" />
+                <ScalarProperty Name="IsClientSpecific" ColumnName="IsClientSpecific" />
+                <ScalarProperty Name="IsSummarizable" ColumnName="IsSummarizable" />
+                <ScalarProperty Name="IsGroupable" ColumnName="IsGroupable" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsDisplayInReport" ColumnName="IsDisplayInReport" />
+                <ScalarProperty Name="IsGroupByDefault" ColumnName="IsGroupByDefault" />
+                <ScalarProperty Name="ReportFieldID" ColumnName="ReportFieldID" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="SQLFieldName" ColumnName="SQLFieldName" />
+                <ScalarProperty Name="ColumnOrder" ColumnName="ColumnOrder" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportParameter">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.ReportParameter)">
+              <MappingFragment StoreEntitySet="ReportParameter">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="IsQueryParameter" ColumnName="IsQueryParameter" />
+                <ScalarProperty Name="IsReportParameter" ColumnName="IsReportParameter" />
+                <ScalarProperty Name="ReportParameterID" ColumnName="ReportParameterID" />
+                <ScalarProperty Name="ReportParameterName" ColumnName="ReportParameterName" />
+                <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReport">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.UserReport)">
+              <MappingFragment StoreEntitySet="UserReport">
+                <ScalarProperty Name="IncludeTitlePage" ColumnName="IncludeTitlePage" />
+                <ScalarProperty Name="RowsCount" ColumnName="RowsCount" />
+                <ScalarProperty Name="IsTurnOffPageBreak" ColumnName="IsTurnOffPageBreak" />
+                <ScalarProperty Name="IsTransient" ColumnName="IsTransient" />
+                <ScalarProperty Name="IsSummaryOnly" ColumnName="IsSummaryOnly" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UserReportName" ColumnName="UserReportName" />
+                <ScalarProperty Name="FormatTypeID" ColumnName="FormatTypeID" />
+                <ScalarProperty Name="ReportLayoutStyleID" ColumnName="ReportLayoutStyleID" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="ModifiedByUserID" ColumnName="ModifiedByUserID" />
+                <ScalarProperty Name="IsCustom" ColumnName="IsCustom" />
+                <ScalarProperty Name="UserReportID" ColumnName="UserReportID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReportField">
+            <EntityTypeMapping TypeName="IsTypeOf(ReportProjectDBModel.UserReportField)">
+              <MappingFragment StoreEntitySet="UserReportField">
+                <ScalarProperty Name="CoverageCode" ColumnName="CoverageCode" />
+                <ScalarProperty Name="IncludePageBreak" ColumnName="IncludePageBreak" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UserReportFieldID" ColumnName="UserReportFieldID" />
+                <ScalarProperty Name="CustomName" ColumnName="CustomName" />
+                <ScalarProperty Name="ColumnOrder" ColumnName="ColumnOrder" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="SortDirection" ColumnName="SortDirection" />
+                <ScalarProperty Name="GroupOrder" ColumnName="GroupOrder" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_ReportField_DataType" TypeName="ReportProjectDBModel.FK_ReportField_DataType" StoreEntitySet="ReportField">
+            <EndProperty Name="DataType">
+              <ScalarProperty Name="DataTypeID" ColumnName="DataTypeID" />
+            </EndProperty>
+            <EndProperty Name="ReportField">
+              <ScalarProperty Name="ReportFieldID" ColumnName="ReportFieldID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ReportParameter_DataType" TypeName="ReportProjectDBModel.FK_ReportParameter_DataType" StoreEntitySet="ReportParameter">
+            <EndProperty Name="DataType">
+              <ScalarProperty Name="DataTypeID" ColumnName="DataTypeID" />
+            </EndProperty>
+            <EndProperty Name="ReportParameter">
+              <ScalarProperty Name="ReportParameterID" ColumnName="ReportParameterID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ReportField_Report" TypeName="ReportProjectDBModel.FK_ReportField_Report" StoreEntitySet="ReportField">
+            <EndProperty Name="Report">
+              <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+            </EndProperty>
+            <EndProperty Name="ReportField">
+              <ScalarProperty Name="ReportFieldID" ColumnName="ReportFieldID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ReportParameter_ReportParameter" TypeName="ReportProjectDBModel.FK_ReportParameter_ReportParameter" StoreEntitySet="ReportParameter">
+            <EndProperty Name="Report">
+              <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+            </EndProperty>
+            <EndProperty Name="ReportParameter">
+              <ScalarProperty Name="ReportParameterID" ColumnName="ReportParameterID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UserReportField_ReportField" TypeName="ReportProjectDBModel.FK_UserReportField_ReportField" StoreEntitySet="UserReportField">
+            <EndProperty Name="ReportField">
+              <ScalarProperty Name="ReportFieldID" ColumnName="ReportFieldID" />
+            </EndProperty>
+            <EndProperty Name="UserReportField">
+              <ScalarProperty Name="UserReportFieldID" ColumnName="UserReportFieldID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_UserReportField_UserReport" TypeName="ReportProjectDBModel.FK_UserReportField_UserReport" StoreEntitySet="UserReportField">
+            <EndProperty Name="UserReport">
+              <ScalarProperty Name="UserReportID" ColumnName="UserReportID" />
+            </EndProperty>
+            <EndProperty Name="UserReportField">
+              <ScalarProperty Name="UserReportFieldID" ColumnName="UserReportFieldID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Filter">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.Filter">
+              <MappingFragment StoreEntitySet="Filter">
+                <ScalarProperty Name="FilterID" ColumnName="FilterID" />
+                <ScalarProperty Name="SystemType" ColumnName="SystemType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FilterReport" TypeName="ReportProjectDBModel.FilterReport" StoreEntitySet="Report">
+            <EndProperty Name="Report">
+              <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+            </EndProperty>
+            <EndProperty Name="Filter">
+              <ScalarProperty Name="FilterID" ColumnName="FilterID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="UserReportOutput">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.UserReportOutput">
+              <MappingFragment StoreEntitySet="UserReportOutput">
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="ReportRunDate" ColumnName="ReportRunDate" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserReportID" ColumnName="UserReportID" />
+                <ScalarProperty Name="UserReportOutputID" ColumnName="UserReportOutputID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubReport">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.SubReport">
+              <MappingFragment StoreEntitySet="SubReport">
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="SPName" ColumnName="SPName" />
+                <ScalarProperty Name="SubReportName" ColumnName="SubReportName" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="SubReportID" ColumnName="SubReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubReportParameter">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.SubReportParameter">
+              <MappingFragment StoreEntitySet="SubReportParameter">
+                <ScalarProperty Name="FieldValueExpression" ColumnName="FieldValueExpression" />
+                <ScalarProperty Name="SubReportParameterName" ColumnName="SubReportParameterName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SubReportID" ColumnName="SubReportID" />
+                <ScalarProperty Name="SubReportParameterID" ColumnName="SubReportParameterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportFolder">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ReportFolder">
+              <MappingFragment StoreEntitySet="ReportFolder">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="ReportFolderName" ColumnName="ReportFolderName" />
+                <ScalarProperty Name="ReportFolderID" ColumnName="ReportFolderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdminUserName">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.AdminUserName">
+              <MappingFragment StoreEntitySet="AdminUserName">
+                <ScalarProperty Name="userName" ColumnName="userName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReportParameter">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.UserReportParameter">
+              <MappingFragment StoreEntitySet="UserReportParameter">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="FilterString" ColumnName="FilterString" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="ParameterValue" ColumnName="ParameterValue" />
+                <ScalarProperty Name="ReportParameterID" ColumnName="ReportParameterID" />
+                <ScalarProperty Name="UserReportID" ColumnName="UserReportID" />
+                <ScalarProperty Name="UserReportParameterID" ColumnName="UserReportParameterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Report_ICESecurityCheckpoint">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.Report_ICESecurityCheckpoint">
+              <MappingFragment StoreEntitySet="Report_ICESecurityCheckpoint">
+                <ScalarProperty Name="Report_ICESecurityCheckpointID" ColumnName="Report_ICESecurityCheckpointID" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="CheckpointID" ColumnName="CheckpointID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RdlComponent">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.RdlComponent">
+              <MappingFragment StoreEntitySet="RdlComponent">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="RdlData" ColumnName="RdlData" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RdlComponentTypeID" ColumnName="RdlComponentTypeID" />
+                <ScalarProperty Name="RdlComponentID" ColumnName="RdlComponentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RdlComponentType">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.RdlComponentType">
+              <MappingFragment StoreEntitySet="RdlComponentType">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="RdlComponentTypeName" ColumnName="RdlComponentTypeName" />
+                <ScalarProperty Name="RdlComponentTypeID" ColumnName="RdlComponentTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportLayoutStyle">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ReportLayoutStyle">
+              <MappingFragment StoreEntitySet="ReportLayoutStyle">
+                <ScalarProperty Name="IsSensitive" ColumnName="IsSensitive" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="ReportLink" ColumnName="ReportLink" />
+                <ScalarProperty Name="IsCustom" ColumnName="IsCustom" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+                <ScalarProperty Name="PreviewImagePath" ColumnName="PreviewImagePath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ReportLayoutStyleName" ColumnName="ReportLayoutStyleName" />
+                <ScalarProperty Name="ReportLayoutStyleID" ColumnName="ReportLayoutStyleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportLayoutStyleRdl">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ReportLayoutStyleRdl">
+              <MappingFragment StoreEntitySet="ReportLayoutStyleRdl">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="FormatTypeID" ColumnName="FormatTypeID" />
+                <ScalarProperty Name="RdlComponentID" ColumnName="RdlComponentID" />
+                <ScalarProperty Name="ReportLayoutStyleID" ColumnName="ReportLayoutStyleID" />
+                <ScalarProperty Name="ReportLayoutStyleRdlID" ColumnName="ReportLayoutStyleRdlID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedule">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="IsNotSendWithNoData" ColumnName="IsNotSendWithNoData" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="AdditionalEmailAddresses" ColumnName="AdditionalEmailAddresses" />
+                <ScalarProperty Name="PriorityTypeID" ColumnName="PriorityTypeID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="RepeatAfterInterval" ColumnName="RepeatAfterInterval" />
+                <ScalarProperty Name="MonthsOfYearBitmask" ColumnName="MonthsOfYearBitmask" />
+                <ScalarProperty Name="DaysOfWeekBitmask" ColumnName="DaysOfWeekBitmask" />
+                <ScalarProperty Name="CalendarDays" ColumnName="CalendarDays" />
+                <ScalarProperty Name="WeekOfMonthTypeID" ColumnName="WeekOfMonthTypeID" />
+                <ScalarProperty Name="RecurrenceTypeID" ColumnName="RecurrenceTypeID" />
+                <ScalarProperty Name="ScheduleStop" ColumnName="ScheduleStop" />
+                <ScalarProperty Name="ScheduleStart" ColumnName="ScheduleStart" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+                <ScalarProperty Name="UserReportID" ColumnName="UserReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReportSummarizeField">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.UserReportSummarizeField">
+              <MappingFragment StoreEntitySet="UserReportSummarizeField">
+                <ScalarProperty Name="UserReportSummarizeFieldID" ColumnName="UserReportSummarizeFieldID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="UserReportFieldID" ColumnName="UserReportFieldID" />
+                <ScalarProperty Name="UserReportID" ColumnName="UserReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientReportField">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ClientReportField">
+              <MappingFragment StoreEntitySet="ClientReportField">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="ReportFieldID" ColumnName="ReportFieldID" />
+                <ScalarProperty Name="ClientReportFieldID" ColumnName="ClientReportFieldID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleRecipient">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ScheduleRecipient">
+              <MappingFragment StoreEntitySet="ScheduleRecipient">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DeliveryMethodTypeID" ColumnName="DeliveryMethodTypeID" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ScheduleRecipientID" ColumnName="ScheduleRecipientID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportDeliveryLog">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ReportDeliveryLog">
+              <MappingFragment StoreEntitySet="ReportDeliveryLog">
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="UserReportOutputID" ColumnName="UserReportOutputID" />
+                <ScalarProperty Name="ScheduleRecipientID" ColumnName="ScheduleRecipientID" />
+                <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+                <ScalarProperty Name="ReportDeliveryLogID" ColumnName="ReportDeliveryLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReleaseNote">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ReleaseNote">
+              <MappingFragment StoreEntitySet="ReleaseNote">
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedUserId" ColumnName="ModifiedUserId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="DOCUMENT" ColumnName="DOCUMENT" />
+                <ScalarProperty Name="ReleaseTitle" ColumnName="ReleaseTitle" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="ReleaseNumber" ColumnName="ReleaseNumber" />
+                <ScalarProperty Name="ReleaseNoteID" ColumnName="ReleaseNoteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserReleaseNote">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.UserReleaseNote">
+              <MappingFragment StoreEntitySet="UserReleaseNote">
+                <ScalarProperty Name="IsReleaseNoteNotificationViewed" ColumnName="IsReleaseNoteNotificationViewed" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedUserId" ColumnName="ModifiedUserId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="IsReleaseNoteRead" ColumnName="IsReleaseNoteRead" />
+                <ScalarProperty Name="ReleaseNoteID" ColumnName="ReleaseNoteID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssnSpecificFieldDefinition">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.AssnSpecificFieldDefinition">
+              <MappingFragment StoreEntitySet="AssnSpecificFieldDefinition">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedByUserID" ColumnName="CreatedByUserID" />
+                <ScalarProperty Name="AssociationNumber" ColumnName="AssociationNumber" />
+                <ScalarProperty Name="coverage_code" ColumnName="coverage_code" />
+                <ScalarProperty Name="FieldDescription" ColumnName="FieldDescription" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="AssnSpecificFieldDefinitionId" ColumnName="AssnSpecificFieldDefinitionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationLog">
+            <EntityTypeMapping TypeName="ReportProjectDBModel.ApplicationLog">
+              <MappingFragment StoreEntitySet="ApplicationLog">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="ApplicationLogID" ColumnName="ApplicationLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="ReportModel" ZoomLevel="89">
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.DataType" Width="1.5" PointX="3.75" PointY="1.875" Height="2.3648893229166656" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.FormatType" Width="1.5" PointX="3" PointY="10.25" Height="2.7494921874999996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.Report" Width="1.5" PointX="0.75" PointY="5.5" Height="3.8931689453124978" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReportField" Width="1.875" PointX="6" PointY="5.125" Height="4.8648079427083317" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReportParameter" Width="2.25" PointX="3" PointY="5.875" Height="2.9070849609374996" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.UserReport" Width="2.25" PointX="7.5" PointY="10.875" Height="5.4417122395833353" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.UserReportField" Width="2.25" PointX="9.75" PointY="6.875" Height="3.3263964843749996" IsExpanded="true" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportField_DataType" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="5.25" PointY="3.578837890625" />
+          <edmx:ConnectorPoint PointX="5.416666666666667" PointY="3.5788378906249996" />
+          <edmx:ConnectorPoint PointX="5.583333333333333" PointY="3.578837890625" />
+          <edmx:ConnectorPoint PointX="6.15625" PointY="3.578837890625" />
+          <edmx:ConnectorPoint PointX="6.15625" PointY="5.125" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportParameter_DataType" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="4.5" PointY="4.2398893229166656" />
+          <edmx:ConnectorPoint PointX="4.5" PointY="5.875" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportField_Report" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="9.62205078125" />
+          <edmx:ConnectorPoint PointX="6" PointY="9.62205078125" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportParameter_ReportParameter" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="2.25" PointY="7.32854248046875" />
+          <edmx:ConnectorPoint PointX="3" PointY="7.32854248046875" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportField_ReportField" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="7.875" PointY="8.6343489583333337" />
+          <edmx:ConnectorPoint PointX="9.75" PointY="8.6343489583333337" />
+          </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportField_UserReport" ManuallyRouted="false">
+          <edmx:ConnectorPoint PointX="8.8125" PointY="10.875" />
+          <edmx:ConnectorPoint PointX="8.8125" PointY="9.5452754375" />
+          <edmx:ConnectorPoint PointX="9.75" PointY="9.5452754375" />
+          </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.Filter" Width="1.5" PointX="0.75" PointY="0.75" Height="1.59568359375" IsExpanded="true" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FilterReport">
+          <edmx:ConnectorPoint PointX="2.2500000000000004" PointY="2.34568359375" />
+          <edmx:ConnectorPoint PointX="2.625" PointY="2.7206835937499996" />
+          <edmx:ConnectorPoint PointX="2.625" PointY="5.125" />
+          <edmx:ConnectorPoint PointX="2.25" PointY="5.5" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.UserReportOutput" Width="2.625" PointX="8.875" PointY="18.375" Height="2.4140429687500031" IsExpanded="true" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportOutput_UserReport" >
+          <edmx:ConnectorPoint PointX="9.3125" PointY="16.316712239583335" />
+          <edmx:ConnectorPoint PointX="9.3125" PointY="18.375" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReportFolder" Width="1.5" PointX="6.375" PointY="0.875" Height="1.9802864583333339" IsExpanded="true" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.Report_fk" >
+          <edmx:ConnectorPoint PointX="6.375" PointY="1.8651432291666668" />
+          <edmx:ConnectorPoint PointX="5.5" PointY="1.8651432291666668" />
+          <edmx:ConnectorPoint PointX="5.5" PointY="5.2110807291666674" />
+          <edmx:ConnectorPoint PointX="4.583333333333333" PointY="5.2110807291666665" />
+          <edmx:ConnectorPoint PointX="4.416666666666667" PointY="5.2110807291666674" />
+          <edmx:ConnectorPoint PointX="3.8020813333333336" PointY="5.2110807291666665" />
+          <edmx:ConnectorPoint PointX="3.6354146666666667" PointY="5.2110807291666674" />
+          <edmx:ConnectorPoint PointX="2.6222526041666661" PointY="5.2110807291666665" />
+          <edmx:ConnectorPoint PointX="2.4555859374999991" PointY="5.2110807291666674" />
+          <edmx:ConnectorPoint PointX="1.4687480000000002" PointY="5.2110807291666674" />
+          <edmx:ConnectorPoint PointX="1.4687480000000002" PointY="5.5" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.SubReport" Width="1.5" PointX="3" PointY="18.375" Height="2.5783902994791674" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.SubReportParameter" Width="2.375" PointX="5.25" PointY="18.5" Height="2.2496956380208353" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_SubReport_Report" >
+          <edmx:ConnectorPoint PointX="1.1492260007147772" PointY="9.3931689453124978" />
+          <edmx:ConnectorPoint PointX="1.1492260007147772" PointY="19.664195149739584" />
+          <edmx:ConnectorPoint PointX="1.858465292024055" PointY="19.664195149739584" />
+          <edmx:ConnectorPoint PointX="2.0251319586907215" PointY="19.664195149739584" />
+          <edmx:ConnectorPoint PointX="3" PointY="19.664195149739584" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_SubReportParameter_SubReport" >
+          <edmx:ConnectorPoint PointX="4.5" PointY="19.778595377604169" />
+          <edmx:ConnectorPoint PointX="4.791666666666667" PointY="19.778595377604169" />
+          <edmx:ConnectorPoint PointX="5.020833333333333" PointY="19.778595377604169" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="19.778595377604169" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.AdminUserName" Width="1.5" PointX="0.75" PointY="3.75" Height="1.2110807291666665" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.UserReportParameter" Width="2.25" PointX="12.75" PointY="5.25" Height="2.4140429687499996" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportParameter_ReportParameter" >
+          <edmx:ConnectorPoint PointX="3.718748" PointY="5.875" />
+          <edmx:ConnectorPoint PointX="3.718748" PointY="4.875" />
+          <edmx:ConnectorPoint PointX="4.416666666666667" PointY="4.8749999999999991" />
+          <edmx:ConnectorPoint PointX="4.583333333333333" PointY="4.875" />
+          <edmx:ConnectorPoint PointX="5.416666666666667" PointY="4.8749999999999991" />
+          <edmx:ConnectorPoint PointX="5.583333333333333" PointY="4.875" />
+          <edmx:ConnectorPoint PointX="6.072916666666667" PointY="4.8749999999999991" />
+          <edmx:ConnectorPoint PointX="6.239583333333333" PointY="4.875" />
+          <edmx:ConnectorPoint PointX="8.375" PointY="4.875" />
+          <edmx:ConnectorPoint PointX="8.375" PointY="6.27300048828125" />
+          <edmx:ConnectorPoint PointX="12.75" PointY="6.27300048828125" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportParameter_UserReport" >
+          <edmx:ConnectorPoint PointX="9.75" PointY="10.875" />
+          <edmx:ConnectorPoint PointX="10.00357443490112" PointY="10.621425565098878" />
+          <edmx:ConnectorPoint PointX="10.121425565098878" PointY="10.503574434901122" />
+          <edmx:ConnectorPoint PointX="10.125" PointY="10.5" />
+          <edmx:ConnectorPoint PointX="13.875" PointY="10.5" />
+          <edmx:ConnectorPoint PointX="13.875" PointY="7.9994921875" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.UserReport_Report_fk" >
+          <edmx:ConnectorPoint PointX="1.5698049686456321" PointY="9.3931689453124978" />
+          <edmx:ConnectorPoint PointX="1.5698049686456321" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="1.907050603243154" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="2.0737172699098205" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="3.6666666666666665" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="3.8333333333333335" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="4.916666666666667" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="5.083333333333333" PointY="13.374847819010416" />
+          <edmx:ConnectorPoint PointX="7.5" PointY="13.374847819010416" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.Report_ICESecurityCheckpoint" Width="3.5" PointX="1" PointY="21.875" Height="1.592306315104171" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.ReportTypeCheckPointJoin_fk" >
+          <edmx:ConnectorPoint PointX="1.9903839365764873" PointY="9.980205078125" />
+          <edmx:ConnectorPoint PointX="1.9903839365764873" PointY="21.875" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReport__FormatType" >
+          <edmx:ConnectorPoint PointX="4.5" PointY="11.687347819010416" />
+          <edmx:ConnectorPoint PointX="4.916666666666667" PointY="11.687347819010416" />
+          <edmx:ConnectorPoint PointX="5.083333333333333" PointY="11.687347819010416" />
+          <edmx:ConnectorPoint PointX="7.5" PointY="11.687347819010416" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.RdlComponent" Width="1.5" PointX="3" PointY="24.375" Height="2.2496956380208353" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.RdlComponentType" Width="1.5" PointX="0.75" PointY="24.625" Height="1.7566536458333353" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReportLayoutStyle" Width="1.5" PointX="5.25" PointY="22" Height="3.5186979166666674" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReportLayoutStyleRdl" Width="1.5" PointX="5.25" PointY="14.25" Height="2.4140429687499996" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportLayoutStyleRdl__FormatType" >
+          <edmx:ConnectorPoint PointX="3.75" PointY="12.499695638020834" />
+          <edmx:ConnectorPoint PointX="3.75" PointY="15.457021484375" />
+          <edmx:ConnectorPoint PointX="4.916666666666667" PointY="15.457021484375" />
+          <edmx:ConnectorPoint PointX="5.083333333333333" PointY="15.457021484375" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="15.457021484375" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_RdlComponent__RdlComponentType" >
+          <edmx:ConnectorPoint PointX="2.25" PointY="25.503326822916669" />
+          <edmx:ConnectorPoint PointX="3" PointY="25.503326822916669" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportLayoutStyleRdl__RdlComponent" >
+          <edmx:ConnectorPoint PointX="4.5" PointY="24.376152846153843" />
+          <edmx:ConnectorPoint PointX="4.875" PointY="24.001152846153843" />
+          <edmx:ConnectorPoint PointX="4.875" PointY="16.091784226562492" />
+          <edmx:ConnectorPoint PointX="4.916666666666667" PointY="16.091784226562492" />
+          <edmx:ConnectorPoint PointX="5.083333333333333" PointY="16.091784226562492" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="16.091784226562492" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportLayoutStyle__Report" >
+          <edmx:ConnectorPoint PointX="2.2499999999999996" PointY="9.3931689453124978" />
+          <edmx:ConnectorPoint PointX="2.625" PointY="9.7681689453124978" />
+          <edmx:ConnectorPoint PointX="5" PointY="9.7681689453124978" />
+          <edmx:ConnectorPoint PointX="5" PointY="21.774230769230769" />
+          <edmx:ConnectorPoint PointX="5.25" PointY="22.024230769230769" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportLayoutStyleRdl__ReportLayoutStyle" >
+          <edmx:ConnectorPoint PointX="5.3076913076923073" PointY="22" />
+          <edmx:ConnectorPoint PointX="4.90625" PointY="21.598558692307691" />
+          <edmx:ConnectorPoint PointX="4.90625" PointY="17.008945814903846" />
+          <edmx:ConnectorPoint PointX="4.9410744349011209" PointY="16.974121380002725" />
+          <edmx:ConnectorPoint PointX="5.0589255650988791" PointY="16.856270249804968" />
+          <edmx:ConnectorPoint PointX="5.2511528461538459" PointY="16.66404296875" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReport__ReportLayoutStyle" >
+          <edmx:ConnectorPoint PointX="6.75" PointY="23.7000634765625" />
+          <edmx:ConnectorPoint PointX="8.25" PointY="23.7000634765625" />
+          <edmx:ConnectorPoint PointX="8.25" PointY="15.589905598958334" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.Schedule" Width="2.25" PointX="12" PointY="15.625" Height="4.480205078125" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_Schedule__UserReport" >
+          <edmx:ConnectorPoint PointX="9.75" PointY="13.859560984309514" />
+          <edmx:ConnectorPoint PointX="12.734375" PointY="13.859560984309514" />
+          <edmx:ConnectorPoint PointX="12.734375" PointY="15.625" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.UserReportSummarizeField" Width="2.5" PointX="14.25" PointY="11.5" Height="2.3648893229166674" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportSumField__UserReport" >
+          <edmx:ConnectorPoint PointX="9.75" PointY="11.59375" />
+          <edmx:ConnectorPoint PointX="14.25" PointY="11.59375" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReportSumField__UserReportField" >
+          <edmx:ConnectorPoint PointX="10.0625" PointY="10.393697916666666" />
+          <edmx:ConnectorPoint PointX="10.0625" PointY="11.562497500000006" />
+          <edmx:ConnectorPoint PointX="14.25" PointY="11.562497500000006" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ClientReportField" Width="1.5" PointX="8.625" PointY="3.75" Height="2.1725878906250102" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ClientReportField__ReportField" >
+          <edmx:ConnectorPoint PointX="7.875" PointY="5.39800048828125" />
+          <edmx:ConnectorPoint PointX="8.2916666666666661" PointY="5.3980004882812489" />
+          <edmx:ConnectorPoint PointX="8.4583333333333339" PointY="5.39800048828125" />
+          <edmx:ConnectorPoint PointX="8.625" PointY="5.39800048828125" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ScheduleRecipient" Width="1.5" PointX="15.125" PointY="16.75" Height="2.5571907552083246" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ScheduleRecipient__Schedule" >
+          <edmx:ConnectorPoint PointX="14.25" PointY="17.957021484374998" />
+          <edmx:ConnectorPoint PointX="15.125" PointY="17.957021484374998" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReportDeliveryLog" Width="1.5" PointX="17.375" PointY="17.125" Height="2.2496956380208246" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportDeliveryLog__Schedule" >
+          <edmx:ConnectorPoint PointX="14.25" PointY="19.30061930338541" />
+          <edmx:ConnectorPoint PointX="17.375" PointY="19.30061930338541" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportDeliveryLog__ScheduleRecipient" >
+          <edmx:ConnectorPoint PointX="16.625" PointY="18.144521484374998" />
+          <edmx:ConnectorPoint PointX="17.375" PointY="18.144521484374998" />
+        </edmx:AssociationConnector>
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_ReportDeliveryLog__UserReportOutput" >
+          <edmx:ConnectorPoint PointX="11.5" PointY="20.431376953125003" />
+          <edmx:ConnectorPoint PointX="18.125" PointY="20.431376953125003" />
+          <edmx:ConnectorPoint PointX="18.125" PointY="19.374695638020825" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ReleaseNote" Width="1.5" PointX="11.375" PointY="1" Height="2.9417936197916674" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.UserReleaseNote" Width="1.5" PointX="13.625" PointY="1.125" Height="2.5571907552083246" />
+        <edmx:AssociationConnector Association="ReportProjectDBModel.FK_UserReleaseNote__ReleaseNote" >
+          <edmx:ConnectorPoint PointX="12.875" PointY="2.4035953776041623" />
+          <edmx:ConnectorPoint PointX="13.625" PointY="2.4035953776041623" />
+        </edmx:AssociationConnector>
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.AssnSpecificFieldDefinition" Width="1.5" PointX="10.375" PointY="11.75" Height="2.3648893229166674" />
+        <edmx:EntityTypeShape EntityType="ReportProjectDBModel.ApplicationLog" Width="1.5" PointX="8.375" PointY="0.75" Height="1.9802864583333246" />
+        </edmx:Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

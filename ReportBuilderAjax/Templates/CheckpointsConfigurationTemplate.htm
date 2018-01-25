@@ -1,0 +1,139 @@
+﻿<div templateId="RootTemplate" style="padding:16px 25px;">
+    <table>
+        <tr>
+            <td></td>
+            <td class="title_group_report" style="padding-left: 0px;">Checkpoints</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="title_group_report" style="padding-left: 0px;">Description</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="top_left_dotted_container"></td>
+            <td class="top_center_dotted_container" style="width: 655px;"></td>
+            <td class="top_right_dotted_container"></td>
+            <td style="width: 15px;"></td>
+            <td class="top_left_dotted_container"></td>
+            <td class="top_center_dotted_container" style="width: 195px;"></td>
+            <td class="top_right_dotted_container"></td>
+        </tr>
+        <tr>
+            <td class="center_left_dotted_container"></td>
+            <td class="center_center_dotted_container">
+                <table width="100%">
+                    <tr>
+                        <td class="custom_report_container" style="padding-right: 5px;" >
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="top_left"></td>
+                                    <td class="top_line"></td>
+                                    <td class="top_right"></td>
+                                </tr>
+                                <tr>
+                                    <td class="center_left"></td>
+                                    <td class="center_content" valign="top">
+                                        <div style="height: 285px; overflow-y: scroll;"  id="leftCheckpointsConfigurationReportsContainerId">
+                                            
+                                        </div>
+                                        
+                                    </td>
+                                    <td class="center_right"></td>
+                                </tr>
+                                <tr>
+                                    <td class="bottom_left"></td>
+                                    <td class="bottom_line">
+                                        <div style="height:5px;"></div>
+                                    </td>
+                                    <td class="bottom_right"></td>
+                                </tr>
+                            </table>	   
+                        </td>
+                        <td class="separation_line" style="width: 15px;">
+                            <div></div>
+                        </td>
+                        <td class="custom_report_container" >
+                            <div style="height: 295px; overflow-y: scroll;width: 295px;" id="rightCheckpointsConfigurationReportsContainerId"></div>
+								    
+                        </td>
+                    </tr>							
+                </table>
+            </td>
+            <td class="center_right_dotted_container"></td>
+            <td></td>
+            <td class="center_left_dotted_container"></td>
+            <td class="center_center_dotted_container" valign="top">
+                <div class="checkpoints_description" id="checkpointsConfigurationReportDescription"></div>
+            </td>
+            <td class="center_right_dotted_container"></td>
+        </tr>
+        <tr>
+            <td class="bottom_left_dotted_container"></td>
+            <td class="bottom_center_dotted_container"></td>
+            <td class="bottom_right_dotted_container"></td>
+            <td></td>
+            <td class="bottom_left_dotted_container"></td>
+            <td class="bottom_center_dotted_container"></td>
+            <td class="bottom_right_dotted_container"></td>
+        </tr>
+    </table>
+    <div class="checkpoints_save_button" id="checkpointsConfigurationSaveButtonId"></div>
+</div>
+
+
+<div templateId="CheckpointsConfigurationItem" class="checkpoints_item" id="{#checkpointsConfigurationItemId}" checkpointId="{#checkpointId}">{#checkpointsConfigurationName}</div>
+
+
+<div templateId="CheckpointsConfigurationReportItem"  class="checkpoints_checkbox_item" folderID="{#folderID}" folderNumber="{#folderNumber}">
+    <table cellpadding="0" cellspacing="0">
+	    <tr>
+		    <td class="top_left_active_bg_report"></td>
+		    <td class="top_center_active_bg_report"></td>
+		    <td class="top_right_active_bg_report"></td>
+	    </tr>
+	    <tr>
+		    <td class="center_left_active_bg_report"></td>
+	        <td class="center_center_active_report">
+	            <div class="checkboxChecked" id="{#checkpointsConfigurationReportFolderCheckboxId}" style="width: 13px;height: 13px;float: left;margin-left: 4px;margin-top: 4px;cursor: pointer;"></div>
+	            <div folderNameID="{#folderID}"  class="checkpoints_checkbox_item_name" >
+	                <div class="icon_folder_checkpoints"></div>
+                    <div  style="padding-left: 25px; margin-top: 5px;">{#checkpointsConfigurationReportCheckboxName}</div>     
+	            </div>
+                
+		    </td>
+		    <td class="center_right_active_bg_report"></td>
+	    </tr>
+	    <tr>
+		    <td class="bottom_left_active_bg_report"></td>
+		    <td class="bottom_center_active_bg_report"></td>
+		    <td class="bottom_right_active_bg_report"></td>
+	    </tr>
+    </table>
+</div>
+
+<div templateId="CheckpointsConfigurationReportSubItem"  class="checkpoints_checkbox_item" parentID="{#parentID}" style="display: none;margin-left: 20px;border: 0px;">
+     <table cellpadding="0" cellspacing="0">
+	    <tr>
+		    <td class="top_left_active_bg_report"></td>
+		    <td class="top_center_active_bg_report"></td>
+		    <td class="top_right_active_bg_report"></td>
+	    </tr>
+	    <tr>
+		    <td class="center_left_active_bg_report"></td>
+	        <td class="center_center_active_report">
+	            <div class="checkboxChecked" id="{#checkpointsConfigurationReportCheckboxId}" style="width: 16px;height: 16px;float: left;margin-top: 2px;margin-left: 4px;cursor: pointer;"></div>
+	            <div  class="checkpoints_checkbox_item_name1">
+	                <div class="icon_file_checkpoints"></div>
+	                <div style="padding-left: 32px;margin-top: 3px;">{#checkpointsConfigurationReportCheckboxName}</div>    
+	            </div>
+                
+            </td>
+		    <td class="center_right_active_bg_report"></td>
+	    </tr>
+	    <tr>
+		    <td class="bottom_left_active_bg_report"></td>
+		    <td class="bottom_center_active_bg_report"></td>
+		    <td class="bottom_right_active_bg_report"></td>
+	    </tr>
+    </table> 
+</div>

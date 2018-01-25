@@ -1,0 +1,97 @@
+﻿<div templateId="main" class="combobox" combobox="1" clicker="1">
+    <table cellpadding="0" cellspacing="0" clicker="1">
+        <tr>
+            <td class="left" clicker="1"></td>
+            <td class="center" clicker="1">
+                <input class="input" type="text" value="" readonly="readonly" controlBox="1" clicker="1" />
+            </td>
+            <td class="button" style="width:19px;" clicker="1">
+                <div class="controlButton" controlButton="1" clicker="1"></div>
+            </td>
+            <td class="right" style="display: none;" clicker="1"></td>
+        </tr>
+    </table>
+    <div class="options" clicker="1" >
+        <table cellpadding="0" cellspacing="0" style="width:100%;" clicker="1">
+            <tr  clicker="1">
+                <td class="left_top_filter" clicker="1"></td>
+                <td class="top_filter" clicker="1"></td>
+                <td class="right_top_filter" clicker="1"></td>
+            </tr>
+            <tr clicker="1"  filterBox="1">
+                <td class="left_filter" clicker="1"></td>
+                <td class="filter" clicker="1" >
+                    <table cellpadding="0" cellspacing="0" clicker="1">
+                        <tr clicker="1">
+                            <td class="filterText" align="center" clicker="1">
+                                <span clicker="1">More than 200 items where found and the list was truncated. <br /> Enter a filter below to alter list missing</span>
+                            </td>
+                        </tr>
+                        <tr clicker="1">
+                            <td style="padding-top:3px;padding-left:50px;" clicker="1">
+                                <table cellpadding="0" cellspacing="0" clicker="1">
+                                    <tr clicker="1">
+                                        <td class="filterLeft" clicker="1"></td>
+                                        <td class="filterCenter" clicker="1">
+                                            <input class="filterInput" clicker="1" type="text" value="" style="width:150px;"/>
+                                        </td>
+                                        <td class="filterRight" clicker="1"></td>
+                                        <td style="padding-left:5px;" clicker="1">
+                                            <div class="filterButton" clicker="1"></div>
+                                        </td>
+                                        <td clicker="1"></td>
+                                    </tr>
+                                </table>
+                            </td>                            
+                        </tr>
+                    </table>
+                </td>
+                <td class="right_filter" clicker="1"></td>
+            </tr>
+            <tr clicker="1">
+                <td class="left_bottom_filter" clicker="1"></td>
+                <td class="bottom_filter" clicker="1"></td>
+                <td class="right_bottom_filter" clicker="1"></td>
+            </tr>
+            <tr clicker="1">
+                <td class="left_topElements" clicker="1"></td>
+                <td class="topElements" clicker="1"></td>
+                <td class="right_topElements" clicker="1"></td>
+            </tr>
+            <tr clicker="1">
+                <td class="left_boxElements" clicker="1"></td>
+                <td class="boxElements" clicker="1">
+                    <table cellpadding="0" cellspacing="0" clicker="1" style="width:100%;">
+                        <tr clicker="1">
+                            <!--<td class="leftBox" clicker="1"></td>-->
+                            <td class="centerBox" clicker="1">
+                                <div class="elements" clicker="1">
+                                    {#options}            
+                                </div>
+                            </td>
+                        </tr>                        
+                    </table>                    
+                </td>
+                <td class="right_boxElements" clicker="1"></td>
+            </tr>
+            <tr clicker="1">
+                <td class="left_bottom_combobox" clicker="1"></td>
+                <td class="bottomCombobox" clicker="1"></td>                
+                <td class="right_bottom_combobox" clicker="1"></td>
+            </tr>
+        </table>        
+    </div>
+</div>
+
+<div templateId="option" class="option" clicker="1">
+    <table cellpadding="0" cellspacing="0" clicker="1" style="width:100%;">
+        <tr clicker="1">
+            <td style="width:20px;padding-left:5px;padding-top:2px;" clicker="1">
+                <div class="checkboxUnchecked" style="width:13px;height:13px;" elementId="{#elementId}" elementValue="{#elementValue}" checkbox="1" clicker="1"></div>
+            </td>
+            <td class="name" align="left" text="1" style="padding-left: 5px;padding-top:2px;" clicker="1" >
+                <nobr clicker="1">{#elementValue} </nobr>
+            </td>
+        </tr>
+    </table>
+</div>

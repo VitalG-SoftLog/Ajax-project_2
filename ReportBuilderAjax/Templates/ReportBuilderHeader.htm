@@ -1,0 +1,197 @@
+﻿<div templateId="Header" id="SwitchClient_button" style="background-image: url(./images/mainBg2.png);">
+    <table cellpadding="0" cellspacing="0">
+        <tr style="height: 72px;">
+            <td>
+                <div style="background-image: url(./images/MyReports.png); background-repeat: no-repeat; width: 175px; height: 72px;"></div>
+            </td>
+            <td>
+                <table style="width: 370px; height: 56px; border: 1px solid; border-radius: 5px 0px 0px 5px; border-right: none; background-image: url(./images/LoginBackground.png); background-repeat: no-repeat; margin-left: 439px;" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div style="margin-top: 1px;">
+                                            <span style="font-family: Arial; font-size: 9pt; font-weight: bold; color: #f2f2f2; margin-left: 10px; line-height: 9px;">Welcome, {#userName}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <span style="font-family: Arial; font-size: 8.25pt; color: #b3b3b3; margin-left: 10px;" id="switchClientName">{#switchClientName}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div id="SwitchClient" style="float: left; margin-left: -2px;"></div>
+                                    </td>
+                                    <td>
+                                        <div id="LogoutBttn" style="float: left; margin-left: 3px;"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table cellspacing="0" cellpadding="0" style="height: 41px; background-image: url(./images/HeaderMiddleBackground.png); background-repeat: repeat-x; width: 984px;">
+        <tr>
+            <td style="width: 21px;"></td>
+            <td style="width: 125px; height: 34px">
+                <div id="ReportBuilderTab" style="margin-bottom: -4px; padding-top: 5px;"></div>
+            </td>
+            <td style="width: 142px; height: 34px;">
+                <div id="DeliveredReportsTab" style="margin-bottom: -4px; padding-top: 5px;"></div>
+            </td>
+            <td style="width: 195px; height: 34px;">
+                <div id="CheckpointsConfigurationTab" style="margin-bottom: -4px; padding-top: 5px;"></div>
+            </td>
+            <td style="width: 116px; height: 34px;">
+                <div id="CustomLogoTab" style="margin-bottom: -4px; padding-top: 5px;"></div>
+            </td>
+            <td style="width: 120px; height: 34px;">
+                <div id="ReleaseNotesTab" style="margin-bottom: -4px; padding-top: 5px;"></div>
+            </td>
+            <td style="width: 253px;"></td>
+        </tr>      
+    </table>
+</div>
+
+
+<div templateId="ReportBuilderTabTemplate">
+    <div class="ReportBuilderTab" id="{#idReportBuilderTab}">
+        <div class="one" id="{#idReportBuilderTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 112px;">
+                    <span>Report Builder</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="DeliveredReportsTabTemplate">
+    <div class="DeliveredReportsTab" id="{#idDeliveredReportsTab}">
+        <div class="two" id="{#idDeliveredReportsTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 132px;">
+                    <span>Delivered Reports</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="CheckpointsConfigurationTabTemplate">
+    <div class="CheckpointsConfigurationTab" id="{#idCheckpointsConfigurationTab}">
+        <div class="two" id="{#idCheckpointsConfigurationTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 185px;">
+                    <span>Checkpoints Configuration</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="CustomLogoTabTemplate">
+    <div class="CustomLogoTab" id="{#idCustomLogoTab}">
+        <div class="two" id="{#idCustomLogoTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 106px;">
+                    <span>Custom Logo</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="ReleaseNotesTabTemplate">
+    <div class="ReleaseNotesTab" id="{#idReleaseNotesTab}">
+        <div class="two" id="{#idReleaseNotesTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 110px;">
+                    <span>Release Notes</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="LogoutBttnTemplate">
+    <div class="ReportBttn" id="{#idLogoutBttn}">
+        <div class="eight">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="SwitchClientBttnTemplate">
+    <div class="ReportBttn" id="{#idSwitchClient}">
+        <div class="nine">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="SwitchClientPopin" id="SwitchClientPopin" style="position: absolute; background-image: url(./images/switchClient_popin_body.png); width:466px; height:214px;margin-left: 546px;margin-top: -86px;z-index: 1111; display:none;">
+    <div style="width: 396px; height: 35px; background-color:White; border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;margin-top: 90px;margin-left: 35px;">
+        <table cellspacing="0" cellpadding="0" style="margin-top: 4px;">
+            <tr>
+                <td>
+                    <div style="font-size:12px; font-family: Arial; font-weight: bold;margin-top: 3px;margin-left: 13px;"> Client:</div>
+                </td>
+                <td>
+                    <div id="SCDropDown" style="margin-left: 11px;margin-top: 3px;"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table cellspacing="0" cellpadding="0" style="margin-top: 14px;">
+        <tr>
+            <td>
+                <div id="SwitchClient_switchButton" style="background-image: url(./images/switchClient_popin_switch.png); width:72px; height:25px; margin-left:161px; cursor: pointer;"></div>
+            </td>
+            <td>
+                <div id="SwitchClient_cancelButton" style="background-image: url(./images/as_main_button_Cancel.png); width:68px; height:25px; margin-left:4px; cursor:pointer;"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div templateId="ReportBuilderRootTemplate" id="{#reportBuilderTabPlaceHolder}">
+    <div id="{#reportSelectFormPlaceHolder}" style="display:none;">     
+    </div>
+    <div id="{#reportBuilderFormPlaceHolder}" style="display:none;">     
+    </div>
+</div>
+
+<div templateId="ReleaseNotesRootTemplate" id="{#releaseNotesTabPlaceHolder}">
+</div>
+
+<div templateId="DeliveredReportsRootTemplate" id="{#deliveredReportsTabPlaceHolder}">
+</div>
+
+<div templateId="CheckpointsConfigurationRootTemplate" id="{#checkpointsConfigurationTabPlaceHolder}">
+</div>
+
+<div templateId="CustomLogoRootTemplate" id="{#customLogoPlaceHolder}">
+</div>

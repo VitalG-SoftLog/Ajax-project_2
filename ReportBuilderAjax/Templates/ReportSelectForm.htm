@@ -1,0 +1,273 @@
+﻿<div templateId="RootTemplate">
+    
+    <div class="top_main_bg_report" id="reportTypes">
+		
+	</div>
+
+    <table cellpadding="0" cellspacing="0" >
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0" >
+                    <tr class="ReportSelectForm">
+                        <td>
+                            <div class="GridHeader" style="width: 344px; cursor: pointer;"   sortColumn="desc" namecolumn="UserReportName">
+                                <div><span class="FontsStyle" >REPORT NAME</span></div>
+                                <div style=" float:right;margin-left: 320px;margin-top: -22px;position: absolute;"> 
+                                    <img id="UserReportName" sortColumn="desc" namecolumn="UserReportName" sortColumnRoot="1" src="./images/sort_desc.png"/> 
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="GridHeader" style="width: 294px; cursor: pointer;"  sortColumn="desc" namecolumn="Name" >
+                                <span class="FontsStyle">REPORT TYPE</span>
+                                <div style=" float:right;margin-left: 270px;margin-top: -22px;position: absolute;"> 
+                                    <img id="Name" sortColumn="desc" namecolumn="Name" sortColumnRoot="1" src="./images/sort_desc.png"/> 
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="GridHeader" style="width: 107px; cursor: pointer;"  sortColumn="desc" namecolumn="CreatedDate">
+                                <span class="FontsStyle">DATE CREATED</span>
+                                <div style=" float:right;margin-left: 91px;margin-top: -22px;position: absolute;"> 
+                                    <img id="CreatedDate" sortColumn="desc" namecolumn="CreatedDate" sortColumnRoot="1" src="./images/sort_desc.png"/> 
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="GridHeader" style="width: 107px; cursor: pointer;" sortColumn="desc" namecolumn="ModifiedDate" >
+                                <span class="FontsStyle">DATE MODIFIED</span>
+                                <div style=" float:right;margin-left: 92px;margin-top: -22px;position: absolute;"> 
+                                    <img id="ModifiedDate" sortColumn="desc" namecolumn="ModifiedDate" sortColumnRoot="1" src="./images/sort_desc.png"/> 
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="background-image: url(./images/BlackGradientTabBg.png); background-repeat: repeat-x; width: 108px; height: 38px;"></div>
+                        </td>
+                    </tr>
+                    {#rowsPlaceHolder}
+                </table>
+            </td>
+        </tr>        
+    </table>
+    <div style="background-image: url(./images/GridBottomShadow.png); background-repeat: no-repeat; width: 984px; height: 13px;"></div>
+    <div id="{#AddSchedulePopUp}"></div>
+</div>
+
+<tr templateId="ItemTemplate">
+    <td style="border-bottom: 1px solid #f2f2f2;border-right: 1px solid #f2f2f2;border-left: 1px solid #f2f2f2;">
+        <div style="width: 348px; height: 29px;" class="GridWhiteCellBg">
+            <div id="{#spawnReportButton}" reportId="{#reportId}" userReportID="{#userReportID}" class="{#spawnType}"></div>
+            <div style="width: 280px; word-wrap:break-word; color: #272727; margin-left: 5px; margin-top: 1px; font-family: Arial; font-size: 9pt; padding-top: 7px;padding-bottom: 5px;float: left;">{#reportName}</div>
+            <div class="icon {#iconType}"></div>
+        </div>
+        <!--
+        <table style="width: 348px; height: 29px;" class="GridWhiteCellBg" cellpadding="0" cellspacing="0">
+        <tr>
+        <td><div style="width: 22px; height: 21px; background-image: url(./images/YellowPlusButton.png); background-repeat: no-repeat; margin-top: 4px; margin-left: 4px; cursor: pointer; float: left;"></div></td>
+        <td><div style="width: 280px; word-wrap:break-word; color: #272727; margin-left: 5px; margin-top: 1px; font-family: Arial; font-size: 9pt; line-height: 29px;float: left;">{#reportName}</div></td>
+        <td><div style="width: 16px; height: 16px; background-image: url(./images/PdfIcon2.png); background-repeat: no-repeat; margin-top: 6px; margin-right: 7px; float: right;"></div></td>
+        </tr>
+        </table>            
+        -->
+    </td>
+    <td valign="top" style="border-bottom: 1px solid #f2f2f2;border-right: 1px solid #f2f2f2;">
+        <div style="width: 299px; height: 29px;" class="GridWhiteCellBg">
+            <span style="color: #272727; margin-left: 6px; margin-top: 1px; font-family: Arial; font-size: 9pt; line-height: 31px;">{#reportType}</span>
+            <div style="width: 22px; height: 21px; background-image: url(./images/GrayPuzzleIcon.png); background-repeat: no-repeat; margin-top: 4px; margin-right: 2px; float: right;{#showCustomIcon}"></div>
+        </div>
+    </td>
+    <td valign="top" style="border-bottom: 1px solid #f2f2f2;border-right: 1px solid #f2f2f2;">
+        <div style="width: 112px; height: 29px;" class="GridWhiteCellBg">
+            <span style="color: #272727; margin-left: 6px; margin-top: 1px; font-family: Arial; font-size: 9pt; line-height: 31px;">{#dateCreated}</span>
+        </div>
+    </td>
+    <td valign="top" style="border-bottom: 1px solid #f2f2f2;border-right: 1px solid #f2f2f2;">
+        <div style="width: 112px; height: 29px;" class="GridWhiteCellBg">
+            <span style="color: #272727; margin-left: 6px; margin-top: 1px; font-family: Arial; font-size: 9pt; line-height: 31px;">{#dateModified}</span>
+        </div>
+    </td>
+    <td valign="top" style="border-bottom: 1px solid #f2f2f2;border-right: 1px solid #f2f2f2;">
+        <div style="width: 105px; height: 29px;" class="GridWhiteCellBg">
+            <div id="{#runReportButton}" reportId="{#reportId}" userReportID="{#userReportID}" style="margin-left: 4px; background-image: url(./images/YellowPlayButton.png);" class="YellowBttns"></div>
+            <div id="{#editReportButton}" reportId="{#reportId}" userReportID="{#userReportID}" style="margin-left: 3px; background-image: url(./images/YellowPencilButton.png);" class="YellowBttns"></div>
+            <div id="{#deleteReportButton}" reportId="{#reportId}" userReportID="{#userReportID}" style="margin-left: 3px; background-image: url(./images/YellowXButton.png);" class="YellowBttns"></div>
+            <div id="{#addScheduleReportButton}" reportId="{#reportId}" userReportID="{#userReportID}" style="margin-left: 3px; background-image: url(./images/YellowAddTimeButton.png);" class="YellowBttns"></div>
+        </div>
+    </td>
+</tr>
+
+
+<tr templateId="RootScheduleTemplate" style="display:none;background-color: #d7d7d7;" id="{#rootScheduleRowsPlaceHolder}">
+<td colspan="5">
+    <table cellpadding="0" cellspacing="0" style="background-image: url(./images/GrayGridBg.png); background-repeat: no-repeat;">
+        <tr>
+            <td id="{#scheduleRowsPlaceHolder}"></td>
+        </tr>
+    </table>
+</td>
+</tr>
+
+<table templateId="HeaderScheduleTemplate" cellpadding="0" cellspacing="0" style="margin: 5px; border: 1px solid #b1b1b1; background-color: #ffffff;">
+    <tr style="line-height: 21px;">
+        <td>
+            <div style="width: 559px; height: 22px; margin-top: 1px; margin-left: 1px; background-image: url(./images/BlackGridBg2.png); background-repeat: repeat-x;cursor: pointer;"  sortColumn="desc" namecolumn="RecurrenceDescription" sortColumnSchedules="{#idTable}">
+                <span style="color: white; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">Recurrence</span>
+                <div style=" float:right;margin-left: 540px;margin-top: -13px;position: absolute;"> 
+                    <img id="{#idRecurrenceDescription}" sortColumn="desc" namecolumn="RecurrenceDescription" sortColumnSchedules="{#idTable}" src="./images/sort_desc.png"/> 
+                </div>
+            </div>
+        </td>
+        <td>
+            <div style="width: 110px; height: 22px; margin-top: 1px; margin-left: 1px; background-image: url(./images/BlackGridBg2.png); background-repeat: repeat-x;cursor: pointer;"  sortColumn="desc" namecolumn="ScheduleStart" sortColumnSchedules="{#idTable}">
+                <span style="color: white; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">Schedule Start</span>
+                <div style=" float:right;margin-left: 96px;margin-top: -13px;position: absolute;"> 
+                    <img id="{#idScheduleStart}" sortColumn="desc" namecolumn="ScheduleStart" sortColumnSchedules="{#idTable}" src="./images/sort_desc.png"/> 
+                </div>
+            </div>
+        </td>
+        <td>
+            <div style="width: 85px; height: 22px; margin-top: 1px; margin-left: 1px; background-image: url(./images/BlackGridBg2.png); background-repeat: repeat-x;cursor: pointer;"  sortColumn="desc" namecolumn="Time" sortColumnSchedules="{#idTable}">
+                <span style="color: white; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">Run Time</span>
+                <div style=" float:right;margin-left: 70px;margin-top: -13px;position: absolute;"> 
+                    <img id="{#idTime}" sortColumn="desc" namecolumn="Time" sortColumnSchedules="{#idTable}" src="./images/sort_desc.png" /> 
+                </div>
+            </div>
+        </td>
+        <td>
+            <div style="width: 106px; height: 22px; margin-top: 1px; margin-left: 1px; background-image: url(./images/BlackGridBg2.png); background-repeat: repeat-x;cursor: pointer;"  sortColumn="desc" namecolumn="ScheduleStop" sortColumnSchedules="{#idTable}">
+                <span style="color: white; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">Schedule Stop</span>
+                <div style=" float:right;margin-left: 92px;margin-top: -13px;position: absolute;"> 
+                    <img id="{#idScheduleStop}" sortColumn="desc" namecolumn="ScheduleStop" sortColumnSchedules="{#idTable}" src="./images/sort_desc.png"/> 
+                </div>
+            </div>
+        </td>
+        <td>
+            <div style="width: 104px; height: 22px; margin-top: 1px; margin-left: 1px; margin-right: 1px; background-image: url(./images/BlackGridBg2.png); background-repeat: repeat-x;"></div>
+        </td>
+    </tr>
+    {#rows}                
+ </table>
+
+<tr templateId="ScheduleItemTemplate" style="line-height: 20px;">
+    <td>
+        <div style="width: 559px; height: 20px; margin-left: 1px; margin-right: -1px; border-right: 1px solid #f2f2f2; border-top: 1px solid #f2f2f2;">
+            <span style="color: #101010; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">{#RecurrenceDescription}</span>
+        </div>
+    </td>
+    <td>
+        <div style="width: 110px; height: 20px; margin-left: 1px; margin-right: -1px; border-right: 1px solid #f2f2f2; border-top: 1px solid #f2f2f2;">
+            <span style="color: #101010; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">{#ScheduleStart}</span>
+        </div>
+    </td>
+    <td>
+        <div style="width: 85px; height: 20px; margin-left: 1px; margin-right: -1px; border-right: 1px solid #f2f2f2; border-top: 1px solid #f2f2f2;">
+            <span style="color: #101010; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">{#Time}</span>
+        </div>
+    </td>
+    <td>
+        <div style="width: 106px; height: 20px; margin-left: 1px; margin-right: -1px; border-right: 1px solid #f2f2f2; border-top: 1px solid #f2f2f2;">
+            <span style="color: #101010; font-family: Arial; font-weight: bold; font-size: 8.25pt; margin-left: 10px;">{#ScheduleStop}</span>
+        </div>
+    </td>
+    <td>
+        <div style="width: 104px; height: 20px; margin-left: 1px; margin-right: 1px; border-top: 1px solid #f2f2f2;">
+            <div scheduleId="{#ScheduleID}" id="{#deleteScheduleButton}" style="width: 8px; height: 7px; background-image: url(./images/GrayXIcon.png); background-repeat: no-repeat; cursor: pointer;margin-right: 5px; ;margin-top: 7px; float: right"></div>
+            <div scheduleId="{#ScheduleID}" id="{#editScheduleButton}" style="width: 13px; height: 13px; background-image: url(./images/GrayPencilIcon.png); background-repeat: no-repeat; cursor: pointer; margin-right: 7px;margin-top: 4px; float: right"></div>
+        </div>
+    </td>
+</tr>
+
+
+<div templateId="ReportTypesRoot">
+    <table id="reportTypesList" cellpadding="0" cellspacing="0" style="margin: 10px;">
+    
+    </table>
+	
+</div>
+
+<div templateId="ReportsFieldsRoot"  id="{#reportContainerPlace}" hideFields="hideFields" style="position: absolute;top:128px;">
+    <div id="leftReportContainerPlace" style="float: left;margin-left: 4px;"></div>
+    <div id="rightReportContainerPlace" style="float: left;"></div>
+	
+</div>
+
+<tr templateId="ReportTypeItem" class="{#class_report}" >
+    <td>
+        <table  cellpadding="0" cellspacing="0" class="{#class_active}">
+            <tr>
+                <td  class="{#class_name_report}" id="{#id}">
+	                <table cellpadding="0" cellspacing="0">
+		                <tr>
+			                <td class="top_left_active_bg_report"></td>
+			                <td class="top_center_active_bg_report"></td>
+			                <td class="top_right_active_bg_report"></td>
+		                </tr>
+		                <tr>
+			                <td class="center_left_active_bg_report"></td>
+			                <td class="center_center_active_report">
+				                <div class="content_name_report">
+					                <div class="icon_folder">
+					                    <div class="number_of_reports">
+							                <span class="black_span_number_of_reports" id="{#blackCountId}"></span>
+							                <span class="span_number_of_reports" id="{#whiteCountId}"></span>
+						                </div>
+					                </div>
+					                <div class="text_name_report">
+						                <div class="main_text_name_report">{#reportTypeName}</div>
+						                <div class="supporting_text_name_report">{#reportTypeDescription}</div>
+					                </div>										
+				                </div>
+			                </td>
+			                <td class="center_right_active_bg_report"></td>
+		                </tr>
+		                <tr>
+			                <td class="bottom_left_active_bg_report"></td>
+			                <td class="bottom_center_active_bg_report"></td>
+			                <td class="bottom_right_active_bg_report"></td>
+		                </tr>
+	                </table>
+                </td>
+                <td class="interval"><div></div></td>
+                <td class="center_left_fields"><div></div></td>
+                <td class="center_center_fields"><div id="{#placeForContainerFields}"></div></td>
+                <td class="center_right_fields"><div></div></td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+
+
+<div templateId="ReportNameItem" class="name_field" id ="{#itemId}" reportId="{#reportId}">
+	<table cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="top_left_active_bg_report"></td>
+			<td class="top_center_active_bg_report"></td>
+			<td class="top_right_active_bg_report"></td>
+													
+		</tr>
+		<tr>
+			<td class="center_left_active_bg_report"></td>
+			<td class="center_center_active_field">
+				<div class="content_name_field">
+					<div class="icon_folder_field"></div>
+					<div class="text_name_field">
+						<div class="main_text_name_field">{#reportName}</div>
+						<div class="supporting_text_name_field">{#reportDescription}</div>
+					</div>										
+				</div>
+			</td>
+			<td class="center_right_active_bg_report"></td>
+													
+		</tr>
+		<tr>
+			<td class="bottom_left_active_bg_report"></td>
+			<td class="bottom_center_active_bg_report"></td>
+			<td class="bottom_right_active_bg_report"></td>
+													
+		</tr>
+												
+	</table>
+</div>
+

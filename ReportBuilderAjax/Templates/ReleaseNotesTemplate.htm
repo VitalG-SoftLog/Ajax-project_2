@@ -1,0 +1,48 @@
+﻿<div templateId="RootTemplate" style="margin-left:26px; margin-top:16px;">
+    <div style="color:#0061b3;font-size:18px;font-family:Arial;margin-left:17px;margin-bottom:8px;">Release Notes</div>
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="3" style="background-image:url(./images/rn_top_border.png);background-repeat:no-repeat;width:929px;height:12px;"></td>    
+    </tr>
+    <tr>
+        <td style="background-image:url(./images/rn_border.png);background-repeat:repeat-y;width: 4px;height:20px;"></td>
+        <td>    
+        <div style="padding:5px;">
+            <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+            <td style="width:104px;border-bottom:1px solid #eeeeee;">
+                <div style="font-size:12px;font-family:Arial;font-weight:bold;margin-left:9px;margin-bottom:11px;">Report Link</div>        
+            </td>
+            <td style="width:373px;border-bottom:1px solid #eeeeee;">
+                <div style="font-size:12px;font-family:Arial;font-weight:bold;margin-left:9px;margin-bottom:11px;">Release</div>
+            </td>
+            <td style="width:149px;border-bottom:1px solid #eeeeee;">
+                <div style="font-size:12px;font-family:Arial;font-weight:bold;margin-left:9px;margin-bottom:11px;">Date</div>        
+            </td>
+            <td style="width:261;border-bottom:1px solid #eeeeee;">
+                <div style="font-size:12px;font-family:Arial;font-weight:bold;margin-left:9px;margin-bottom:11px;">Release Summary</div>        
+            </td>
+            <td style="border-bottom:1px solid #eeeeee;"></td>
+            </tr>
+            {#rowsPlaceHolder}
+            </table>
+        </div>
+        </td>
+        <td style="background-image:url(./images/rn_border.png);background-repeat:repeat-y;width: 4px;height:20px;"></td>
+    </tr>
+    <tr>
+        <td colspan="3" style="background-image:url(./images/rn_bottom_border.png);background-repeat:no-repeat;width:929px;height:12px;"></td>    
+    </tr>
+    </table>
+</div>
+
+<tr templateId="RowTemplate" class="{#rowClass}">
+    <td style="height:24px;padding-left:10px;color:" valign="middle">
+        <span id="{#openDocumentLinkId}" releaseNoteID="{#releaseNoteID}" onclick="window.open('{#herf}');" style="cursor: pointer;">Open Document</span>
+    </td>
+    <td style="padding-left:7px;"  valign="middle">{#release}</td>
+    <td style="padding-left:7px;"  valign="middle">{#date}</td>
+    <td class="right" style="padding-left:7px;border-right: none;"  valign="middle">{#reliaseSummary}</td>
+    <td class="right" align="right" valign="middle" style="padding-right:2px;padding-left:7px;"><div style="background-image:url(./images/rn_attention_img.png);background-repeat:no-repeat;width:18px;height:18px;{#showUnRead}"></div></td>
+</tr>
+

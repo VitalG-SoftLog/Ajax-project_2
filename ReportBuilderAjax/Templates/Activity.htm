@@ -1,0 +1,32 @@
+﻿<div templateId="ActivityItem" style="width: 100%;padding-left: 6px; padding-right: 2px; padding-top: 6px; padding-bottom: 7px; float: left;" class="activityItem" index="{#index}">
+    <div style="height: 1px; width: 344px; background-color: #e0e0e0; margin-left: -6px; position: relative; top: 52px;"></div>
+    <div style="float: left;">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2">
+                    <div id="{#clearActivity}"></div>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 2px">
+                    <div id="{#addActivity}" style="width: 24px;"></div>
+                </td>
+                <td style="padding-top: 2px;">
+                    <div id="{#removeActivity}"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="activity_label">
+        <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold; color: #525252">Activity:</span>
+    </div>
+    <div id="{#activitiesComboBox}" class="activity_combobox"></div>
+    <div id="{#operandComboBox}" class="activity_operandcombobox"></div>
+    <div class="activity_inputcontainer">
+        <div class="activityInput">
+            <div class="left"></div>
+            <div class="center" style="width: 32px;"><input id="{#activityInput}" class="input"/></div>
+            <div class="right"></div>
+        </div>
+    </div>
+</div>

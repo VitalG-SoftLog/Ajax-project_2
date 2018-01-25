@@ -1,0 +1,87 @@
+﻿<div templateId="Item" index="{#index}" class="hierarchyItem" >
+    
+    <table width="100%" class="hierarchyItem_table">
+        <tr>
+            <td style="width: 30px;" rowspan="3" valign="top">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div style="display: none; margin-left: 5px; margin-top: 9px;" id="{#clearHierarchy}" class="clearHierarhy"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 2px;">
+                            <div id="{#addHierarchyItem}"  style="display: none; margin-left: 5px;" class="addHierarchy"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-top: 2px;">
+                            <div id="{#removeHierarchyItem}" style="margin-left: 5px;" class="removeHierarchy"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 78px;text-align: right;">
+                <div class="hierarchyLabel_container">
+                    <span class="hierarchyLabel" style="word-wrap: break-word; line-height: 12px;">{#memberLabel}</span>
+                </div>
+            </td>
+            <td>
+                <div id="{#menbersDropDownContainer}" class="hierarchyDropDownContainer" style="margin-top: 4px;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">
+                <div style="margin-top: -2px">
+                    <span class="hierarchyLabel">{#locationLabel}</span>
+                </div>
+            </td>
+            <td>
+                <div id="{#locationDropDownContainer}" class="hierarchyDropDownContainer"></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">
+                <div style="margin-top: -2px">
+                    <span id="{#groupCode1LabelId}" class="groupCodeLabel" style="display: none;">{#groupCode1Label}</span>
+                </div>
+            </td>
+            <td>
+                <div id="{#groupCode1DropDownContainer}" class="groupCodeContainer" style="display: none;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30px;"></td>
+            <td style="text-align: right;">
+                <div style="margin-top: -2px">
+                    <span id="{#groupCode2LabelId}" class="groupCodeLabel" style="display: none;">{#groupCode2Label}</span>
+                </div>
+            </td>
+            <td>
+                <div id="{#groupCode2DropDownContainer}" class="groupCodeContainer" style="display: none;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 30px;"></td>
+            <td style="text-align: right;">
+                <div style="margin-top: -2px">
+                    <span id="{#groupCode3LabelId}" class="groupCodeLabel" style="display: none;">{#groupCode3Label}</span>
+                </div>
+            </td>
+            <td>
+                <div id="{#groupCode3DropDownContainer}" class="groupCodeContainer" style="display: none;"></div>
+            </td>
+        </tr>
+         <tr style="padding-bottom: 3px;">
+             <td style="width: 30px;"></td>
+             <td style="text-align: right;">
+                <div style="margin-top: -2px">
+                     <span id="{#groupCode4LabelId}" class="groupCodeLabel" style="display: none;">{#groupCode4Label}</span>
+                </div>
+             </td>
+             <td>
+                <div id="{#groupCode4DropDownContainer}" class="groupCodeContainer" style="display: none;"></div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+﻿<div templateId="Main">
+    <table class="viewReport" cellpadding="0" cellspacing="0" width="100%">
+        <tr class="headerBg">
+            <td style="vertical-align: top;">
+                <table cellpadding="0" cellspacing="0" style="margin:7px;" >
+                    <tr>
+                        <td><div class="refresh" id="{#refreshBtn}"></div></td>
+                        <td style="width:15px;"></td>
+                        <td><div class="spacer"></div></td>
+                        <td style="width:15px;"></td>
+                        <td style="width:87px;"><div class="exportPDF" id="{#exportPDFBtn}"></div></td>
+                        <td style="width:5px;"></td>
+                        <td style="width:87px;"><div class="exportXLS" id="{#exportXLSBtn}"></div></td>
+                        
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><iframe id="{#content}" width="100%" frameborder="0" height="600px"></iframe></td>
+        </tr>
+        <tr><td>
+                <div id="viewReportGridContainer">
+                    <table id="viewGrid" width="100%" style="max-height: 600px;margin-bottom: -5px;"></table>
+                </div>
+                
+            </td></tr>
+    </table>    
+</div>

@@ -1,0 +1,1120 @@
+﻿<div templateId="AddSchedulePopUp" id="{#AddSchedulePopUpContainer}" class="shedule">
+    <table cellpadding="0" cellspacing="0" style="width:902px;">
+        <tr>
+            <td>
+                <div style="width:922px; height:4px;">
+                    <table cellpadding="0" cellspacing="0" style="width:100%;">
+                        <tr>
+                            <td class="leftTopBorder"></td>
+                            <td class="centerTopBorder"></td>
+                            <td class="rightTopBorder"></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr style="height: 48px; background-color:#eaeaea;">
+            <td>
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div style="background-image: url(./images/as_clock.png); width:21px; height:21px;margin-left: 15px;"></div>
+                        </td>
+                        <td>
+                            <div style="padding-left: 7px;">
+                                <span style="font-family: Arial; font-weight:bold; font-size:18px; color:#bc5e01;">Add Schedule</span>
+                            </div>
+                        </td>                        
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:white;">
+                <table cellpadding="0" cellspacing="0" style="width:100%;">
+                    <tr>
+                        <td>
+                            <div style="height: 215px; width:590px; margin-left:15px; margin-top:15px;">
+                                <div style="height: 165px;border:1px solid #b7b7b7;">
+                                    <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                        <tr>
+                                            <td>
+                                                <div style="width: 158px; height: 22px; background-image: url(./images/as_grid_header.png); background-repeat: repeat-x; margin-top: 1px; margin-left: 1px;">
+                                                    <div style="padding-top: 4px;">
+                                                        <span style="color: white; padding-left: 6px; font-family: Arial; font-weight: bold; font-size: 8.25pt;">Recipient Name</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="width: 234px; height: 22px; background-image: url(./images/as_grid_header.png); background-repeat: repeat-x; margin-top: 1px; margin-left: 1px;">
+                                                    <div style="padding-top: 4px;">
+                                                        <span style="color: white; padding-left: 6px; font-family: Arial; font-weight: bold; font-size: 8.25pt;">Email</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="width: 151px; height: 22px; background-image: url(./images/as_grid_header.png); background-repeat: repeat-x; margin-top: 1px; margin-left: 1px;">
+                                                    <div style="padding-top: 4px;">
+                                                        <span style="color: white; padding-left: 6px; font-family: Arial; font-weight: bold; font-size: 8.25pt;">Delivery Method</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="width: 41px; height: 22px; background-image: url(./images/as_grid_header.png); background-repeat: repeat-x; margin-top: 1px; margin-left: 1px;">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div style="width: 590px; height: 145px; overflow-y: scroll; overflow-x: hidden;">
+                                        <table cellpadding="0" cellspacing="0" style="width: 579px; margin-left: 1px; background-color: #f2f2f2;">
+                                            <tr>
+                                                <td style="padding-bottom: 1px">
+                                                    <div style="width: 158px; height: 23px; background-color: white;">
+                                                        <div style="padding-left: 6px; padding-top: 4px;">
+                                                            <span style="color: black; font-family: Arial; font-size: 8.25pt;">Alison Martinez</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="padding-bottom: 1px">
+                                                    <div style="width: 234px; height: 23px; background-color: white; margin-left: 1px;">
+                                                        <div style="padding-left: 6px; padding-top: 4px;">
+                                                            <span style="color: black;font-family: Arial; font-size: 8.25pt;">test-amartinez@ccmsi.com.example.com</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td style="padding-bottom: 1px">
+                                                    <div style="width: 151px; height: 23px; background-color: white; margin-left: 1px;">
+                                                        <div id="{#idDeliveryMethodRadio}"></div>
+                                                    </div>
+                                                </td>
+                                                <td style="padding-bottom: 1px">
+                                                    <div style="width: 41px; height: 23px; background-color: white; margin-left: 1px;">
+                                                        <div style="width: 8px; height: 7px; margin-left: 7px; margin-top: 8px; background-image: url(./images/GrayXIcon.png); cursor: pointer; float: left;"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>                                            
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="height: 41px;border-right: 1px solid #b7b7b7;border-left: 1px solid #b7b7b7; background-color:#f8f8f8">
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr style="height: 42px;">
+                                            <td>
+                                                <div id="addRecipientsSchedule" style="background-image: url(./images/as_grid_button_Add_Recipients.png); width:109px; height:25px;margin-left: 6px;"></div>
+                                                <div id="recipientsSchedulePopIn"></div>
+                                            </td>
+                                            <td>
+                                                <div style="margin-left: 12px;margin-top: 4px;">
+                                                    <div>
+                                                        <span style="font-family: Arial; font-size:8.25pt; color: #070707; ">For email recipients not in the system type their addresses here (separated by semicolons):</span>
+                                                    </div>
+                                                </div>
+                                                <div style="background-image: url(./images/as_grid_input.png); width:448px; height:21px;margin-left: 12px;margin-top: 1px;">
+                                                    <input type="text" style="width: 438px;height: 14px;border: 0px;background-color: transparent;margin-left: 5px;
+                                                        margin-top: 3px;font-family: Arial; font-size: 8.25pt; color: #292929" />
+                                                </div>
+                                            </td>  
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div >
+                                    <table cellpadding="0" cellspacing="0" style="width:590px;">
+                                        <tr>
+                                            <td class="leftAsBottom" style="width:6px;"></td>
+                                            <td class="centerAsBottom" style="width:578px;"></td>
+                                            <td class="rightAsBottom" style="width:6px;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 17px;margin-top: 16px;">
+                                            <div style="padding-bottom: 3px;" align="left">
+                                                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold; color: #525252;">Subject:</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 12px;">
+                                            <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png); float:left;"></div>
+                                            <div style="width: 267px; height:21px; background-image: url(./images/as_grid_input_center.png); float: left;"><input type="text" style="border: none; width: 266px; height: 15px; margin-top: 3px; font-family: Arial; font-size: 8.25pt; color: #292929" value="Subject Here"/></div>
+                                            <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png); float: left;"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 17px;padding-top: 8px;">
+                                            <div  align="left">
+                                                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold; color: #525252;">Priority:</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="height: 21px;"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 17px;margin-top: 8px; padding-bottom: 3px;" align="left">
+                                            <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;color: #525252;">Comment:</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="margin-left: 12px;">
+                                            <div style="width: 6px; height:106px; background-image: url(./images/as_grid_comment_input_left.png); float: left;"></div>
+                                            <div style="width: 267px; height:106px; background-image: url(./images/as_grid_comment_input_center.png);float: left;">
+                                                <textarea style="width: 262px; height: 94px; border: none; resize: none; margin-top: 4px; font-size: 8.25pt; font-family: Arial; color: #292929;">Comment Here</textarea>
+                                            </div>
+                                            <div style="width: 6px; height:106px; background-image: url(./images/as_grid_comment_input_right.png);float: left;"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="height: 32px;margin-top: 10px;"></div>
+                            <table cellpadding="0" cellspacing="0" style="width:583px;margin-left: 15px;margin-bottom: 11px;">
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <table cellpadding="0" cellspacing="0" style="width:579px;">
+                                                <tr>
+                                                    <td>
+                                                        <div id="OnceShedulerTab" sheduleTab="1" reportSheduleTabs="1">
+                                                            <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                                                <tr>
+                                                                    <td class="leftTabActive" corner="1"></td>
+                                                                    <td class="centerTabActive" corner="2">Once</td>
+                                                                    <td class="rightTabActive" corner="3"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:3px;border-bottom:solid 1px #b7b7b7">
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <div id="DalyShedulerTabs" sheduleTab="2" reportSheduleTabs="1">
+                                                            <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                                                <tr>
+                                                                    <td class="leftTabInActive" corner="1"></td>
+                                                                    <td class="centerTabInActive" corner="2">Daily</td>
+                                                                    <td class="rightTabInActive" corner="3"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:3px;border-bottom:solid 1px #b7b7b7">
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <div id="WeeklyShedulerTabs" sheduleTab="3" reportSheduleTabs="1">
+                                                            <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                                                <tr>
+                                                                    <td class="leftTabInActive" corner="1"></td>
+                                                                    <td class="centerTabInActive" corner="2">Weekly</td>
+                                                                    <td class="rightTabInActive" corner="3"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:3px;border-bottom:solid 1px #b7b7b7">
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <div id="MonthlyShedulerTabs" sheduleTab="4" reportSheduleTabs="1">
+                                                            <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                                                <tr>
+                                                                    <td class="leftTabInActive" corner="1"></td>
+                                                                    <td class="centerTabInActive" corner="2">Monthly</td>
+                                                                    <td class="rightTabInActive" corner="3"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:3px;border-bottom:solid 1px #b7b7b7">
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <div id="QuarterlyShedulerTabs" sheduleTab="5" reportSheduleTabs="1">
+                                                            <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                                                <tr>
+                                                                    <td class="leftTabInActive" corner="1"></td>
+                                                                    <td class="centerTabInActive" corner="2">Quartery</td>
+                                                                    <td class="rightTabInActive" corner="3"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:3px;border-bottom:solid 1px #b7b7b7">
+                                                        
+                                                    </td>
+                                                    <td>
+                                                        <div id="YearlyShedulerTabs" sheduleTab="6" reportSheduleTabs="1">
+                                                            <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                                                <tr>
+                                                                    <td class="leftTabInActive" corner="1"></td>
+                                                                    <td class="centerTabInActive" corner="2">Yearly</td>
+                                                                    <td class="rightTabInActive" corner="3"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:110px;border-bottom:solid 1px #b7b7b7">
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>    
+                                </tr>
+                                <tr>
+                                    <td class="headerTab"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;background: #f5f5f5;" id="onceTabShedule"></div>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;background: #f5f5f5;" id="dailyTabShedule"></div>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;background: #f5f5f5;" id="weeklyTabSchedule"></div>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;background: #f5f5f5;" id="monthlyTabSchedule"></div>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;background: #f5f5f5;" id="quarterlyTabSchedule"></div>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;background: #f5f5f5;" id="yearlyTabSchedule"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><div style="height:5px; background-image: url(./images/as_grid3_bottom.png);background-repeat: no-repeat;"></div></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <div>
+                                <div style="margin-left: 12px;margin-top: 53px;" id="WithoutDataCheckBox"></div>
+                                <div style="float:right;margin-left: 31px;margin-top: -15px;position: absolute;">
+                                    <span style="font-family: Arial; font-weight: bold; font-size: 8.25pt; color: #303030;">Do Not Send Report Without Data</span>
+                                </div>
+                            </div>
+                            <table cellpadding="0" cellspacing="0" style="width: 291px;margin-bottom: 11px;">
+                                <tr>
+                                    <td><div style="height:6px; background-image: url(./images/as_grid4_top.png);margin-left: 12px;margin-top: 6px;"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="height:141px; border-right: 1px solid #b7b7b7; border-left: 1px solid #b7b7b7;margin-left: 12px;">
+                                            <table cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; height: 141px; width: 277px;">
+                                                <tr>
+                                                    <td style="height: 23px; padding-top: 2px;">
+                                                        <div style="float: left; margin-left: 11px; margin-top: 4px;">
+                                                            <span style="font-family: Arial; font-weight: bold; font-size: 8.25pt; color: #303030">Schedule Start:</span>
+                                                        </div>
+                                                        <div style="float: left;">
+                                                            <div id="ScheduleStartCalendar" style="padding-left: 39px;"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 23px; padding-top: 2px;">
+                                                        <div style="float: left; margin-left: 10px; margin-top: 3px;" id="ScheduleStopCheckBox"></div>
+                                                        <div style="float: left; margin-left: 4px; margin-top: 4px;">
+                                                            <span style="font-family: Arial; font-weight: bold; font-size: 8.25pt; color: #303030">Schedule Stop:</span>
+                                                        </div>
+                                                        <div style="float: left;">
+                                                            <div id="ScheduleStopCalendar" style="padding-left: 24px;"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 23px; padding-top: 2px;">
+                                                        <div style="float: left; margin-left: 11px; margin-top: 5px;">
+                                                            <span style="font-family: Arial; font-weight: bold; font-size: 8.25pt; color: #303030">Run Time:</span>
+                                                        </div>
+                                                        <div style="float: left;">
+                                                            <div id="ScheduleTimeCalendar" style="padding-left: 67px;"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div style="float: left; margin-left: 8px; margin-top: -21px;">
+                                                            <span style="font-family: Arial; font-size: 7.5pt; color: #303030">* Time is expressed in Central Time (US &amp; Canada)</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><div style="height:6px; background-image: url(./images/as_grid4_bottom.png);margin-left: 12px;"></div></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>   
+                </table>
+            </td>
+        </tr>
+        <tr  style="height: 48px; background-color:#eaeaea;">
+            <td>
+                <div style="background-image: url(./images/as_main_button_ok.png); width:68px; height:25px;margin-left:381px; cursor: pointer;" id="SaveScheduleBttn"></div>
+                <div style="background-image: url(./images/as_main_button_Cancel.png); width:68px; height:25px; position:absolute; margin-left: 453px;margin-top: -25px; cursor: pointer;" id="SheduleCancelBttn"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width:922px; height:4px;">
+                    <table cellpadding="0" cellspacing="0" style="width:100%;">
+                        <tr>
+                            <td class="leftBottomBorder"></td>
+                            <td class="centerBottomBorder"></td>
+                            <td class="rightBottomBorder"></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div templateId="DeliveryMethodRadio">
+    <div style="width: 17px; height: 17px; margin-left: 3px; float: left; margin-top: 3px;" class="DeliveryMethodRadioInactive" DeliveryMethodRadio="" Value="1"></div>
+    <div style="padding-left: 5px; padding-top: 4px;float: left;">
+        <span style="color: black; font-family: Arial; font-size: 8.25pt;">Email</span>
+    </div>
+    <div style="width: 17px; height: 17px; margin-left: 10px; float: left; margin-top: 3px;" class="DeliveryMethodRadioInactive" DeliveryMethodRadio="" Value="2"></div>
+    <div style="padding-left: 5px; padding-top: 4px;float: left;">
+        <span style="color: black; float: left; font-family: Arial; font-size: 8.25pt;">Delivery Tab</span>
+    </div> 
+</div>
+
+<div templateId="OnceSheduleTemplate" style="vertical-align: middle;text-align: middle;">
+    <table style="height:140px;width:100%;">
+        <tr>
+            <td class="onceText" valign="middle" align="center">
+                Report runs only once
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div  templateId="DailyScheduleTemplate">
+    <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="dailyOneDayOfWeekRadio" style="width: 12px;height: 12px;" isRadio="" Value="1"></div>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <div style="" >
+                                <span style="font-family: Arial; font-size: 11px; color: #292929;">One day of week:</span>
+                            </div>
+                        </td>
+                        <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                            <div id="dailyOneDayOfWeekRadioControl" style="margin-left: 10px;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailySunCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Sun</td>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailyMonCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Mon</td>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailyTueCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Tue</td>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailyWedCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Wed</td>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailyThuCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Thu</td>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailyFriCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Fri</td>
+                                        <td>
+                                            <div class="checkboxUnchecked" id="dailySutCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                        </td>
+                                        <td>Sat</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>                
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 27px;padding-left:15px;">
+                <div class="radioInactive" id="dailyEveryWeekRadio" style="width: 12px;height: 12px;" isRadio="" Value="2"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">Every week day (Mon-Fri)</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 26px;padding-left:15px;">
+                <div class="radioInactive" id="dailyRepeaterAfterRadio" style="width: 12px;height: 12px;" isRadio="" Value="3"></div>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td><div style="">
+                                <span style="font-family: Arial; font-size: 11px; color: #292929;">Repeater after</span>
+                            </div></td>
+                        <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                            <div style="margin-left: 2px;" id="dailyRepeaterAfterControl">
+                                <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png); float:left;"></div>
+                                <div style="width: 27px; height:21px; background-image: url(./images/as_grid_input_center.png); float: left;">
+                                    <input type="text" style="border: none; width: 26px; height: 15px; margin-top: 3px; font-family: Arial;
+                                        background-color: white; font-size: 8.25pt; color: #292929" id="repeatAfterDailyTextBox"/>
+                                </div>
+                                <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png); float: left;"></div>
+                            </div>
+                        </td>
+                        <td style="font-family: Arial; font-size: 11px; color: #292929;">days</td>
+                    </tr>
+                </table>                
+            </td>
+            <td>                
+            </td>            
+        </tr>
+        <tr>
+            <td colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+    </table> 
+</div>
+
+<div  templateId="WeeklyScheduleTemplate">
+    <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <div style="">
+                                <span style="font-family: Arial; font-size: 11px; color: #292929;">Repeat after this number of weeks:</span>
+                            </div>
+                        </td>
+                        <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                            <div style="margin-left: 2px;">
+                                <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png); float:left;"></div>
+                                <div style="width: 27px; height:21px; background-image: url(./images/as_grid_input_center.png); float: left;"><input type="text" style="border: none; width: 26px; height: 15px; margin-top: 3px; font-family: Arial; font-size: 8.25pt; color: #292929" id="repeatAfterWeeklyTextBox"/></div>
+                                <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png); float: left;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td  style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                <tr>
+                    <td>
+                        <div style="" >
+                            <span style="font-family: Arial; font-size: 11px; color: #292929;">One day of week:</span>
+                        </div>
+                    </td>
+                    <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                        <div style="margin-left: 10px;" id="weeklyOneDayOfWeekControl">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklySunCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Sun</td>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklyMonCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Mon</td>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklyTueCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Tue</td>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklyWedCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Wed</td>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklyThuCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Thu</td>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklyFriCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Fri</td>
+                                    <td>
+                                        <div class="checkboxUnchecked" id="weeklySutCheckBox" checkbox="1" style="width:13px;height:13px;margin-left: 5px;"></div>
+                                    </td>
+                                    <td>Sat</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+    </table>
+</div>
+
+<div  templateId="MonthlyScheduleTemplate">
+    <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="monthlyOneDayRadio" style="width: 12px;height: 12px;" isRadio="" Value="1"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Calendar Day:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div >
+                    <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png); float:left;"></div>
+                    <div style="width: 87px; height:21px; background-image: url(./images/as_grid_input_center.png); float: left;">
+                        <input type="text" style="border: none; width: 86px; height: 15px; margin-top: 3px; font-family: Arial; font-size: 8.25pt; 
+                            background-color: white; color: #292929" id="monthlyOneCalendarDayTextBox"/>
+                    </div>
+                    <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png); float: left;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="monthlyOneWeekRadio" style="width: 12px;height: 12px;" isRadio="" Value="2"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Week of Month:</span>
+                </div>
+            </td>
+            <td>
+                <div id="monthlyOneWeekDropDownControl"></div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Day of Week:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div id="monthlyOneDayOfWeekControl">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlySunCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Sun</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyMonCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Mon</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyTueCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Tue</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyWedCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Wed</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyThuCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Thu</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyFriCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Fri</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlySutCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 30px;">Sut</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="vertical-align: top;">
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;vertical-align: top;">Months:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div id="montlyMonthsControl">
+                    <table style="height: 70px;">
+                        <tr>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyJanCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 35px;">Jan</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyAprCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 35px;">Apr</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyJulCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 35px;">Jul</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyOctCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td style="width: 35px;">Oct</td>                       
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyFebCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td>Feb</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyMayCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td>May</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyAugCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td>Aug</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyNovCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>                            
+                            <td>Nov</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyMarCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td>Mar</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyJunCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td>Jun</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlySepCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>
+                            <td>Sep</td>
+                            <td>
+                                <div class="checkboxUnchecked" id="monthlyDecCheckBox" checkbox="1" style="width:13px;height:13px;"></div>
+                            </td>     
+                            <td>Dec</td>                       
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div  templateId="QuarterlyScheduleTemplate">
+    <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+            <td colspan="3">
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">This report will be run quarterly in Jan, Apr, Jul and Oct:</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="quarterlyOneDayRadio" style="width: 12px;height: 12px;" isRadio="" Value="1"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On calendar day(s):</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div style="margin-left: 2px;">
+                    <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png); float:left;"></div>
+                    <div style="width: 87px; height:21px; background-image: url(./images/as_grid_input_center.png); float: left;">
+                        <input  id="quarterlyOneDaysTextBox" type="text" style="border: none; width: 86px; height: 15px; margin-top: 3px; font-family: Arial; 
+                            font-size: 8.25pt; color: #292929;background-color: white;"/>
+                    </div>
+                    <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png); float: left;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="quarterlyOneWeekRadio" style="width: 12px;height: 12px;" isRadio="" Value="2"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Week of Month:</span>
+                </div>
+            </td>
+            <td>
+                <div id="quarterlyOneWeekDropDownControl"></div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Day of Week:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div id="quarterlyOneDayOfWeekControl">                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+    </table>
+</div>
+
+<div  templateId="YearlyScheduleTemplate">
+    <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="yearlyOneDayRadio" style="width: 12px;height: 12px;" isRadio="" Value="1"></div>
+            </td>
+            <td style="width: 102px;">
+                <div>
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On calendar day:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div>
+                    <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png); float:left;"></div>
+                    <div style="width: 120px; height:21px; background-image: url(./images/as_grid_input_center.png); float: left;">
+                        <input type="text" style="border: none; width: 118px; height: 14px; margin-top: 3px; font-family: Arial; 
+                            font-size: 8.25pt; color: #292929;background-color: white;" id="yearlyOneDayTextBox"/>
+                    </div>
+                    <div style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png); float: left;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td  colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 25px;padding-left:15px;">
+                <div class="radioInactive" id="yearlyOneWeekRadio" style="width: 12px;height: 12px;" isRadio="" Value="2"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Week of Month:</span>
+                </div>
+            </td>
+            <td>
+                <div id="yearlyOneWeekDropDownControl"></div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">On Day of Week:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div id="yearlyOneDayOfWeekControl">                    
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td  colspan="3" style="border-bottom: solid 1px #b7b7b7"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="vertical-align: top;">
+                <div style="">
+                    <span style="font-family: Arial; font-size: 11px; color: #292929;">Months:</span>
+                </div>
+            </td>
+            <td style="font-family: Arial; font-size: 11px; color: #292929;">
+                <div id="yearlyMonthsRadioControl"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<table templateId="multiRadioQuarterly">
+    <tr>
+        <td>
+            <div class="radioInactive" id="quarterlySunRadio" isRadio="" Value="1" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Sun</td>
+        <td>
+            <div class="radioInactive" id="quarterlyMonRadio" isRadio="" Value="2" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Mon</td>
+        <td>
+            <div class="radioInactive" id="quarterlyTueRadio" isRadio="" Value="3" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Tue</td>
+        <td>
+            <div class="radioInactive" id="quarterlyWedRadio" isRadio="" Value="4" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Wed</td>
+        <td>
+            <div class="radioInactive" id="quarterlyThuRadio" isRadio="" Value="5" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Thu</td>
+        <td>
+            <div class="radioInactive" id="quarterlyFriRadio" isRadio="" Value="6" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Fri</td>
+        <td>
+            <div class="radioInactive" id="quarterlySutRadio" isRadio="" Value="7" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Sat</td>
+    </tr>
+</table>
+<table templateId="multiRadioYearly">
+    <tr>
+        <td>
+            <div class="radioInactive" id="yearlySunRadio" isRadio="" Value="1" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Sun</td>
+        <td>
+            <div class="radioInactive" id="yearlyMonRadio" isRadio="" Value="2" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Mon</td>
+        <td>
+            <div class="radioInactive" id="yearlyTueRadio" isRadio="" Value="3" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Tue</td>
+        <td>
+            <div class="radioInactive" id="yearlyWedRadio" isRadio="" Value="4" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Wed</td>
+        <td>
+            <div class="radioInactive" id="yearlyThuRadio" isRadio="" Value="5" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Thu</td>
+        <td>
+            <div class="radioInactive" id="yearlyFriRadio" isRadio="" Value="6" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Fri</td>
+        <td>
+            <div class="radioInactive" id="yearlySutRadio" isRadio="" Value="7" style="width:12px;height:12px;margin-left: 5px;"></div>
+        </td>
+        <td>Sat</td>
+    </tr>
+</table>
+
+<table templateId="yearlyMultiRadioTemplate" style="height: 70px;">
+    <tr>
+        <td>
+            <div class="radioInactive" id="yearlyJanRadio" isRadio="" Value="1" style="width:12px;height:12px;"></div>
+        </td>
+        <td style="width:35px;margin-right: 5px;">Jan</td>
+        <td>
+            <div class="radioInactive" id="yearlyAprRadio" isRadio="" Value="4" style="width:12px;height:12px;"></div>
+        </td>
+        <td style="width:35px;margin-right: 5px;">Apr</td>
+        <td>
+            <div class="radioInactive" id="yearlyJulRadio" isRadio="" Value="7" style="width:12px;height:12px;"></div>
+        </td>
+        <td style="width:35px;margin-right: 5px;">Jul</td>
+        <td>
+            <div class="radioInactive" id="yearlyOctRadio" isRadio="" Value="10" style="width:12px;height:12px;"></div>
+        </td>
+        <td style="width:35px;margin-right: 5px;">Oct</td>                       
+    </tr>
+    <tr>
+        <td>
+            <div class="radioInactive" id="yearlyFebRadio" isRadio="" Value="2" style="width:12px;height:12px;"></div>
+        </td>
+        <td>Feb</td>
+        <td>
+            <div class="radioInactive" id="yearlyMayRadio" isRadio="" Value="5" style="width:12px;height:12px;"></div>
+        </td>
+        <td>May</td>
+        <td>
+            <div class="radioInactive" id="yearlyAugRadio" isRadio="" Value="8" style="width:12px;height:12px;"></div>
+        </td>
+        <td>Aug</td>
+        <td>
+            <div class="radioInactive" id="yearlyNovRadio" isRadio="" Value="11" style="width:12px;height:12px;"></div>
+        </td>                            
+        <td>Nov</td>
+    </tr>
+    <tr>
+        <td>
+            <div class="radioInactive" id="yearlyMarRadio" isRadio="" Value="3" style="width:12px;height:12px;"></div>
+        </td>
+        <td>Mar</td>
+        <td>
+            <div class="radioInactive" id="yearlyJunRadio" isRadio="" Value="6" style="width:12px;height:12px;"></div>
+        </td>
+        <td>Jun</td>
+        <td>
+            <div class="radioInactive" id="yearlySepRadio" isRadio="" Value="9" style="width:12px;height:12px;"></div>
+        </td>
+        <td>Sep</td>
+        <td>
+            <div class="radioInactive" id="yearlyDecRadio" isRadio="" Value="12" style="width:12px;height:12px;"></div>
+        </td>     
+        <td>Dec</td>                       
+    </tr>
+</table>
+
+<div templateId="scheduleFilterPopInTemplate" style="position:absolute;z-index:1000;height:250px;">
+    <table cellpadding="0" cellspacing="0" >
+        <tr>
+            <td class="left_top_shadow_corner"></td>
+            <td class="top_shadow_popup"></td>
+            <td class="right_top_shadow_corner"></td>
+        </tr>   
+        <tr>
+            <td class="left_shadow_popup"></td>
+            <td>
+                <table cellpadding="0" cellspacing="0" >
+                    <tr>
+                        <td>
+                            <table  cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="top_left_corner_popup"></td>
+                                    <td class="top_popup"></td>
+                                    <td class="top_right_corner_popup"></td>
+                                </tr>
+                                 <tr>
+                                    <td class="left_popup"></td>
+                                     <td style="height: 35px;background: #f5f5f5;">
+                                         <div >
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td class="filterText" >Filter:</td>
+                                                    <td>
+                                                        <table cellpadding="0" cellspacing="0">
+                                                            <tr>
+                                                                <td style="width: 6px; height:21px; background-image: url(./images/as_grid_input_left.png);background-repeat: no-repeat; "></td>
+                                                                <td align="left" style="width: 260px; height:21px; background-image: url(./images/as_grid_input_center.png);background-repeat: repeat-x;">
+                                                                    <input type="text" style="border: none;  height: 15px;font-family: Arial;font-size: 8.25pt; color: #292929" id="Text1"/>
+                                                                    <div style="float: right;">
+                                                                        <div class="left_blue_count"></div>
+                                                                        <div class="center_blue_count">
+                                                                           <div style="float:left;" class="filterMatches" id="filterScheduleMatchesDiv">XX</div> 
+                                                                        </div>
+                                                                        <div class="right_blue_count"></div>    
+                                                                    </div>
+                                                                    
+                                                                </td>
+                                                                <td  style="width: 6px; height:21px; background-image: url(./images/as_grid_input_right.png);background-repeat: no-repeat;"></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        <div class="button_add_delivery"></div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="button_auto_delivery"></div>
+                                                    </td>
+                                                </tr>
+                                            </table>    
+                                        </div>
+                                     </td>
+                                    <td class="right_popup"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="top_left_inner_popup"></td>
+                                    <td class="top_inner_popup"></td>
+                                    <td class="top_right_inner_popup"></td>                                        
+                                </tr>
+                                 <tr>
+                                    <td class="left_inner_popup"></td>
+                                     <td class="" style="background-color: white;">
+                                         <div id="ConteinerInnerPopup" style="height: 25px;width: 566px; " class="">
+                                             <div class="itemPopup">
+                                                <div  style="cursor:default;" class="drag_drop_item" valign="center">
+                                                    <div class="field_name" style="margin-top: 3px;" id="{#}">{#}</div>																
+                                                </div>    
+                                             </div>
+                                             
+                                         </div>
+                                     </td>
+                                    <td class="right_inner_popup"></td>                                        
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table  cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="left_popup"></td>
+                                     <td style="background: #f5f5f5;width: 562px;" align="center">
+                                         <div class="button_cancel_popup">
+                                        </div>
+                                     </td>
+                                    <td class="right_popup"></td>
+                                </tr>
+                                <tr>
+                                    <td class="bottom_left_corner_popup"></td>
+                                    <td class="bottom_popup"></td>
+                                    <td class="bottom_right_corner_popup"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>                
+            </td>
+            <td class="right_shadow_popup"></td>
+        </tr>     
+        <tr>
+            <td class="left_bottom_shadow_corner"></td>
+            <td class="bottom_shadow_popup"></td>
+            <td class="right_bottom_shadow_corner"></td>
+        </tr>
+    </table>
+</div>

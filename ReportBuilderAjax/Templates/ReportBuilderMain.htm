@@ -1,0 +1,87 @@
+﻿<div templateId="MainLeft" style="background-color: white;" id="{#reportBuilderTabMainPlaceHolderId}">
+    <table cellpadding="0" cellspacing="0" style="width: 984px; height: 39px; border: 1px solid #bbbbbb; border-left: none; border-right:none; background-image: url(./images/CenterGreyHeaderBackground.png); background-repeat: repeat-x;">
+        <tr>
+            <td>
+                <div style="width: 579px; height: 25px; border-radius: 5px; border: 1px solid #dfdfdf; background-color: white; float: left; position: relative; left: 39px; top: 2px;">
+                    <span class="Repname" style="color: #005393; font-size: 12pt; float: left; margin-left: 18px; margin-top: 4px;">{#ReportNameSpan}</span> 
+                </div>
+                <div style="background-image: url(./images/BackButton.png); background-repeat: no-repeat; width: 30px; height: 30px; cursor: pointer; border-radius: 15px; float: left; position: relative; right: 555px; top: 1px" onclick="onTemplatesReady()"></div>
+                <div style="float: left; margin-left: 23px; margin-top: 5px; margin-top: 9px;">
+                    <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold; color: #0e0e0e; letter-spacing: -0.1px;">Report Layout Style</span>
+                </div>
+                <div style="width: 229px; float: left; height: 24px; border-radius: 4px; margin-top: 3px; margin-left: 7px;">
+                    <div id="ReportLayoutStyleDropDown" style="margin-left: 1px; margin-top: 2px;"></div>
+                </div>                               
+            </td>
+        </tr>
+    </table>
+    <div style="width: 984px; height: 10px; background-image: url(./images/MiddleHeaderShadow.png); background-repeat: repeat-x; background-color: white;"></div>
+    <table cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+            <td style="width:366px;vertical-align: top;" id="{#lossRunSummaryFilterContainerId}" />
+            <td>
+                <div id="BetweenTabs" style="width: 6px;">
+                    <div id="MainLeft2" style="display: none;">
+                        <div id="MainLeftTop" style="width: 31px; height: 5px; background-image: url(./images/CollapsedTopLeftMain.png); background-repeat: no-repeat;"></div>
+                        <div id="MainLeftCenter" style="width: 31px; background-image: url(./images/CollapsedCenterLeftMain.png); background-repeat: repeat-y;">
+                            <div id="DataFilters" style="width: 11px; height: 70px; background-image: url(./images/DataFilters.png); background-repeat: no-repeat; position: relative; left: 9px; top: 9px;"></div>
+                            <div id="SlideLeftBttn2" style="width: 41px; height: 42px; background-image: url(./images/ScrollRightIcon.png); background-repeat: no-repeat;position: relative; left: 17px; cursor: pointer;"></div>
+                        </div>
+                        <div id="MainLeftBottom" style="width: 31px; height: 6px; background-image: url(./images/CollapsedBottomLeftMain.png); background-repeat: no-repeat;"></div>
+                        <div style="width: 372px; overflow: hidden; margin-right: -5px;">
+                            <div id="MainLeftShadowSlide" style="width: 372px; height: 16px; background-image: url(./images/MainLeftShadow.png); background-repeat: no-repeat; position: relative; top: -4px; left: -336px;"></div>
+                        </div>
+                    </div>
+                    <div id="SlideLeftBttn" style="width: 41px; height: 42px; background-image: url(./images/ScrollLeftIcon.png); background-repeat: no-repeat;position: relative;left: -13px; cursor: pointer;"></div>
+                </div>
+            </td>
+            <td style="vertical-align: top;">
+                <div id="reportBuilderTabs" style="margin-left: 0px;"></div>
+                <div id="MainRightShadow2" style="width: 610px; overflow: hidden;">
+                    <div style="width: 943px; height: 16px; background-image: url(./images/MainRightShadow2.png); background-repeat: no-repeat; position: relative; left: 4px;"></div>
+                </div>             
+            </td>
+        </tr>        
+    </table>
+</div>
+
+<div templateId="TabsPanel" style="width: 500px;height:100px;border:1px solid red;">
+    <table>
+        <tr id="{#id}">
+        </tr>
+    </table>
+</div>
+<div templateId="ContentPanel" id="{#id}" style="width: 500px;height:500px;border:1px solid blue;">
+    <table>
+        <tr id="{#id}">
+        </tr>
+    </table>
+</div>
+
+<div templateId="ReportBuilderTabTemplate">
+    <div class="ReportBuilderTab" id="{#tabId}" tabindex="{#tabIndex}">
+        <div class="one" id="{#idReportBuilderTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 112px;">
+                    <span>Report Builder</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<div templateId="DeliveredReportsTabTemplate">
+    <div class="DeliveredReportsTab" id="{#tabId}" tabindex="{#tabIndex}">
+        <div class="two" id="{#idDeliveredReportsTabSkin}">
+            <div class="margin" style="cursor: pointer;" onclick="">
+                <div class="left"></div>
+                <div class="center" style="width: 132px;">
+                    <span>Delivered Reports</span>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+    </div>        
+</div>

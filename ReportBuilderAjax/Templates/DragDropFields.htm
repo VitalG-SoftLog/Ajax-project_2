@@ -1,0 +1,103 @@
+﻿<div templateId="DragDropContainer" >
+    <div style="float:left;">
+        <div style="padding-bottom: 3px;" class="summary_fields">{#usedFieldsListName}
+            <span class="numbers_of_fields" id="{#usedFieldsCountElement}"></span>
+        </div>
+        <div>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="top_left"></td>
+                    <td class="top_line"></td>
+                    <td class="top_right"></td>
+                </tr>
+                <tr>
+                    <td class="center_left"></td>
+                    <td class="center_content">
+                        <div id="{#centerContainerId}_left" style="overflow-y:scroll;width: 264px;">
+                            <ul id="{#usedFieldsContainerId}" class="sort">
+									
+                            </ul>
+                        </div>
+                    </td>
+                    <td class="center_right"></td>
+                </tr>
+                <tr>
+                    <td class="bottom_left"></td>
+                    <td class="bottom_line">
+                        <div style="height:5px;"></div>
+                    </td>
+                    <td class="bottom_right"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="float:left;margin-left:5px;">
+        <div style="padding-bottom: 3px;" class="summary_fields">{#availableFieldsListName}
+            <span class="numbers_of_fields" id="{#availableFieldsCountElement}"></span>
+        </div>
+        <div>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="top_left"></td>
+                    <td class="top_line"></td>
+                    <td class="top_right"></td>
+                </tr>
+                <tr>
+                    <td class="center_left"></td>
+                    <td class="center_content">
+                        <div id="{#centerContainerId}_right" >
+                            <div id="{#typesContainer}">
+                                
+                            </div>
+                            <ul id="{#availableFieldsContainerId}" class="sort" style="overflow-y:scroll;width: 264px;">
+                                
+                            </ul>
+                        </div>
+                    </td>
+                    <td class="center_right"></td>
+                </tr>
+                <tr>
+                    <td class="bottom_left"></td>
+                    <td class="bottom_line">
+                        <div style="height:5px;"></div>
+                    </td>
+                    <td class="bottom_right"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div templateId="groupItemHeader" class="group_report_header" id="{#groupItemHeader}" style="cursor: pointer;" category="{#category}">
+    <div class="close_group_column"></div>	
+    <div class="summary_fields" style="padding-bottom: 3px;font-size: 12px;color: white;" >{#groupItemListName}
+        <span class="numbers_of_fields" id="{#groupItemHeaderCount}" style="font-size: 12px;color: white;"></span>
+    </div>
+		
+</div>
+
+<li id="{#itemId}" fieldId="{#fieldId}" templateId="fieldItem" class="{#class}" category="{#category}">
+    <div  style="cursor:default;" class="drag_drop_item" >
+        <div class="pencil_icon" id="{#editFieldNameBtn}">
+            <img src="images/pencil.png" alt="Edit Field Name"/>
+        </div>
+        <div class="{#descendingClass}" id="{#descendingFieldBtn}"></div>
+        <div class="{#ascendingClass}" id="{#ascendingFieldBtn}"></div>
+        <div class="field_name" id="{#fieldNameId}">{#fieldName}</div>																
+    </div>
+    <div class="change_drag_drop_item">
+	    <table cellpadding="0" cellspacing="0">
+		    <tr>
+			    <td class="left_change_field_name"></td>
+			    <td class="center_change_field_name">
+				    <input type="text" class="change_field_name" id="{#editTextBox}" value="{#fieldName}"/>
+			    </td>
+			    <td class="right_change_field_name"></td>
+			    <td class="ok_change_field_name">
+				    <div  class="button_ok_change_field_name" id="{#saveFieldName}"></div>
+			    </td>
+		    </tr>
+	    </table>
+    </div>
+</li>

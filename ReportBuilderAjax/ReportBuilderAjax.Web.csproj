@@ -1,0 +1,912 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7D48B2C-A405-4D38-B4D4-473903F9B48A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportBuilderAjax.Web</RootNamespace>
+    <AssemblyName>ReportBuilderAjax.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'SystemTest|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\ReportBuilderAjax.Web.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportingServices.RdlObjectModel">
+      <HintPath>..\lib\Microsoft.ReportingServices.RdlObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.ServiceModel.DomainServices.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Server, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CompanyLogo\ccmsi.png" />
+    <Content Include="CompanyLogo\ccmsi1.png" />
+    <Content Include="CompanyLogo\compmc.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\ui-lightness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="css\ui-lightness\jquery-ui-timepicker-addon.css" />
+    <Content Include="css\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="DownloadFile.aspx" />
+    <Content Include="Fonts\myriadpro-bold-webfont.svg" />
+    <Content Include="Fonts\myriadpro-semibold-webfont.svg" />
+    <Content Include="Fonts\ptn77f-webfont.svg" />
+    <Content Include="Fonts\ptsans\PTSans-NarrowBold.svg" />
+    <Content Include="Fonts\regular\MyriadPro-Regular.svg" />
+    <Content Include="Fonts\semibold\MyriadPro-Semibold.svg" />
+    <Content Include="GetFile.aspx" />
+    <Content Include="HttpHandlers\LogoService.svc" />
+    <Content Include="HttpHandlers\RdlService.svc" />
+    <Content Include="HttpHandlers\ReportBuilderService.svc" />
+    <Content Include="HttpHandlers\ReportGenerationService.svc" />
+    <Content Include="images\active_folder.png" />
+    <Content Include="images\as_clock.png" />
+    <Content Include="images\as_grid3_bottom.png" />
+    <Content Include="images\as_grid3_top.png" />
+    <Content Include="images\as_grid4_bottom.png" />
+    <Content Include="images\as_grid4_top.png" />
+    <Content Include="images\as_grid_bottom.png" />
+    <Content Include="images\as_grid_button_Add_Recipients.png" />
+    <Content Include="images\as_grid_comment_input_center.png" />
+    <Content Include="images\as_grid_comment_input_left.png" />
+    <Content Include="images\as_grid_comment_input_right.png" />
+    <Content Include="images\as_grid_header.png" />
+    <Content Include="images\as_grid_input.png" />
+    <Content Include="images\as_grid_input_center.png" />
+    <Content Include="images\as_grid_input_left.png" />
+    <Content Include="images\as_grid_input_right.png" />
+    <Content Include="images\as_main_bottom.png" />
+    <Content Include="images\as_main_button_Cancel.png" />
+    <Content Include="images\as_main_button_Ok.png" />
+    <Content Include="images\as_main_top.png" />
+    <Content Include="images\BackButton.png" />
+    <Content Include="images\BackgroundShape.png" />
+    <Content Include="images\background_select_DropDown.png" />
+    <Content Include="images\BasicFilterArreyDown.png" />
+    <Content Include="images\BasicFilterArreyUp.png" />
+    <Content Include="images\BasicFilterBg.png" />
+    <Content Include="images\bg_active_history_report_row.png" />
+    <Content Include="images\BlackGradientTabBg.png" />
+    <Content Include="images\BlackGridBg2.png" />
+    <Content Include="images\black_left_sort.png" />
+    <Content Include="images\black_right_sort.png" />
+    <Content Include="images\blue_delete_button.png" />
+    <Content Include="images\BorderBottomLeft.png" />
+    <Content Include="images\border_left.png" />
+    <Content Include="images\border_right.png" />
+    <Content Include="images\BottomButtonsBg2.png" />
+    <Content Include="images\BottomMainBg.png" />
+    <Content Include="images\BottomMainBg2.png" />
+    <Content Include="images\bottom_center_active_bg_report.png" />
+    <Content Include="images\bottom_combobox_bg.png" />
+    <Content Include="images\bottom_combobox_filter_bg.png" />
+    <Content Include="images\bottom_dotted_border.png" />
+    <Content Include="images\bottom_hover_blue_report.png" />
+    <Content Include="images\bottom_left.png" />
+    <Content Include="images\bottom_left_active_bg_report.png" />
+    <Content Include="images\bottom_left_active_report_fields.png" />
+    <Content Include="images\bottom_left_corner_popup.png" />
+    <Content Include="images\bottom_left_dotted_border.png" />
+    <Content Include="images\bottom_left_hover_bg_report.png" />
+    <Content Include="images\bottom_left_hover_blue_report.png" />
+    <Content Include="images\bottom_line.png" />
+    <Content Include="images\bottom_popup.png" />
+    <Content Include="images\bottom_right.png" />
+    <Content Include="images\bottom_right_active_bg_report.png" />
+    <Content Include="images\bottom_right_active_report_fields.png" />
+    <Content Include="images\bottom_right_corner_popup.png" />
+    <Content Include="images\bottom_right_dotted_border.png" />
+    <Content Include="images\bottom_right_hover_bg_report.png" />
+    <Content Include="images\bottom_right_hover_blue_report.png" />
+    <Content Include="images\bottom_shadow_popup.png" />
+    <Content Include="images\bottom_sheduler_bg.png" />
+    <Content Include="images\browseButton.png" />
+    <Content Include="images\button_add_delivery.png" />
+    <Content Include="images\button_auto_delivery.png" />
+    <Content Include="images\button_ok_change_field_name.png" />
+    <Content Include="images\Cancel.png" />
+    <Content Include="images\CancelButton.png" />
+    <Content Include="images\CenterBlackBttn.png" />
+    <Content Include="images\CenterBlackTab.png" />
+    <Content Include="images\CenterBlackTab2.png" />
+    <Content Include="images\CenterButton.png" />
+    <Content Include="images\CenterDropDown2.png" />
+    <Content Include="images\CenterGrayButton.png" />
+    <Content Include="images\CenterGreyHeaderBackground.png" />
+    <Content Include="images\CenterLastXDays.png" />
+    <Content Include="images\CenterSaveBttn.png" />
+    <Content Include="images\CenterWhiteBttn.png" />
+    <Content Include="images\CenterWhiteLoginBttn.png" />
+    <Content Include="images\CenterWhiteTab.png" />
+    <Content Include="images\CenterWhiteTab2.png" />
+    <Content Include="images\CenterYellowBttn.png" />
+    <Content Include="images\center_active_bg_report.png" />
+    <Content Include="images\center_blue_count.png" />
+    <Content Include="images\center_change_field_name.png" />
+    <Content Include="images\center_hover_bg_report.png" />
+    <Content Include="images\center_hover_blue_report.png" />
+    <Content Include="images\center_left.png" />
+    <Content Include="images\center_numder_history_page.png" />
+    <Content Include="images\center_right.png" />
+    <Content Include="images\center_grey_trans_bg.png" />
+    <Content Include="images\CheckBoxActive.png" />
+    <Content Include="images\CheckBoxInactive.png" />
+    <Content Include="images\checked.png" />
+    <Content Include="images\checkpoints_save_button.png" />
+    <Content Include="images\Clear.png" />
+    <Content Include="images\ClearFilter.png" />
+    <Content Include="images\ClearFilter2.png" />
+    <Content Include="images\clear_hierarchy.png" />
+    <Content Include="images\closed_folder.png" />
+    <Content Include="images\close_group_column.png" />
+    <Content Include="images\combobox_bg.png" />
+    <Content Include="images\combobox_button.png" />
+    <Content Include="images\CollapsedBottomLeftMain.png" />
+    <Content Include="images\CollapsedCenterLeftMain.png" />
+    <Content Include="images\CollapsedTopLeftMain.png" />
+    <Content Include="images\combobox_filter_bg.png" />
+    <Content Include="images\combobox_filter_button.png" />
+    <Content Include="images\combobox_options_left_bg.png" />
+    <Content Include="images\combobox_options_right_bg.png" />
+    <Content Include="images\combobox_options_top_bg.png" />
+    <Content Include="images\combobox_overlay_option_bg.png" />
+    <Content Include="images\Covered.png" />
+    <Content Include="images\DataFilters.png" />
+    <Content Include="images\directory_tree.png" />
+    <Content Include="images\directory_tree_last.png" />
+    <Content Include="images\DropDownArrowDown.png" />
+    <Content Include="images\dropDownCenter.png" />
+    <Content Include="images\dropDownLeft.png" />
+    <Content Include="images\DropDownLeft2.png" />
+    <Content Include="images\dropDownRight.png" />
+    <Content Include="images\DropDownRight2.png" />
+    <Content Include="images\DropDown_bottom_border.png" />
+    <Content Include="images\DropDown_filter_left_top_radius.png" />
+    <Content Include="images\DropDown_filter_right_border.png" />
+    <Content Include="images\DropDown_filter_right_top_radius.png" />
+    <Content Include="images\DropDown_filter_top_border.png" />
+    <Content Include="images\DropDown_left_border.png" />
+    <Content Include="images\DropDown_left_bottom_radius.png" />
+    <Content Include="images\DropDown_left_top_radius.png" />
+    <Content Include="images\DropDown_right_border.png" />
+    <Content Include="images\DropDown_right_bottom_radius.png" />
+    <Content Include="images\DropDown_right_top_radius.png" />
+    <Content Include="images\DropDown_top_border.png" />
+    <Content Include="images\emptyLogoButton.png" />
+    <Content Include="images\exportPDFReport.png" />
+    <Content Include="images\exporXLSReport.png" />
+    <Content Include="images\focus_item.png" />
+    <Content Include="images\GrayGridBg.png" />
+    <Content Include="images\GrayPencilIcon.png" />
+    <Content Include="images\GrayPlusButton.png" />
+    <Content Include="images\GrayPuzzleIcon.png" />
+    <Content Include="images\GrayXIcon.png" />
+    <Content Include="images\gray_left_sort.png" />
+    <Content Include="images\gray_right_sort.png" />
+    <Content Include="images\grid.png" />
+    <Content Include="images\GridBottomShadow.png" />
+    <Content Include="images\group_active_bg.png" />
+    <Content Include="images\group_inactive_bg.png" />
+    <Content Include="images\HeaderBackground.png" />
+    <Content Include="images\HeaderMiddleBackground.png" />
+    <Content Include="images\header_tabs_sheduler_bg.png" />
+    <Content Include="images\hover_field_icon.png" />
+    <Content Include="images\hover_folder.png" />
+    <Content Include="images\icon_PDF.png" />
+    <Content Include="images\icon_XLS.png" />
+    <Content Include="images\InputCalendarDefault.png" />
+    <Content Include="images\InputCalendarSelected.png" />
+    <Content Include="images\input_filter_bg.png" />
+    <Content Include="images\leftBg.png" />
+    <Content Include="images\LeftBlackBttn.png" />
+    <Content Include="images\LeftBlackBttn2.png" />
+    <Content Include="images\LeftBlackTab.png" />
+    <Content Include="images\LeftBlackTab2.png" />
+    <Content Include="images\LeftCenterBg.png" />
+    <Content Include="images\LeftLastXDays.png" />
+    <Content Include="images\LeftMainBg.png" />
+    <Content Include="images\LeftSaveBttn.png" />
+    <Content Include="images\LeftSideButton.png" />
+    <Content Include="images\LeftWhiteBttn.png" />
+    <Content Include="images\LeftWhiteBttn2.png" />
+    <Content Include="images\LeftWhiteLoginBttn.png" />
+    <Content Include="images\LeftWhiteTab.png" />
+    <Content Include="images\LeftWhiteTab2.png" />
+    <Content Include="images\LeftYellowBttn.png" />
+    <Content Include="images\left_blue_count.png" />
+    <Content Include="images\left_bottom_shadow_corner.png" />
+    <Content Include="images\left_change_field_name.png" />
+    <Content Include="images\left_corner_as_grid_bottom.png" />
+    <Content Include="images\left_corner_bottom_combobox.png" />
+    <Content Include="images\left_corner_bottom_sheduler.png" />
+    <Content Include="images\left_corner_combobox.png" />
+    <Content Include="images\left_corner_down_schedule_filter.png" />
+    <Content Include="images\left_corner_filter_textbox.png" />
+    <Content Include="images\left_corner_group_active.png" />
+    <Content Include="images\left_corner_group_inactive.png" />
+    <Content Include="images\left_corner_shedule_filter.png" />
+    <Content Include="images\left_corner_tab_active.png" />
+    <Content Include="images\left_corner_tab_inactive.png" />
+    <Content Include="images\left_corner_tab_shedule.png" />
+    <Content Include="images\left_corner_tab_sheduler_active.png" />
+    <Content Include="images\left_corner_top_filter.png" />
+    <Content Include="images\left_corner_top_sheduler.png" />
+    <Content Include="images\left_dotted_border.png" />
+    <Content Include="images\left_grey_trans_bg.png" />
+    <Content Include="images\left_inner_popup.png" />
+    <Content Include="images\left_numder_history_page.png" />
+    <Content Include="images\left_popup.png" />
+    <Content Include="images\left_shadow_popup.png" />
+    <Content Include="images\left_top_shadow_corner.png" />
+    <Content Include="images\LoginBackground.png" />
+    <Content Include="images\login_background.png" />
+    <Content Include="images\login_button_sign.png" />
+    <Content Include="images\login_error.png" />
+    <Content Include="images\login_input.png" />
+    <Content Include="images\login_input_password_text.png" />
+    <Content Include="images\login_input_username_text.png" />
+    <Content Include="images\login_Logo.png" />
+    <Content Include="images\LogoImage.png" />
+    <Content Include="images\Logout.png" />
+    <Content Include="images\LogoutIcon.png" />
+    <Content Include="images\mainBg.gif" />
+    <Content Include="images\mainBg2.png" />
+    <Content Include="images\MainLeftShadow.png" />
+    <Content Include="images\MainRightShadow.png" />
+    <Content Include="images\MainRightShadow2.png" />
+    <Content Include="images\MiddleHeaderShadow.png" />
+    <Content Include="images\Minus.png" />
+    <Content Include="images\MyReports.png" />
+    <Content Include="images\nextReportBtn.png" />
+    <Content Include="images\next_page_delivered_history.png" />
+    <Content Include="images\number_of_reports.png" />
+    <Content Include="images\open_folder.png" />
+    <Content Include="images\open_group_column.png" />
+    <Content Include="images\pdfBlack.png" />
+    <Content Include="images\PdfIcon.png" />
+    <Content Include="images\PdfIcon2.png" />
+    <Content Include="images\PDFradio.png" />
+    <Content Include="images\pencil.png" />
+    <Content Include="images\Plus.png" />
+    <Content Include="images\previous_page_delivered_history.png" />
+    <Content Include="images\prevReportBtn.png" />
+    <Content Include="images\RadioActive.png" />
+    <Content Include="images\RadioActive2.png" />
+    <Content Include="images\RadioInactive.png" />
+    <Content Include="images\RadioInactive2.png" />
+    <Content Include="images\radio_center_black2.png" />
+    <Content Include="images\radio_center_black3.png" />
+    <Content Include="images\radio_center_white2.png" />
+    <Content Include="images\radio_center_white3.png" />
+    <Content Include="images\Recucle.png" />
+    <Content Include="images\refreshReport.png" />
+    <Content Include="images\removeLogoButton.png" />
+    <Content Include="images\reportPageBgSide.png" />
+    <Content Include="images\reportPageLeftSide.png" />
+    <Content Include="images\reportPageRightSide.png" />
+    <Content Include="images\reportPrintBg.png" />
+    <Content Include="images\reportSeparator.png" />
+    <Content Include="images\rightBg.png" />
+    <Content Include="images\RightBlackBttn.png" />
+    <Content Include="images\RightBlackBttn2.png" />
+    <Content Include="images\RightBlackTab.png" />
+    <Content Include="images\RightBlackTab2.png" />
+    <Content Include="images\RightBottomMainBorder.png" />
+    <Content Include="images\RightLastXDays.png" />
+    <Content Include="images\RightMiddleMainBg.png" />
+    <Content Include="images\RightSaveBttn.png" />
+    <Content Include="images\RightSideButton.png" />
+    <Content Include="images\RightTopMainBorder.png" />
+    <Content Include="images\RightWhiteBttn.png" />
+    <Content Include="images\RightWhiteBttn2.png" />
+    <Content Include="images\RightWhiteLoginBttn.png" />
+    <Content Include="images\RightWhiteTab.png" />
+    <Content Include="images\RightWhiteTab2.png" />
+    <Content Include="images\RightYellowBttn.png" />
+    <Content Include="images\right_blue_count.png" />
+    <Content Include="images\right_bottom_shadow_corner.png" />
+    <Content Include="images\right_change_field_name.png" />
+    <Content Include="images\right_corner_as_grid_bottom.png" />
+    <Content Include="images\right_corner_bottom_combobox.png" />
+    <Content Include="images\right_corner_bottom_sheduler.png" />
+    <Content Include="images\right_corner_combobox.png" />
+    <Content Include="images\right_corner_down_schedule_filter.png" />
+    <Content Include="images\right_corner_filter_textbox.png" />
+    <Content Include="images\right_corner_group_active.png" />
+    <Content Include="images\right_corner_group_inactive.png" />
+    <Content Include="images\right_corner_schedule_filter.png" />
+    <Content Include="images\right_corner_tab_active.png" />
+    <Content Include="images\right_corner_tab_inactive.png" />
+    <Content Include="images\right_corner_tab_sheduler.png" />
+    <Content Include="images\right_corner_tab_sheduler_active.png" />
+    <Content Include="images\right_corner_top_filter.png" />
+    <Content Include="images\right_corner_top_sheduler.png" />
+    <Content Include="images\right_dotted_border.png" />
+    <Content Include="images\right_grey_trans_bg.png" />
+    <Content Include="images\right_inner_popup.png" />
+    <Content Include="images\right_numder_history_page.png" />
+    <Content Include="images\right_popup.png" />
+    <Content Include="images\right_shadow_popup.png" />
+    <Content Include="images\right_top_shadow_corner.png" />
+    <Content Include="images\rn_attention_img.png" />
+    <Content Include="images\rn_border.png" />
+    <Content Include="images\rn_bottom_border.png" />
+    <Content Include="images\rn_select_row.png" />
+    <Content Include="images\rn_top_border.png" />
+    <Content Include="images\RunReport.png" />
+    <Content Include="images\RunReportButton.png" />
+    <Content Include="images\exampleButton.png" />
+    <Content Include="images\Save.png" />
+    <Content Include="images\SavePopUpCloud.png" />
+    <Content Include="images\SaveReport.png" />
+    <Content Include="images\SaveReportAsNew.png" />
+    <Content Include="images\SaveReportAsNewButton.png" />
+    <Content Include="images\SaveReportButton.png" />
+    <Content Include="images\SaveReportNameInput.png" />
+    <Content Include="images\ScheduleCalendar.png" />
+    <Content Include="images\ScheduleTimeCalendar.png" />
+    <Content Include="images\ScrollLeftIcon.png" />
+    <Content Include="images\ScrollRightIcon.png" />
+    <Content Include="images\ShowAll.png" />
+    <Content Include="images\sort_asc.png" />
+    <Content Include="images\sort_desc.png" />
+    <Content Include="images\standart_field_icon.png" />
+    <Content Include="images\standart_folder.png" />
+    <Content Include="images\SwitchClient.png" />
+    <Content Include="images\SwitchClientIcon.png" />
+    <Content Include="images\switchClient_popin_body.png" />
+    <Content Include="images\switchClient_popin_switch.png" />
+    <Content Include="images\tab_active_bg.png" />
+    <Content Include="images\tab_inactive_bg.png" />
+    <Content Include="images\tab_sheduler_bg.png" />
+    <Content Include="images\tab_sheduler_bg_active.png" />
+    <Content Include="images\TopHeader.png" />
+    <Content Include="images\TopMainBg.png" />
+    <Content Include="images\top_dotted_border.png" />
+    <Content Include="images\top_filter_schedule_bg.png" />
+    <Content Include="images\top_hover_blue_report.png" />
+    <Content Include="images\top_inner_popup.png" />
+    <Content Include="images\top_left.png" />
+    <Content Include="images\top_left_corner_popup.png" />
+    <Content Include="images\top_left_dotted_border.png" />
+    <Content Include="images\top_left_group.png" />
+    <Content Include="images\top_left_hover_blue_report.png" />
+    <Content Include="images\top_left_inner_popup.png" />
+    <Content Include="images\top_line.png" />
+    <Content Include="images\top_line_group.png" />
+    <Content Include="images\top_popup.png" />
+    <Content Include="images\top_right.png" />
+    <Content Include="images\top_right_active_bg_report.png" />
+    <Content Include="images\top_right_corner_popup.png" />
+    <Content Include="images\top_right_dotted_border.png" />
+    <Content Include="images\top_right_group.png" />
+    <Content Include="images\top_right_hover_bg_report.png" />
+    <Content Include="images\top_center_active_bg_report.png" />
+    <Content Include="images\top_combobox_bg.png" />
+    <Content Include="images\top_filter_bg.png" />
+    <Content Include="images\top_left_active_bg_report.png" />
+    <Content Include="images\top_left_active_report_fields.png" />
+    <Content Include="images\top_left_hover_bg_report.png" />
+    <Content Include="images\top_main_bg_report.png" />
+    <Content Include="images\top_right_active_report_fields.png" />
+    <Content Include="images\top_right_hover_blue_report.png" />
+    <Content Include="images\top_right_inner_popup.png" />
+    <Content Include="images\top_shadow_popup.png" />
+    <Content Include="images\top_sheduler_bg.png" />
+    <Content Include="images\unchecked.png" />
+    <Content Include="images\uploadButton.png" />
+    <Content Include="images\ViewReport.png" />
+    <Content Include="images\viewReportEXImage.png" />
+    <Content Include="images\viewReportPDFImage.png" />
+    <Content Include="images\XlsIcon2.png" />
+    <Content Include="images\XLSradio.png" />
+    <Content Include="images\YellowAddTimeButton.png" />
+    <Content Include="images\YellowMinusButton.png" />
+    <Content Include="images\YellowPencilButton.png" />
+    <Content Include="images\YellowPlayButton.png" />
+    <Content Include="images\YellowPlusButton.png" />
+    <Content Include="images\YellowXButton.png" />
+    <Content Include="js\ActivityControl.js" />
+    <Content Include="js\CheckpointsConfiguration.js" />
+    <Content Include="js\Common\ControlLibrary\AsOfDateControl.js" />
+    <Content Include="js\Common\ControlLibrary\DateRangeControl.js" />
+    <Content Include="js\Common\ControlLibrary\DateTimeControl.js" />
+    <Content Include="js\Common\ControlLibrary\DeliveryMethodRadioButton.js" />
+    <Content Include="images\XlsIcon.png" />
+    <Content Include="images\xlsWhite.png" />
+    <Content Include="js\Common\ControlLibrary\MultiRadioButton.js" />
+    <Content Include="js\Common\ControlLibrary\newCheckBoxControl.js" />
+    <Content Include="js\Common\ControlLibrary\newDropDownControl.js" />
+    <Content Include="js\Common\ControlLibrary\CustomDropDown.js" />
+    <Content Include="js\Common\jquery-ui-timepicker-addon.js" />
+    <Content Include="js\Common\jquery.dataTables.js" />
+    <Content Include="js\Common\KeyTable.js" />
+    <Content Include="js\Common\Silverlight.js" />
+    <Content Include="js\ReportBuilderHeader.js" />
+    <Content Include="js\ReleaseNotes.js" />
+    <Content Include="js\DragDropFields.js" />
+    <Content Include="js\FilterBase.js" />
+    <Content Include="js\FilterDataManager.js" />
+    <Content Include="js\ClientAnalysisControl.js" />
+    <Content Include="js\Filters\LossRunSummaryFilter.js" />
+    <Content Include="js\HierarchyControl.js" />
+    <Content Include="js\DeliveredReports.js" />
+    <Content Include="js\ReportCustomLogo.js" />
+    <Content Include="js\ReportLayout.js" />
+    <Content Include="js\ReportLayoutColumns.js" />
+    <Content Include="js\ReportLayoutGrouping.js" />
+    <Content Include="js\ReportLayoutSorting.js" />
+    <Content Include="js\ReportSelectForm.js" />
+    <Content Include="js\ReportTabManager.js" />
+    <Content Include="js\ReportTypes.js" />
+    <Content Include="js\ScheduleRecipientsFilter.js" />
+    <Content Include="js\ShedulerControl.js" />
+    <Content Include="js\SummarizeFields.js" />
+    <Content Include="js\TabsControlManager.js" />
+    <Content Include="js\ViewReport.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginJS\jquery-1.3.2.js" />
+    <Content Include="LoginJS\jquery.watermark.min.js" />
+    <Content Include="LoginJS\LoginStyle.css" />
+    <Content Include="ReportBuilder.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="js\Common\Autocomplete.js" />
+    <Content Include="js\Common\Common.js" />
+    <Content Include="js\Common\ControlLibrary\CalendarControl.js" />
+    <Content Include="js\Common\ControlLibrary\CheckBoxControl.js" />
+    <Content Include="js\Common\ControlLibrary\CheckBoxSetControl.js" />
+    <Content Include="js\Common\ControlLibrary\ClassInheritance.js" />
+    <Content Include="js\Common\ControlLibrary\ClassLibraryInternalTypes.js" />
+    <Content Include="js\Common\ControlLibrary\ControlAbstractClass.js" />
+    <Content Include="js\Common\ControlLibrary\ControlAbstractClassPrototypeCustomize.js" />
+    <Content Include="js\Common\ControlLibrary\DinamicRadioButtonSetControl.js" />
+    <Content Include="js\Common\ControlLibrary\DropDownControl.js" />
+    <Content Include="js\Common\ControlLibrary\EventFunctionSetClass.js" />
+    <Content Include="js\Common\ControlLibrary\MultiSelectComboBox.js" />
+    <Content Include="js\Common\ControlLibrary\RadioButtonControl.js" />
+    <Content Include="js\Common\ControlLibrary\RadioButtonSetControl.js" />
+    <Content Include="js\Common\ControlLibrary\StaticControl.js" />
+    <Content Include="js\Common\ControlLibrary\StaticDomElement.js" />
+    <Content Include="js\Common\ControlLibrary\TextAreaControl.js" />
+    <Content Include="js\Common\ControlLibrary\TextBoxControl.js" />
+    <Content Include="js\Common\CrossBrowseElement.js" />
+    <Content Include="js\Common\jquery-1.3.2.js" />
+    <Content Include="js\Common\jquery-ui-1.7.1.custom.min.js" />
+    <Content Include="js\Common\jquery-ui-1.7.3.custom.min.js" />
+    <Content Include="js\Common\jquery.block.ui.js" />
+    <Content Include="js\Common\jquery.extend.centerElement.js" />
+    <Content Include="js\Common\jquery.formatCurrency.js" />
+    <Content Include="js\Common\jquery.history.js" />
+    <Content Include="js\Common\jquery.maskedinput-1.2.1.js" />
+    <Content Include="js\Common\jquery.maskMoney.js" />
+    <Content Include="js\Common\jquery.ui.datepicker.min.js" />
+    <Content Include="js\Common\jquery.watermark.min.js" />
+    <Content Include="js\Common\json2.js" />
+    <Content Include="js\Common\Plupload\gears_init.js" />
+    <Content Include="js\Common\Plupload\jquery.plupload.queue.min.js" />
+    <Content Include="js\Common\Plupload\plupload.flash.swf" />
+    <Content Include="js\Common\Plupload\plupload.full.min.js" />
+    <Content Include="js\Common\Plupload\plupload.silverlight.xap" />
+    <Content Include="js\Common\RegionPlugin.js" />
+    <Content Include="js\Common\setFrameSizeByContent.js" />
+    <Content Include="js\Common\si.files.js" />
+    <Content Include="js\Common\TemplateEngine.js" />
+    <Content Include="js\Common\TemplateManager.js" />
+    <Content Include="js\Common\Timer.js" />
+    <Content Include="js\Consts.js" />
+    <Content Include="js\ReportBuilderForm.js" />
+    <Content Include="Services\ReportDeliveryService.svc" />
+    <Content Include="Style.css" />
+    <Content Include="Templates\Activity.htm" />
+    <Content Include="Templates\AddSchedule.htm" />
+    <Content Include="Templates\CheckpointsConfigurationTemplate.htm" />
+    <Content Include="Templates\ClientAnalysis.htm" />
+    <Content Include="Templates\CustomLogoReport.htm" />
+    <Content Include="Templates\DeliveredReportTemplate.htm" />
+    <Content Include="Templates\ReleaseNotesTemplate.htm" />
+    <Content Include="Templates\DragDropFields.htm" />
+    <Content Include="Templates\DropDownTemplates.htm" />
+    <Content Include="Templates\Hierarchy.htm" />
+    <Content Include="Templates\LossRunSummaryFilterTemplate.htm" />
+    <Content Include="Templates\ReportBuilderForm.htm" />
+    <Content Include="Templates\ReportBuilderHeader.htm" />
+    <Content Include="Templates\ReportBuilderMain.htm" />
+    <Content Include="Templates\ReportLayoutColumns.htm" />
+    <Content Include="Templates\ReportLayoutGrouping.htm" />
+    <Content Include="Templates\ReportLayoutGroups.htm" />
+    <Content Include="Templates\ReportLayoutSorting.htm" />
+    <Content Include="Templates\ReportSelectForm.htm" />
+    <Content Include="Templates\ReportTabs.htm" />
+    <Content Include="Templates\SummarizeFields.htm" />
+    <Content Include="Templates\ViewReport.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\RFAjaxAccessibleAttribute.cs" />
+    <Compile Include="Common\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\Const.Common.cs" />
+    <Compile Include="Common\Const.SPName.cs" />
+    <Compile Include="Common\Const.SPParam.cs" />
+    <Compile Include="Common\DB.cs" />
+    <Compile Include="Common\IIntegrationInfo.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\UserContext.cs" />
+    <Compile Include="DownloadFile.aspx.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownloadFile.aspx.designer.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Filter\FilterData.cs" />
+    <Compile Include="GetFile.aspx.cs">
+      <DependentUpon>GetFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetFile.aspx.designer.cs">
+      <DependentUpon>GetFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlers\CancelReportRequest.cs" />
+    <Compile Include="HttpHandlers\DuplexService.cs" />
+    <Compile Include="HttpHandlers\GenerateCustomReportRequest.cs" />
+    <Compile Include="HttpHandlers\GenerateReportRequest.cs" />
+    <Compile Include="HttpHandlers\GenerateReportResponse.cs" />
+    <Compile Include="HttpHandlers\GenerateStandardReportRequest.cs" />
+    <Compile Include="HttpHandlers\GenerateUserReportRequest.cs" />
+    <Compile Include="HttpHandlers\LogDomainService.cs" />
+    <Compile Include="HttpHandlers\LogoService.svc.cs">
+      <DependentUpon>LogoService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlers\RdlService.svc.cs">
+      <DependentUpon>RdlService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlers\ReportBuilderService.svc.cs">
+      <DependentUpon>ReportBuilderService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlers\ReportGenerationService.cs" />
+    <Compile Include="HttpHandlers\ReportRequestStatusEnum.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CheckpointObj.cs" />
+    <Compile Include="Models\DataTypeEnum.cs" />
+    <Compile Include="Models\DeliveredReportInfo.cs" />
+    <Compile Include="Models\FormatTypeEnum.cs" />
+    <Compile Include="Models\LogoFile.cs" />
+    <Compile Include="Models\RdlComponentTypeEnum.cs" />
+    <Compile Include="Models\RegistrationData.cs" />
+    <Compile Include="Models\ReportDeliveryLogObj.cs" />
+    <Compile Include="Models\ReportEnum.cs" />
+    <Compile Include="Models\ReportFolder.cs" />
+    <Compile Include="Models\ReportFolderEnum.cs" />
+    <Compile Include="Models\Rpt.cs" />
+    <Compile Include="Models\RptField.cs" />
+    <Compile Include="Models\RptLayoutStyle.cs" />
+    <Compile Include="Models\RptParameter.cs" />
+    <Compile Include="Models\Shared\Schedule.shared.cs" />
+    <Compile Include="Models\Shared\ScheduleRecipient.shared.cs" />
+    <Compile Include="Models\Shared\User.shared.cs" />
+    <Compile Include="Models\Shared\UserAssnView.shared.cs" />
+    <Compile Include="Models\SortDirectionEnum.cs" />
+    <Compile Include="Models\SubRpt.cs" />
+    <Compile Include="Models\SubRptParameter.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserAssociation.cs" />
+    <Compile Include="Models\UserReleaseNote.cs" />
+    <Compile Include="Models\UserRpt.cs" />
+    <Compile Include="Models\UserRptOutput.cs" />
+    <Compile Include="MSIClaimModel.Designer.cs" />
+    <Compile Include="ReportBuilder.aspx.cs">
+      <DependentUpon>ReportBuilder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportBuilder.aspx.designer.cs">
+      <DependentUpon>ReportBuilder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\RFActionNameAbsentException.cs" />
+    <Compile Include="Exceptions\RFArgumentAbsentException.cs" />
+    <Compile Include="Exceptions\RFInvalidMethodNameException.cs" />
+    <Compile Include="Exceptions\RFInvalidParameterTypeException.cs" />
+    <Compile Include="Exceptions\RFNotAjaxAccessibleException.cs" />
+    <Compile Include="Exceptions\RFParameterAbsentException.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlers\CookieFix.cs" />
+    <Compile Include="HttpHandlers\GetLogFile.cs" />
+    <Compile Include="HttpHandlers\IntegrationHandler.cs" />
+    <Compile Include="HttpHandlers\IntegrationModule.cs" />
+    <Compile Include="HttpHandlers\ReportBuilderHandler.ashx.cs">
+      <DependentUpon>ReportBuilderHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHandlers\RFBaseHandler.cs" />
+    <Compile Include="HttpHandlers\RFBaseTemplateHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBuilder\LogoManager.cs" />
+    <Compile Include="ReportBuilder\RdlManager.cs" />
+    <Compile Include="ReportBuilder\ReportCustomizationExtensionManager.cs" />
+    <Compile Include="ReportBuilder\TableRdlGenerator.cs" />
+    <Compile Include="ReportModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\ReportDeliveryService.svc.cs">
+      <DependentUpon>ReportDeliveryService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ReportDomainService.metadata.cs" />
+    <Compile Include="Services\ReportDomainService.cs" />
+    <Compile Include="Web References\ReportExecution2005\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ReportingService2005\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HttpHandlers\ReportBuilderHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ReportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\myriadpro-semibold-webfont.ttf" />
+    <Content Include="Fonts\myriadpro-semibold-webfont.woff" />
+    <Content Include="Fonts\ptsans\PTSans-NarrowBold.afm" />
+    <Content Include="Fonts\ptsans\PTSans-NarrowBold.eot" />
+    <Content Include="Fonts\ptsans\PTSans-NarrowBold.ttf" />
+    <Content Include="Fonts\ptsans\PTSans-NarrowBold.woff" />
+    <Content Include="Fonts\regular\MyriadPro-Regular.afm" />
+    <Content Include="Fonts\regular\MyriadPro-Regular.eot" />
+    <Content Include="Fonts\regular\MyriadPro-Regular.ttf" />
+    <Content Include="Fonts\regular\MyriadPro-Regular.woff" />
+    <Content Include="Fonts\semibold\MyriadPro-Semibold.afm" />
+    <Content Include="Fonts\semibold\MyriadPro-Semibold.eot" />
+    <Content Include="Fonts\semibold\MyriadPro-Semibold.ttf" />
+    <Content Include="Fonts\semibold\MyriadPro-Semibold.woff" />
+    <Content Include="Fonts\myriadpro-bold-webfont.eot" />
+    <Content Include="Fonts\myriadpro-bold-webfont.ttf" />
+    <Content Include="Fonts\myriadpro-bold-webfont.woff" />
+    <Content Include="Fonts\myriadpro-semibold-webfont.eot" />
+    <Content Include="Fonts\ptn77f-webfont.eot" />
+    <Content Include="Fonts\ptn77f-webfont.ttf" />
+    <Content Include="Fonts\ptn77f-webfont.woff" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.SystemTest.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <WebReferenceUrl Include="http://vs2008devccmsi:8080/ReportServer/ReportExecution2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportExecution2005\</RelPath>
+      <UpdateFromURL>http://vs2008devccmsi:8080/ReportServer/ReportExecution2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ReportBuilderSL_Web_ReportExecution2005_ReportExecutionService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://vs2008devccmsi:8080/ReportServer/ReportService2005.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ReportingService2005\</RelPath>
+      <UpdateFromURL>http://vs2008devccmsi:8080/ReportServer/ReportService2005.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ReportBuilderSL_Web_ReportingService2005_ReportingService2005</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FilterService\ReportBuilderAjax.Web.FilterService.csproj">
+      <Project>{63F6E61A-7FF0-4977-A6E2-A5B472C81B81}</Project>
+      <Name>ReportBuilderAjax.Web.FilterService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportBuilder.Web.Common\ReportBuilderAjax.Web.Common.csproj">
+      <Project>{8BCED565-2774-458C-8B79-EE842ECDFFA5}</Project>
+      <Name>ReportBuilderAjax.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="MSIClaimModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MSIClaimModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\MyriadPro-Semibold.otf" />
+    <None Include="Web References\ReportExecution2005\DocumentMapNode.datasource" />
+    <None Include="Web References\ReportExecution2005\ExecutionInfo.datasource" />
+    <None Include="Web References\ReportExecution2005\ExecutionInfo2.datasource" />
+    <None Include="Web References\ReportExecution2005\Extension.datasource" />
+    <None Include="Web References\ReportExecution2005\Reference.map" />
+    <None Include="Web References\ReportExecution2005\ReportExecution2005.wsdl" />
+    <None Include="Web References\ReportExecution2005\Warning.datasource" />
+    <None Include="Web References\ReportingService2005\ActiveState.datasource" />
+    <None Include="Web References\ReportingService2005\CatalogItem.datasource" />
+    <None Include="Web References\ReportingService2005\DataRetrievalPlan.datasource" />
+    <None Include="Web References\ReportingService2005\DataSetDefinition.datasource" />
+    <None Include="Web References\ReportingService2005\DataSource.datasource" />
+    <None Include="Web References\ReportingService2005\DataSourceDefinition.datasource" />
+    <None Include="Web References\ReportingService2005\DataSourcePrompt.datasource" />
+    <None Include="Web References\ReportingService2005\Event.datasource" />
+    <None Include="Web References\ReportingService2005\ExecutionSettingEnum.datasource" />
+    <None Include="Web References\ReportingService2005\ExpirationDefinition.datasource" />
+    <None Include="Web References\ReportingService2005\Extension.datasource" />
+    <None Include="Web References\ReportingService2005\ExtensionParameter.datasource" />
+    <None Include="Web References\ReportingService2005\ExtensionSettings.datasource" />
+    <None Include="Web References\ReportingService2005\ItemTypeEnum.datasource" />
+    <None Include="Web References\ReportingService2005\Job.datasource" />
+    <None Include="Web References\ReportingService2005\ModelCatalogItem.datasource" />
+    <None Include="Web References\ReportingService2005\ModelDrillthroughReport.datasource" />
+    <None Include="Web References\ReportingService2005\ModelItem.datasource" />
+    <None Include="Web References\ReportingService2005\ParameterValue.datasource" />
+    <None Include="Web References\ReportingService2005\ParameterValueOrFieldReference.datasource" />
+    <None Include="Web References\ReportingService2005\Policy.datasource" />
+    <None Include="Web References\ReportingService2005\Property.datasource" />
+    <None Include="Web References\ReportingService2005\Reference.map" />
+    <None Include="Web References\ReportingService2005\ReportHistorySnapshot.datasource" />
+    <None Include="Web References\ReportingService2005\ReportParameter.datasource" />
+    <None Include="Web References\ReportingService2005\ReportService2005.wsdl" />
+    <None Include="Web References\ReportingService2005\Role.datasource" />
+    <None Include="Web References\ReportingService2005\Schedule.datasource" />
+    <None Include="Web References\ReportingService2005\ScheduleDefinitionOrReference.datasource" />
+    <None Include="Web References\ReportingService2005\Subscription.datasource" />
+    <None Include="Web References\ReportingService2005\Task.datasource" />
+    <None Include="Web References\ReportingService2005\Warning.datasource" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>44710</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/ReportBuilderAjax</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/ReportBuilderAjax</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

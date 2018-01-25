@@ -1,0 +1,718 @@
+﻿<div templateId="RootTemplate" id="main_form_div" >
+    <div id="{#filterContainerId}"></div>
+</div>
+
+<div templateId="YesNoButtonTemplate">
+    <table>
+        <tbody>
+            <tr>
+                <td class="ans">
+                    <h4 id="{#idButton}_print" style="display: none;">Yes</h4>
+                    <div id="{#idButton}" class="first">
+                        <div class="one" clickfor="{#idButton}_yes">
+                            <div class="margin">
+                                <div class="center" style="width:37px">Yes</div>
+                            </div>
+                        </div>
+                        <div class="two" clickfor="{#idButton}_no">
+                            <div class="margin">
+                                <div class="center" style="width:37px">No</div>
+                            </div>
+                        </div>
+                        <div style="display:none;">
+                            <input id="{#idButton}_yes" type="radio" checked="checked" attachedclass="first" value="yes" name="{#idButton}_rbg"/>
+                            <input id="{#idButton}_no" type="radio" attachedclass="second" value="no" name="{#idButton}_rbg"/>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div templateId="CalendarInput">
+    <h4 style="display: none" id="{#idCalendarInput}_print"></h4>
+    <div id="{#idCalendarContainer}" class="calendarConteiner" style="width: 90px; height: 23px;"><input id="{#idCalendarInput}" type="text" class="calendarInput"/></div>
+</div>
+
+<div templateId="ScheduleCalendarInput">
+    <h4 style="display: none" id="{#idScheduleCalendarInput}_print"></h4>
+    <div id="{#idScheduleCalendarContainer}" class="ScheduleCalendarConteiner" style="width: 108px; height: 23px;">
+        <input id="{#idScheduleCalendarInput}" type="text" class="calendarInput" style="width: 77px;"/>
+        <div style="width: 23px;height: 23px;float: right;cursor: pointer;"></div>
+    </div>
+</div>
+
+<div templateId="ScheduleDateTimeInput">
+    <h4 style="display: none" id="{#idScheduleDateTimeInput}_print"></h4>
+    <div id="{#idScheduleDateTimeContainer}" class="ScheduleTimeCalendarConteiner" style="width: 108px; height: 23px;">
+        <input id="{#idScheduleDateTimeInput}" type="text" class="calendarInput" style="width: 77px;"/>
+        <div style="width: 23px;height: 23px;float: right;cursor: pointer;"></div>
+    </div>
+</div>
+
+<div templateId="Checkbox">
+    <div class="checkboxUnchecked" id="{#idCheckBox}" style="width: 13px;height: 13px;"></div>
+    <h4 id="{#idCheckBox}_print" style="display: none;">YES</h4>
+</div>
+
+<div templateId="TurnOffPageBreakMultiRadio">
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="width: 15px;"><div class="radioActive" isRadio="" Value="1"></div></td>
+            <td style="width: 35px;"><span style="font-family: Arial; font-size: 8.25pt; color: #292929">Yes</span></td>
+            <td style="width: 16px;"><div class="radioInactive" isRadio="" Value="2"></div></td>
+            <td style="width: 17px;"><span style="font-family: Arial; font-size: 8.25pt; color: #292929">No</span></td>
+        </tr>
+    </table>
+</div>
+
+<div templateId="IncludePageTitleMultiRadio">
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="width: 15px;"><div class="radioActive" isRadio="" Value="1"></div></td>
+            <td style="width: 35px;"><span style="font-family: Arial; font-size: 8.25pt; color: #292929">Yes</span></td>
+            <td style="width: 16px;"><div class="radioInactive" isRadio="" Value="2"></div></td>
+            <td style="width: 17px;"><span style="font-family: Arial; font-size: 8.25pt; color: #292929">No</span></td>
+        </tr>
+    </table>
+</div>
+
+<div  templateId="MultiRadio">
+    <table cellpadding="0" cellspacing="0" >
+        <tr>
+            <td style="width: 16px; height: 25px;">
+                <div class="radioInactive" style="width: 12px;height: 12px;" isRadio="" Value="1"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">Date of Loss</span>
+                </div>
+            </td>            
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 27px;">
+                <div class="radioInactive" style="width: 12px;height: 12px;" isRadio="" Value="2"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">Claim Entry</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 16px; height: 26px;">
+                <div class="radioInactive" style="width: 12px;height: 12px;" isRadio="" Value="3"></div>
+            </td>
+            <td>
+                <div style="">
+                    <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">Date Closed</span>
+                </div>
+            </td>
+        </tr>
+    </table> 
+</div>
+
+<div templateId="IncludeRPORadio">
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="width: 12px;">
+                <div class="radioInactive" style="width: 12px;height: 12px;" isRadio="" Value="1"></div>
+            </td>
+            <td style="width: 41px;">
+                <div style="padding-left: 3px;">
+                    <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">Yes</span>
+                </div>
+            </td>
+            <td style="width: 12px;">
+                <div class="radioInactive" style="width: 12px;height: 12px;" isRadio="" Value="2"></div>
+            </td>
+            <td style="width: 41px;">
+                <div style="padding-left: 3px;">
+                    <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">No</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div templateId="MultiRadioHorizontal" >
+     <table cellpadding="0" cellspacing="0">
+         <tr>
+             <td style="width: 12px;">
+                 <div class="radioInactive" style="width: 12px;height: 12px; margin-bottom: 4px;" isRadio="" Value="1"></div>
+             </td>
+             <td style="width: 41px;">
+                 <div style="padding-left: 3px;margin-top: -5px;">
+                     <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">Yes</span>
+                 </div>
+             </td>
+             <td style="width: 12px;">
+                 <div class="radioInactive" style="width: 12px;height: 12px; margin-bottom: 4px;" isRadio="" Value="2"></div>
+             </td>
+             <td style="width: 41px;">
+                 <div style="padding-left: 3px;margin-top: -5px;">
+                     <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">No</span>
+                 </div>
+             </td>
+             <td style="width: 12px;">
+                 <div class="radioInactive" style="width: 12px;height: 12px; margin-bottom: 4px;" isRadio="" Value="3"></div>
+             </td>
+             <td style="width: 41px;">
+                 <div style="padding-left: 3px;margin-top: -4px;">
+                     <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">All</span>
+                 </div>
+             </td>
+         </tr>
+     </table>
+</div>
+
+<div templateId="SaveInputTemplate">
+    <div class="SaveInputContainer">
+        <input id="{#idSaveInput}" class="SaveInput" type="text" value=""></input>
+    </div>
+</div>
+
+<div templateId="SaveAsNewInputTemplate">
+    <div class="SaveInputContainer">
+        <input id="{#idSaveAsNewInput}" class="SaveInput" type="text" value=""></input>
+    </div>
+</div>
+
+<div templateId="BottomButtonsTemplate" id="{#reportBuilderTabBottomPlaceHolderId}">
+    <div class="SaveCloudDisabled" id="{#SaveCloud}" SaveAttr="true">
+        <div style="float: left;">
+            <div id="{#SaveInput}"/>
+        </div>
+        <div id="{#SaveBttn}" style="position: relative; top: 22px; left: 29px; float: left;"></div>
+    </div>
+    <div class="SaveAsNewCloudDisabled" id="{#SaveAsNewCloud}" SaveAsNewAttr="true">
+        <div style="float: left;">
+            <div id="{#SaveAsNewInput}"/>
+        </div>
+        <div id="{#SaveAsNewBttn}" style="position: relative; top: 22px; left: 29px; float: left;"></div>
+    </div>
+    <table style=" height: 48px; padding-left: 115px; padding-bottom: 20px; padding-top: 4px;" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td style="width: 5px; height: 48px; background-image: url(./images/left_grey_trans_bg.png); background-repeat: no-repeat;"></td>
+                <td style="padding: 0px;  height: 48px; background-image: url(./images/center_grey_trans_bg.png); background-repeat:repeat-x; position: relative;">
+                    <table cellpadding="0" cellspacing="0" style=" height: 48px;">
+                        <tr>
+                            <td style="width: 96px;">
+                                <div style="width: 96px;">
+                                    <span id="{#bottomButtons}_text" style="font-size: 8.25pt; font-weight: bold; font-family: Arial;position: relative; left: 12px; color: #303030;">Report Format</span>
+                                </div>                                    
+                            </td>
+                            <td>
+                                <div id="PdfXlsButton"></div>
+                            </td>
+                            <td>
+                                <div id="{#RunReportBttn}" style="position: relative; left: 1px;"></div>
+                                <!--input id="{#bottomButtons}_runReport" type="button" style="cursor: pointer;color: white;border: none; background-image: url(./images/RunReportButton.png); background-repeat: no-repeat; width: 102px; height: 44px; padding-left: 7px; position: relative; top: -1px; left: 3px;"/-->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 5px; height: 48px; background-image: url(./images/right_grey_trans_bg.png); background-repeat: no-repeat;"></td>
+                <td style="padding: 0px;">
+                    <table>
+                        <tbody>
+                            <tr class="margin">
+                                <td style="padding-left: 1px;">
+                                    <div id="{#SaveReportBttn}" name="SaveBttn" SaveAttr="true"></div>                                    
+                                    <!--input id="{#bottomButtons}_saveReport" type="button" style="cursor: pointer; border: none; background-image: url(./images/SaveReportButton.png); background-repeat: no-repeat;width:107px;height:45px;"/-->
+                                </td>
+                                <td style="padding-left: 0px;">
+                                    <div id="{#SaveReportAsNewBttn}" name="SaveAsNewBttn" SaveAsNewAttr="true"></div>
+                                    <!--input id="{#bottomButtons}_saveReportAsNew" type="button" style="cursor: pointer; border: none; background-image: url(./images/SaveReportAsNewButton.png); background-repeat:no-repeat;width:152px;height:45px;"/-->
+                                </td>
+                                <td style="padding-left: 0px;">
+                                    <div id="{#CancelBttn}"></div>
+                                    <!--input id="{#bottomButtons}_cancel" type="button" style="cursor: pointer; border: none; background-image: url(./images/CancelButton.png); background-repeat: no-repeat;width:76px;height:45px;"/-->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div templateId="MultiRadioHorizontalReportFormatType" style="margin-top: 4px;">
+     <table cellpadding="0" cellspacing="0">
+         <tr>
+             <td style="width: 12px;">
+                 <div class="radioInactive" style="width: 12px;height: 12px; margin-bottom: 4px;" isRadio="" Value="1000"></div>
+             </td>
+             <td style="width: 51px;">
+                 <div style="padding-left: 3px;margin-top: -2px;">
+                     <table>
+                         <tr>
+                             <td><div style="width: 16px; height: 16px; background-image: url(./images/icon_PDF.png); background-color: transparent; background-repeat: no-repeat;vertical-align:middle;"></div></td>
+                             <td><span style="font-family: Arial; font-size: 8.25pt; color: #292929;padding-left: 1px;">PDF</span></td>
+                         </tr>
+                     </table>                                          
+                 </div>
+             </td>
+             <td style="width: 12px;">
+                 <div class="radioInactive" style="width: 12px;height: 12px; margin-bottom: 4px;" isRadio="" Value="1001"></div>
+             </td>
+             <td style="width: 51px;">
+                 <div style="padding-left: 3px;margin-top: -2px;">
+                     <table>
+                         <tr>
+                             <td>
+                                 <div style="width: 16px; height: 16px; background-image: url(./images/icon_XLS.png); background-color: transparent; background-repeat: no-repeat;vertical-align:middle;"></div>
+                             </td>
+                             <td>
+                                 <span style="font-family: Arial; font-size: 8.25pt; color: #292929;padding-left: 1px;">XLS</span>
+                             </td>  
+                         </tr>
+                     </table>                                
+                 </div>
+             </td>
+             <td style="width: 12px;">
+                 <div class="radioInactive" style="width: 12px;height: 12px; margin-bottom: 4px;" isRadio="" Value="1007"></div>
+             </td>
+             <td style="width: 51px;">
+             <div style="padding-left: 3px;margin-top: -1px;">
+                 <table>
+                    <tr>
+                        <td>
+                             <div style="width: 16px; height: 16px; background-image: url(./images/grid.png); background-color: transparent; background-repeat: no-repeat;vertical-align:middle;"></div>
+                        </td>
+                        <td>
+                            <span style="font-family: Arial; font-size: 8.25pt; color: #292929;padding-left: 1px;">Grid</span>
+                        </td>  
+                     </tr>
+                  </table>   
+             </div>    
+             </td>
+         </tr>
+     </table>
+</div>
+
+<div templateId="PdfXlsTemplate">
+        <table cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="ans" style="vertical-align: middle;">
+                        <h4 id="{#idButton}_print" style="display: none;">PDF</h4>
+                        <div id="{#idButton}" class="PDF">
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="width: 18px; height: 16px;">
+                                        <div class="one" clickfor="{#idButton}_PDF">
+                                            <div class="margin">
+                                                <div class="center" style="width:12px;"></div>
+                                            </div>
+                                        </div> 
+                                    </td>
+                                    <td style="width: 16px; height: 16px;">
+                                        <div style="width: 16px; height: 16px; background-image: url(./images/icon_PDF.png); background-color: transparent; background-repeat: no-repeat;"></div>
+                                    </td>
+                                    <td style="width: 34px; height: 16px;">
+                                        <div>
+                                            <span style="font-family: Arial; font-size: 8.25pt; color: #292929; margin-left: 4px;">PDF</span>
+                                        </div>
+                                    </td>
+                                    <td style="width: 19px; height: 16px;">
+                                        <div class="two" clickfor="{#idButton}_XLS">
+                                            <div class="margin">
+                                                <div class="center" style="width:12px"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="width: 16px; height: 16px;">
+                                        <div style="width: 16px; height: 16px; background-image: url(./images/icon_XLS.png); background-color: transparent; background-repeat: no-repeat;"></div>
+                                    </td>
+                                    <td style="width: 34px; height: 16px;">
+                                        <div>
+                                            <span style="font-family: Arial; font-size: 8.25pt; color: #292929; margin-left: 4px;">XLS</span>
+                                        </div>
+                                    </td>
+                                    <td style="width: 18px; height: 16px;">
+                                        <div class="three" clickfor="{#idButton}_Grid">
+                                            <div class="margin">
+                                                <div class="center" style="width:12px;"></div>
+                                            </div>
+                                        </div> 
+                                    </td>
+                                    <td style="width: 34px; height: 16px;">
+                                        <div>
+                                            <span style="font-family: Arial; font-size: 8.25pt; color: #292929;">Grid</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <div style="display:none;">
+                                <input id="{#idButton}_PDF" type="radio" checked="checked" attachedclass="PDF" value="PDF" name="{#idButton}_rbg"/>
+                                <input id="{#idButton}_XLS" type="radio" attachedclass="XLS" value="XLS" name="{#idButton}_rbg"/>
+                                <input id="{#idButton}_Grid" type="radio" attachedclass="Grid" value="Grid" name="{#idButton}_rbg"/>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+<!--<div templateId="PdfXlsTemplate">
+    <table cellpadding="0" cellspacing="0" style="position: relative;">
+        <tr>
+            <td style="width: 18px; height: 16px;">
+                <div class="radioInactive" isRadio="" Value="2" style="background-color: transparent;"></div>
+            </td>
+            <td style="width: 16px; height: 16px;">
+                <div style="width: 16px; height: 16px; background-image: url(./images/icon_PDF.png); background-color: transparent; background-repeat: no-repeat;"></div>
+            </td>
+            <td style="width: 34px; height: 16px;">
+                <span style="font-family: Arial; font-size: 8.25pt; color: #292929; margin-left: 4px;">PDF</span>
+            </td>
+            <td style="width: 19px; height: 16px;">
+                <div class="radioInactive" isRadio="" Value="1" style="background-color: transparent;"></div>
+            </td>
+            <td style="width: 16px; height: 16px;">
+                <div style="width: 16px; height: 16px; background-image: url(./images/icon_XLS.png); background-color: transparent; background-repeat: no-repeat;"></div>
+            </td>
+            <td style="width: 34px; height: 16px;">
+                <span style="font-family: Arial; font-size: 8.25pt; color: #292929; margin-left: 4px;">XLS</span>
+            </td>
+        </tr>
+    </table>
+</div>-->
+
+<div templateId="RunReportBttnTemplate">
+    <div class="ReportBttn" id="{#idRunReportBttn}">
+        <div class="four">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="SaveReportBttnTemplate">
+    <div class="ReportBttn" id="{#idSaveReportBttn}">
+        <div class="one" clickfor="{#idSaveReportBttn}_click">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="SaveReportAsNewBttnTemplate">
+    <div class="ReportBttn" id="{#idSaveReportAsNewBttn}">
+        <div class="two">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="CancelBttnTemplate">
+    <div class="ReportBttn" id="{#idCancelBttn}">
+        <div class="three">
+            <div class="margin" style="cursor: pointer;" onclick="onTemplatesReady()"></div>
+        </div>
+    </div>
+</div>
+
+
+<div templateId="SaveBttnTemplate">
+    <div class="ReportBttn" id="{#idSaveBttn}">
+        <div class="five">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="DropDownControl" style="margin-top: 2px;margin-bottom: 2px;">
+<div isDropAttribute="{#idDropDown}" >
+    <table id="{#idDropDown}_width" style="padding: 0px;" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="{#dropDownHide}_left"></td>
+            <td class="{#dropDownHide}_center">
+                <input type="text" id="{#idDropDown}_showDiv" style="outline: none;margin-top: 2px;border:none; background:transparent; margin-bottom: 3px;padding-left: 2px;" readonly="readonly"/>
+            </td>
+            <td class='{#dropDownHide}_right' style="width: 20px;"></td>
+        </tr>
+    </table>
+    <div id="{#idDropDown}_ImageTable" DropAttribute="{#attribute}" style="position: absolute;z-index: 1000;display:none;margin-top: 1px;">
+        <table  cellpadding="0" cellspacing="0">
+            <tr style="height: 6px;">
+                <td style="background-image: url('./images/DropDown_filter_left_top_radius.png');background-repeat: no-repeat; width:4px;"></td>
+                <td style="background-image: url('./images/DropDown_filter_top_border.png');"> </td>
+                <td style="background-image: url('./images/DropDown_filter_right_top_radius.png');background-repeat: no-repeat; width:7px;"></td>
+            </tr>
+            <tr id="{#idDropDown}_filter" clicker="1"  filterBox="1" class="filter">
+                <td  style="background-color: #f5f5f5; border-left:  1px solid #B0B0B0;"></td>
+                <td class="dropDown_filter" clicker="1" >
+                    <table cellpadding="0" cellspacing="0" clicker="1" width="100%">
+                        <tr >
+                            <td class="dropDown_filterText" align="center" clicker="1">
+                                <span clicker="1">More than 200 items where found and the list was truncated. <br /> Enter a filter below to alter list missing</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 34px;">
+                                <table cellpadding="0" cellspacing="0" clicker="1">
+                                    <tr>
+                                        <td class="dropDown_filterLeft"></td>
+                                        <td class="dropDown_filterCenter" >
+                                            <input id="{#idDropDown}_filterInput" style="outline:none;width: 150px;" class="dropDown_filterCenter_Input" clicker="1" type="text" value=""/>
+                                        </td>
+                                        <td class="dropDown_filterRight"></td>
+                                        <td style="padding-left:5px;">
+                                            <div class="dropDown_filterButton" clicker="1"></div>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </td>                            
+                        </tr>
+                    </table>
+                </td>
+                <td style="background-image: url('./images/DropDown_filter_right_border.png');"></td>
+            </tr>
+            <tr style="height: 5px;">
+                <td style="background-image: url('./images/DropDown_left_top_radius.png'); width:5px;"></td>
+                <td style="background-image: url('./images/DropDown_top_border.png');"> </td>
+                <td style="background-image: url('./images/DropDown_right_top_radius.png'); width:7px;"></td>
+            </tr>
+            <tr>
+                <td style="background-image: url('./images/DropDown_left_border.png'); width:5px;"></td>
+                <td class="dropDownHide"><div id="{#idDropDown}" style="background-color: white;overflow-y: auto;overflow-x: hidden;"></div></td>
+                <td style="background-image: url('./images/DropDown_right_border.png'); width:7px;"></td>
+            </tr>
+            <tr style="height: 7px;">
+                <td style="background-image: url('./images/DropDown_left_bottom_radius.png'); width:5px;"></td>
+                <td style="background-image: url('./images/DropDown_bottom_border.png');"></td>
+                <td style="background-image: url('./images/DropDown_right_bottom_radius.png'); width:7px;"></td>  
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+
+<div templateId="DropDownWithCheckBox">
+    <div style="width: 150px;">
+        <div style="position: absolute;height:23px; width: 5px; background-image: url('./images/dropDownLeft.png')"></div>
+        <div style="position: absolute;height:23px; width: 119px; background-image: url('./images/dropDownCenter.png'); margin-left: 5px; overflow:hidden;">
+            <div id="{#idDropDownWithCheckBox}_showDiv" style="margin-top: 2px;"></div>
+        </div>
+        <div style="position: absolute;height:23px; width: 26px; background-image: url('./images/dropDownRight.png'); margin-left: 124px;"></div>
+    </div>
+    <!-- <select id="{#idDropDownWithCheckBox}" style="width: 150px;border-color: black; border-radius: 5px 5px 5px 5px;opacity:0;"></select>-->
+    <div style="width: 150px; height: 150px;border: 1px solid black; overflow:scroll;" id="{#idDropDownWithCheckBox}"></div>
+</div>
+
+<div templateId="ClearFilterBttnTemplate">
+    <div class="ReportBttn" id="{#idClearFilterBttn}">
+        <div class="six">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="ViewReportBttnTemplate">
+    <div class="ReportBttn" id="{#idViewReportBttn}">
+        <div class="eleven">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="ShowAllBttnTemplate">
+    <div class="ReportBttn" id="{#idShowAllBttn}">
+        <div class="seven">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="ShowCoveredBttnTemplate">
+    <div class="ReportBttn" id="{#idShowCoveredBttn}">
+        <div class="ten">
+            <div class="margin" style="cursor: pointer;" onclick=""></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="BtnTemplate">
+    <div class="ReportBttn">
+        <div class="clear" style="width: 22px;">
+            <div class="margin" style="cursor: pointer;"></div>
+        </div>
+    </div>
+</div>
+
+
+<div templateId="plusBtnTemplate" style="width: 24px;">
+    <div class="ReportBttn">
+        <div class="plus" style="width: 22px;">
+            <div class="margin" style="cursor: pointer;"></div>
+        </div>
+    </div>
+</div>
+
+<div templateId="minusBtnTemplate" style="width: 20px;">
+    <div class="ReportBttn">
+        <div class="minus" style="width: 22px;">
+            <div class="margin" style="cursor: pointer;"></div>
+        </div>
+    </div>
+</div>
+
+<table cellpadding="0" cellspacing="0" style="margin-top: 9px;" templateId="DateRangeTemplate">
+    <tr>
+        <td style="width: 123px; height: 28px; text-align:right;">
+            <div style="margin-bottom: 3px;">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 8px; color: #525252">Date Range:</span>
+            </div>
+        </td>
+        <td style="width: 221px; height: 28px;">
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td><div id="DateRange"></div></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="LastXDaysInput">
+                        <div id="LastXDaysSkin" style="padding-left: 4px; margin-top: -3px;">
+                            <div class="left"></div>
+                            <div class="center" style="width: 22px;"><input id="{#lastXDays}" class="input" style="margin-top: 4px" maxlength="3"/></div>
+                            <div class="right"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 123px; text-align:right;">
+            <div style="margin-top: -3px">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 8px; color: #525252">From:</span>
+            </div>
+        </td>
+        <td style="width: 221px;">
+            <table cellpadding="0" cellspacing="0" style="margin-left: -1px;">
+                <tr>
+                    <td style="width: 90px;">
+                        <div id="DateFrom" style="margin-left: -1px;margin-top: -1px;padding-bottom: 2px;"></div>
+                    </td>
+                    <td style="width: 16px;">
+                        <div style="margin-top: -2px; padding-left: 5px;">
+                            <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold; color: #525252">To:</span>
+                        </div>
+                    </td>
+                    <td style="width: 88px;">
+                        <div id="DateTo" style="margin-left: 2px;margin-top: -1px;padding-bottom: 2px;"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="dateRangeTimes" style="display: none; height: 26px;">
+        <td style="width: 123px; text-align:right; padding-top: 1px;">
+            <div style="margin-top: -3px;">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 8px; color: #525252">Hours:</span>
+            </div>
+        </td>
+        <td style="width: 221px; padding-top: 1px;">
+            <table cellpadding="0" cellspacing="0" class="hours_combobox">
+                <tr>
+                    <td style="width: 91px;">
+                        <div id="{#startHours}"></div>
+                    </td>
+                    <td style="width: 24px;">
+                    </td>
+                    <td style="width: 88px;">
+                        <div id="{#endHours}"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="dateRangeTimes" style="display: none; height: 26px;">
+        <td style="width: 123px; text-align:right;">
+            <div style="margin-top: -3px;">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 8px; color: #525252">Minutes:</span>
+            </div>
+        </td>
+        <td style="width: 221px;">
+            <table cellpadding="0" cellspacing="0" class="minutes_combobox">
+                <tr>
+                    <td style="width: 91px;">
+                        <div id="{#startMinutes}"></div>
+                    </td>
+                    <td style="width: 24px;">
+                    </td>
+                    <td style="width: 88px;">
+                        <div id="{#endMinutes}"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr class="dateRangeTimes" style="display: none; height: 24px;">
+        <td style="width: 123px; text-align:right;">
+            <div style="margin-top: -3px;">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 8px; color: #525252">AM/PM:</span>
+            </div>
+        </td>
+        <td style="width: 221px;">
+            <table cellpadding="0" cellspacing="0" class="am_pm_combobox">
+                <tr>
+                    <td style="width: 91px;">
+                        <div id="{#startAMPM}"></div>
+                    </td>
+                    <td style="width: 24px;">
+                    </td>
+                    <td style="width: 88px;">
+                        <div id="{#endAMPM}"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" style="margin-top: 8px;" templateId="AsOfDateRangeTemplate">
+    <tr>
+        <td style="width: 118px; text-align:right;">
+            <div style="margin-top: -4px;">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 3px; color: #525252">As of Date Type:</span>
+            </div>
+        </td>
+        <td>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td><div id="{#asOfDateType}" style="margin-top: -3px; margin-left: 5px;"></div></td>                    
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 118px; text-align:right;">
+            <div style="margin-top: -3px;">
+                <span style="font-family: Arial; font-size: 8.25pt; font-weight: bold;margin-right: 3px; color: #525252">As of Date:</span>
+            </div>
+        </td>
+        <td style="width: 222px;">
+            <table style="margin-left: 0px;">
+                <tr>
+                    <td style="width: 91px;">
+                        <div id="{#asOfDate}" class="asOfDate_container"></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
